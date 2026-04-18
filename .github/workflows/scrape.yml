@@ -6,12 +6,11 @@ on:
   workflow_dispatch:        # manual trigger from the Actions tab
 
 permissions:
-  contents: write           # needed to commit updated data back to repo
+  contents: write
 
 jobs:
   scrape:
     runs-on: ubuntu-latest
-
     steps:
       - name: Check out repo
         uses: actions/checkout@v4
@@ -24,18 +23,19 @@ jobs:
           python-version: "3.12"
 
       - name: Install dependencies
-        run: pip install httpx duckdb pandas
+        run: pip install httpx duckdb pandas python-dotenv
 
       - name: Run scraper
         env:
           CONGRESS_API_KEY: ${{ secrets.CONGRESS_API_KEY }}
+          RUN_MODE: incremental
         run: python scraper.py
 
       - name: Commit updated DB and JSON exports
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add congress.db docs/data/
+          git add congress.duckdb data/
           git diff --cached --quiet \
             || git commit -m "chore: nightly refresh $(date -u +'%Y-%m-%d')" \
             && git push

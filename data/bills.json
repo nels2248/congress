@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-04-18T01:55:39.550028+00:00",
-  "count": 15,
+  "last_updated": "2026-04-18T02:03:20.857193+00:00",
+  "count": 16,
   "data": [
     {
       "bill_id": "119-HR-134",
@@ -15,7 +15,7 @@
       "sponsor_party": "R",
       "sponsor_state": "FL",
       "origin_chamber": "House",
-      "updated_at": "2026-04-18 01:55:32.158484"
+      "updated_at": "2026-04-18 02:03:18.65236"
     },
     {
       "bill_id": "119-HR-173",
@@ -30,7 +30,7 @@
       "sponsor_party": "R",
       "sponsor_state": "NY",
       "origin_chamber": "House",
-      "updated_at": "2026-04-18 01:55:32.660772"
+      "updated_at": "2026-04-18 02:03:19.176873"
     },
     {
       "bill_id": "119-HR-209",
@@ -45,7 +45,7 @@
       "sponsor_party": "R",
       "sponsor_state": "VA",
       "origin_chamber": "House",
-      "updated_at": "2026-04-18 01:55:33.169165"
+      "updated_at": "2026-04-18 02:03:19.72217"
     },
     {
       "bill_id": "119-HJRES-1",
@@ -60,7 +60,7 @@
       "sponsor_party": "R",
       "sponsor_state": "AZ",
       "origin_chamber": "House",
-      "updated_at": "2026-04-18 01:55:33.704984"
+      "updated_at": "2026-04-18 02:03:20.211071"
     },
     {
       "bill_id": "119-HR-68",
@@ -226,6 +226,21 @@
       "sponsor_state": "AZ",
       "origin_chamber": "House",
       "updated_at": "2026-04-18 01:55:39.538217"
+    },
+    {
+      "bill_id": "119-HR-144",
+      "congress": 119,
+      "bill_type": "HR",
+      "bill_number": "144",
+      "title": "Tennessee Valley Authority Salary Transparency Act",
+      "introduced_date": "2025-01-03",
+      "latest_action": "Received in the Senate and Read twice and referred to the Committee on Environment and Public Works.",
+      "latest_action_date": "2025-01-16",
+      "sponsor_name": "Rep. Cohen, Steve [D-TN-9]",
+      "sponsor_party": "D",
+      "sponsor_state": "TN",
+      "origin_chamber": "House",
+      "updated_at": "2026-04-18 02:03:20.839093"
     }
   ]
 }
