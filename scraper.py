@@ -78,8 +78,11 @@ def fetch_bills(congress, limit=250, offset=0, from_date=None):
         "limit":   limit,
         "offset":  offset,
         "format":  "json",
+        "sort":    "latestAction.actionDate+desc",  # ← sort by real action date
     }
     if from_date:
+        # Use updateDate for the filter since API doesn't support
+        # filtering directly on latestAction.actionDate
         params["fromDateTime"] = from_date
     r = httpx.get(f"{BASE_URL}/bill/{congress}", params=params, timeout=30)
     r.raise_for_status()
@@ -155,8 +158,8 @@ def scrape_dev(con):
 
 
 def scrape_incremental(con):
-    """Bills updated in the last 24 hours. Used for nightly cron."""
-    since = (datetime.now(timezone.utc) - timedelta(hours=24)).strftime("%Y-%m-%dT%H:%M:%SZ")
+    """Look back 72 hours instead of 24 to account for publishing lag"""
+    since = (datetime.now(timezone.utc) - timedelta(hours=72)).strftime("%Y-%m-%dT%H:%M:%SZ")
     log.info(f"MODE: incremental (since {since})")
     offset = 0
     out    = []
