@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Congress Bill Explorer</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:          #ffffff;
+      --bg2:         #f7f7f5;
+      --bg3:         #f0efe9;
+      --border:      #e4e3dc;
+      --text:        #1a1a18;
+      --muted:       #6b6a63;
+      --hint:        #9b9a93;
+      --blue:        #185FA5;
+      --blue-bg:     #E6F1FB;
+      --blue-txt:    #0C447C;
+      --red:         #A32D2D;
+      --red-bg:      #FCEBEB;
+      --red-txt:     #791F1F;
+      --green:       #3B6D11;
+      --green-bg:    #EAF3DE;
+      --green-txt:   #27500A;
+      --amber:       #854F0B;
+      --amber-bg:    #FAEEDA;
+      --amber-txt:   #633806;
+      --purple:      #534AB7;
+      --purple-bg:   #EEEDFE;
+      --purple-txt:  #3C3489;
+      --teal:        #0F6E56;
+      --teal-bg:     #E1F5EE;
+      --teal-txt:    #085041;
+      --radius:      10px;
+      --radius-sm:   6px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg:          #1c1c1a;
+        --bg2:         #242422;
+        --bg3:         #2c2c2a;
+        --border:      #3a3a37;
+        --text:        #e8e7df;
+        --muted:       #a0a098;
+        --hint:        #6b6a63;
+        --blue:        #85B7EB;
+        --blue-bg:     #0C447C;
+        --blue-txt:    #B5D4F4;
+        --red:         #F09595;
+        --red-bg:      #791F1F;
+        --red-txt:     #F7C1C1;
+        --green:       #97C459;
+        --green-bg:    #27500A;
+        --green-txt:   #C0DD97;
+        --amber:       #EF9F27;
+        --amber-bg:    #633806;
+        --amber-txt:   #FAC775;
+        --purple:      #AFA9EC;
+        --purple-bg:   #3C3489;
+        --purple-txt:  #CECBF6;
+        --teal:        #5DCAA5;
+        --teal-bg:     #085041;
+        --teal-txt:    #9FE1CB;
+      }
+    }
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: var(--bg3);
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .page { max-width: 1100px; margin: 0 auto; padding: 1.5rem; }
+
+    .header { margin-bottom: 1.25rem; }
+    .header h1 { font-size: 1.25rem; font-weight: 600; margin-bottom: 4px; }
+    .header .meta { font-size: 12px; color: var(--hint); display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+    .live-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%;
+                 background: var(--green); margin-right: 5px; vertical-align: middle; }
+
+    .filter-bar {
+      background: var(--bg);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem 1.25rem;
+      margin-bottom: 1rem;
+      display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: flex-end;
+    }
+    .fg { display: flex; flex-direction: column; gap: 4px; }
+    .fg label { font-size: 11px; font-weight: 600; text-transform: uppercase;
+                 letter-spacing: .06em; color: var(--hint); }
+    select, input[type="date"] {
+      background: var(--bg2); border: 0.5px solid var(--border);
+      border-radius: var(--radius-sm); color: var(--text);
+      font-size: 13px; padding: 6px 10px; min-width: 130px;
+    }
+    select:focus, input[type="date"]:focus { outline: none; border-color: var(--blue); }
+    .btn {
+      padding: 6px 14px; background: var(--bg2); border: 0.5px solid var(--border);
+      border-radius: var(--radius-sm); color: var(--muted); font-size: 13px;
+      cursor: pointer; align-self: flex-end;
+    }
+    .btn:hover { border-color: var(--blue); color: var(--blue); }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 0.75rem; margin-bottom: 1rem;
+    }
+    .stat {
+      background: var(--bg); border: 0.5px solid var(--border);
+      border-radius: var(--radius); padding: 0.9rem 1.1rem;
+    }
+    .stat .val { font-size: 1.6rem; font-weight: 600; line-height: 1.1; }
+    .stat .lbl { font-size: 12px; color: var(--muted); margin-top: 4px; }
+    .stat.blue   .val { color: var(--blue); }
+    .stat.teal   .val { color: var(--teal); }
+    .stat.amber  .val { color: var(--amber); }
+    .stat.green  .val { color: var(--green); }
+    .stat.purple .val { color: var(--purple); }
+
+    .charts { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+    .chart-card {
+      background: var(--bg); border: 0.5px solid var(--border);
+      border-radius: var(--radius); padding: 1rem 1.25rem;
+    }
+    .chart-card.wide { grid-column: 1 / -1; }
+    .chart-card h2 { font-size: 11px; font-weight: 600; text-transform: uppercase;
+                      letter-spacing: .06em; color: var(--hint); margin-bottom: 0.75rem; }
+
+    svg.chart { overflow: visible; display: block; width: 100%; }
+    .axis text { font-size: 11px; fill: var(--muted); }
+    .axis path, .axis line { stroke: var(--border); }
+    .grid line { stroke: var(--border); stroke-opacity: 0.5; }
+    .grid path { stroke: none; }
+    .bar { cursor: default; transition: opacity .12s; }
+    .bar:hover { opacity: 0.7; }
+    .line-path { fill: none; stroke-width: 2; }
+    .area-path { opacity: 0.1; }
+
+    .table-card {
+      background: var(--bg); border: 0.5px solid var(--border);
+      border-radius: var(--radius); margin-top: 0.75rem; overflow: hidden;
+    }
+    .table-header {
+      padding: 0.75rem 1.25rem; border-bottom: 0.5px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .table-header h2 { font-size: 11px; font-weight: 600; text-transform: uppercase;
+                        letter-spacing: .06em; color: var(--hint); }
+    .table-header span { font-size: 12px; color: var(--hint); }
+    .tbl-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    th {
+      text-align: left; padding: 8px 12px; background: var(--bg2);
+      border-bottom: 0.5px solid var(--border);
+      font-weight: 600; font-size: 11px; text-transform: uppercase;
+      letter-spacing: .05em; color: var(--hint); cursor: pointer;
+      user-select: none; white-space: nowrap;
+    }
+    th:hover { color: var(--text); }
+    th.sort-active { color: var(--blue); }
+    td { padding: 8px 12px; border-bottom: 0.5px solid var(--border); color: var(--text); }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: var(--bg2); }
+    td.title-cell { max-width: 300px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+    .badge { display: inline-block; padding: 2px 8px; border-radius: 99px; font-size: 11px; font-weight: 600; }
+    .b-D  { background: var(--blue-bg);   color: var(--blue-txt); }
+    .b-R  { background: var(--red-bg);    color: var(--red-txt); }
+    .b-I  { background: var(--purple-bg); color: var(--purple-txt); }
+    .b-x  { background: var(--bg3);       color: var(--hint); }
+    .b-H  { background: var(--teal-bg);   color: var(--teal-txt); }
+    .b-S  { background: var(--amber-bg);  color: var(--amber-txt); }
+
+    .pager {
+      padding: 10px 12px; border-top: 0.5px solid var(--border);
+      display: flex; gap: 8px; align-items: center;
+    }
+    .pager span { font-size: 12px; color: var(--hint); flex: 1; text-align: center; }
+
+    .error-bar {
+      background: var(--red-bg); color: var(--red-txt);
+      border: 0.5px solid var(--red); border-radius: var(--radius);
+      padding: 0.9rem 1.25rem; margin-bottom: 1rem; font-size: 13px;
+    }
+
+    @media (max-width: 600px) { .charts { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <h1>Congress bill explorer</h1>
+    <div class="meta">
+      <span id="meta-refresh">Loading...</span>
+      <span id="meta-count"></span>
+    </div>
+  </div>
+
+  <div id="err" style="display:none" class="error-bar"></div>
+
+  <div class="filter-bar">
+    <div class="fg">
+      <label>Party</label>
+      <select id="f-party">
+        <option value="">All parties</option>
+        <option value="D">Democrat</option>
+        <option value="R">Republican</option>
+        <option value="I">Independent</option>
+      </select>
+    </div>
+    <div class="fg">
+      <label>Chamber</label>
+      <select id="f-chamber">
+        <option value="">All chambers</option>
+        <option value="House">House</option>
+        <option value="Senate">Senate</option>
+      </select>
+    </div>
+    <div class="fg">
+      <label>State</label>
+      <select id="f-state"><option value="">All states</option></select>
+    </div>
+    <div class="fg">
+      <label>Bill type</label>
+      <select id="f-type"><option value="">All types</option></select>
+    </div>
+    <div class="fg">
+      <label>From date</label>
+      <input type="date" id="f-from">
+    </div>
+    <div class="fg">
+      <label>To date</label>
+      <input type="date" id="f-to">
+    </div>
+    <button class="btn" onclick="resetFilters()">Reset</button>
+  </div>
+
+  <div class="stats">
+    <div class="stat blue">  <div class="val" id="s-total">—</div>  <div class="lbl">Bills shown</div></div>
+    <div class="stat teal">  <div class="val" id="s-house">—</div>  <div class="lbl">House bills</div></div>
+    <div class="stat amber"> <div class="val" id="s-senate">—</div> <div class="lbl">Senate bills</div></div>
+    <div class="stat green"> <div class="val" id="s-states">—</div> <div class="lbl">States represented</div></div>
+    <div class="stat purple"><div class="val" id="s-month">—</div>  <div class="lbl">Introduced this month</div></div>
+  </div>
+
+  <div class="charts">
+    <div class="chart-card wide">
+      <h2>Bills introduced over time</h2>
+      <svg class="chart" id="c-time" height="160"></svg>
+    </div>
+    <div class="chart-card">
+      <h2>By sponsoring party</h2>
+      <svg class="chart" id="c-party" height="180"></svg>
+    </div>
+    <div class="chart-card">
+      <h2>By chamber</h2>
+      <svg class="chart" id="c-chamber" height="180"></svg>
+    </div>
+    <div class="chart-card wide">
+      <h2>Top 20 states by bill count</h2>
+      <svg class="chart" id="c-state" height="210"></svg>
+    </div>
+  </div>
+
+  <div class="table-card">
+    <div class="table-header">
+      <h2>Bills</h2>
+      <span id="tbl-count"></span>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th onclick="sortBy('bill_id')"           id="th-id">Bill</th>
+            <th onclick="sortBy('introduced_date')"   id="th-date" class="sort-active">Date ↓</th>
+            <th onclick="sortBy('origin_chamber')"    id="th-ch">Chamber</th>
+            <th onclick="sortBy('sponsor_party')"     id="th-party">Party</th>
+            <th onclick="sortBy('sponsor_state')"     id="th-state">State</th>
+            <th onclick="sortBy('title')"             id="th-title">Title</th>
+            <th onclick="sortBy('latest_action_date')" id="th-action">Latest action</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+    <div class="pager">
+      <button class="btn" id="btn-prev" onclick="prevPage()">← Prev</button>
+      <span id="page-info"></span>
+      <button class="btn" id="btn-next" onclick="nextPage()">Next →</button>
+    </div>
+  </div>
+
+</div>
+<script>
+const PARTY_COLOR   = { D:'#185FA5', R:'#A32D2D', I:'#534AB7' };
+const CHAMBER_COLOR = { House:'#0F6E56', Senate:'#854F0B' };
+const FALLBACK_C    = '#888780';
+const PAGE_SZ = 50;
+
+let allBills = [], filtered = [];
+let sortCol = 'introduced_date', sortAsc = false, page = 0;
+
+async function load() {
+  try {
+    const res  = await fetch('data/bills.json');
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const json = await res.json();
+
+    allBills = Array.isArray(json) ? json : (json.data || []);
+
+    const lu = json.last_updated
+      ? new Date(json.last_updated).toLocaleString()
+      : null;
+    document.getElementById('meta-refresh').innerHTML =
+      `<span class="live-dot"></span>${lu ? 'Last refresh: ' + lu : 'Data loaded'}`;
+    document.getElementById('meta-count').textContent =
+      `${(json.count || allBills.length).toLocaleString()} bills in dataset`;
+
+    buildSelects();
+    applyFilters();
+  } catch(e) {
+    const el = document.getElementById('err');
+    el.style.display = 'block';
+    el.textContent =
+      `Could not load data/bills.json — run scraper.py first, then serve via local_server.py (${e.message}).`;
+    document.getElementById('meta-refresh').textContent = 'No data';
+  }
+}
+
+function buildSelects() {
+  const states = [...new Set(allBills.map(d=>d.sponsor_state).filter(Boolean))].sort();
+  const fs = document.getElementById('f-state');
+  states.forEach(s => { const o = document.createElement('option'); o.value = o.textContent = s; fs.appendChild(o); });
+
+  const types = [...new Set(allBills.map(d=>d.bill_type).filter(Boolean))].sort();
+  const ft = document.getElementById('f-type');
+  types.forEach(t => { const o = document.createElement('option'); o.value = o.textContent = t; ft.appendChild(o); });
+}
+
+function applyFilters() {
+  const p = document.getElementById('f-party').value;
+  const c = document.getElementById('f-chamber').value;
+  const s = document.getElementById('f-state').value;
+  const t = document.getElementById('f-type').value;
+  const fr = document.getElementById('f-from').value;
+  const to = document.getElementById('f-to').value;
+  filtered = allBills.filter(d =>
+    (!p  || d.sponsor_party   === p) &&
+    (!c  || d.origin_chamber  === c) &&
+    (!s  || d.sponsor_state   === s) &&
+    (!t  || d.bill_type       === t) &&
+    (!fr || (d.introduced_date||'') >= fr) &&
+    (!to || (d.introduced_date||'') <= to)
+  );
+  page = 0;
+  render();
+}
+
+function resetFilters() {
+  ['f-party','f-chamber','f-state','f-type'].forEach(id => document.getElementById(id).value = '');
+  ['f-from','f-to'].forEach(id => document.getElementById(id).value = '');
+  applyFilters();
+}
+
+function render() {
+  const thisMonth = new Date().toISOString().slice(0,7);
+  document.getElementById('s-total').textContent  = filtered.length.toLocaleString();
+  document.getElementById('s-house').textContent  = filtered.filter(d=>d.origin_chamber==='House').length.toLocaleString();
+  document.getElementById('s-senate').textContent = filtered.filter(d=>d.origin_chamber==='Senate').length.toLocaleString();
+  document.getElementById('s-states').textContent = new Set(filtered.map(d=>d.sponsor_state).filter(Boolean)).size.toLocaleString();
+  document.getElementById('s-month').textContent  = filtered.filter(d=>(d.introduced_date||'').startsWith(thisMonth)).length.toLocaleString();
+  renderCharts();
+  renderTable();
+}
+
+function dims(id, mb) {
+  const el = document.getElementById(id);
+  const W  = (el.parentElement.clientWidth||500) - 40;
+  const H  = +el.getAttribute('height');
+  const m  = { top:8, right:16, bottom: mb||38, left:46 };
+  el.setAttribute('width', W);
+  return { W, H, m, w: W-m.left-m.right, h: H-m.top-m.bottom };
+}
+
+function barChart(id, data, xKey, yKey, colorFn, mb) {
+  const { W, H, m, w, h } = dims(id, mb);
+  const svg = d3.select('#'+id); svg.selectAll('*').remove();
+  if (!data.length) return;
+  const g = svg.append('g').attr('transform',`translate(${m.left},${m.top})`);
+  const x = d3.scaleBand().domain(data.map(d=>d[xKey])).range([0,w]).padding(0.28);
+  const y = d3.scaleLinear().domain([0, d3.max(data,d=>d[yKey])]).nice().range([h,0]);
+  g.append('g').attr('class','grid')
+   .call(d3.axisLeft(y).ticks(4).tickSize(-w).tickFormat(''));
+  g.append('g').attr('transform',`translate(0,${h})`).attr('class','axis')
+   .call(d3.axisBottom(x))
+   .selectAll('text').attr('transform','rotate(-30)').style('text-anchor','end');
+  g.append('g').attr('class','axis')
+   .call(d3.axisLeft(y).ticks(4).tickFormat(v => v>=1000 ? d3.format('.2s')(v) : v));
+  g.selectAll('.bar').data(data).join('rect').attr('class','bar')
+   .attr('x',d=>x(d[xKey])).attr('y',d=>y(d[yKey]))
+   .attr('width',x.bandwidth()).attr('height',d=>h-y(d[yKey]))
+   .attr('fill',d=>colorFn ? colorFn(d[xKey]) : '#185FA5').attr('rx',3);
+}
+
+function lineChart(id, data, xKey, yKey) {
+  const { W, H, m, w, h } = dims(id, 42);
+  const svg = d3.select('#'+id); svg.selectAll('*').remove();
+  if (!data.length) return;
+  const g = svg.append('g').attr('transform',`translate(${m.left},${m.top})`);
+  const x = d3.scalePoint().domain(data.map(d=>d[xKey])).range([0,w]);
+  const y = d3.scaleLinear().domain([0, d3.max(data,d=>d[yKey])]).nice().range([h,0]);
+  const tick = Math.max(1, Math.ceil(data.length/10));
+  g.append('g').attr('class','grid')
+   .call(d3.axisLeft(y).ticks(4).tickSize(-w).tickFormat(''));
+  g.append('g').attr('transform',`translate(0,${h})`).attr('class','axis')
+   .call(d3.axisBottom(x).tickValues(x.domain().filter((_,i)=>i%tick===0)))
+   .selectAll('text').attr('transform','rotate(-30)').style('text-anchor','end');
+  g.append('g').attr('class','axis')
+   .call(d3.axisLeft(y).ticks(4).tickFormat(v => v>=1000 ? d3.format('.2s')(v) : v));
+  const area = d3.area().x(d=>x(d[xKey])).y0(h).y1(d=>y(d[yKey])).curve(d3.curveMonotoneX);
+  const line = d3.line().x(d=>x(d[xKey])).y(d=>y(d[yKey])).curve(d3.curveMonotoneX);
+  g.append('path').datum(data).attr('class','area-path').attr('fill','#185FA5').attr('d',area);
+  g.append('path').datum(data).attr('class','line-path').attr('stroke','#185FA5').attr('d',line);
+}
+
+function renderCharts() {
+  const byMonth = [...d3.rollup(filtered, v=>v.length, d=>(d.introduced_date||'').slice(0,7))]
+    .map(([k,v])=>({month:k,count:v})).filter(d=>d.month&&d.month.length===7)
+    .sort((a,b)=>a.month.localeCompare(b.month));
+  lineChart('c-time', byMonth, 'month', 'count');
+
+  const byParty = [...d3.rollup(filtered.filter(d=>d.sponsor_party), v=>v.length, d=>d.sponsor_party)]
+    .map(([k,v])=>({party:k,count:v})).sort((a,b)=>b.count-a.count);
+  barChart('c-party', byParty, 'party', 'count', k=>PARTY_COLOR[k]||FALLBACK_C, 44);
+
+  const byChamber = [...d3.rollup(filtered.filter(d=>d.origin_chamber), v=>v.length, d=>d.origin_chamber)]
+    .map(([k,v])=>({chamber:k,count:v})).sort((a,b)=>b.count-a.count);
+  barChart('c-chamber', byChamber, 'chamber', 'count', k=>CHAMBER_COLOR[k]||FALLBACK_C, 44);
+
+  const byState = [...d3.rollup(filtered.filter(d=>d.sponsor_state), v=>v.length, d=>d.sponsor_state)]
+    .map(([k,v])=>({state:k,count:v})).sort((a,b)=>b.count-a.count).slice(0,20);
+  barChart('c-state', byState, 'state', 'count', ()=>'#185FA5', 52);
+}
+
+const TH_MAP = {
+  bill_id:'th-id', introduced_date:'th-date', origin_chamber:'th-ch',
+  sponsor_party:'th-party', sponsor_state:'th-state', title:'th-title',
+  latest_action_date:'th-action'
+};
+
+function sortBy(col) {
+  sortAsc = sortCol === col ? !sortAsc : (col === 'title');
+  sortCol = col;
+  page = 0;
+  document.querySelectorAll('th').forEach(th => {
+    th.classList.remove('sort-active');
+    th.textContent = th.textContent.replace(/ [↑↓]$/,'');
+  });
+  const th = document.getElementById(TH_MAP[col]);
+  if (th) { th.classList.add('sort-active'); th.textContent += sortAsc ? ' ↑' : ' ↓'; }
+  renderTable();
+}
+
+function prevPage() { if (page>0) { page--; renderTable(); } }
+function nextPage() { const p=Math.ceil(filtered.length/PAGE_SZ); if (page<p-1) { page++; renderTable(); } }
+
+function d(date) { return date ? String(date).slice(0,10) : '—'; }
+function partyBadge(p) {
+  if (!p) return '<span class="badge b-x">—</span>';
+  return `<span class="badge b-${p}">${p}</span>`;
+}
+function chamberBadge(c) {
+  if (c==='House')  return '<span class="badge b-H">House</span>';
+  if (c==='Senate') return '<span class="badge b-S">Senate</span>';
+  return '<span class="badge b-x">—</span>';
+}
+
+function renderTable() {
+  const sorted = [...filtered].sort((a,b) => {
+    const av = a[sortCol]??'', bv = b[sortCol]??'';
+    return sortAsc ? (av>bv?1:-1) : (av<bv?1:-1);
+  });
+  const pages = Math.ceil(sorted.length/PAGE_SZ)||1;
+  const slice = sorted.slice(page*PAGE_SZ, (page+1)*PAGE_SZ);
+
+  document.getElementById('tbl-count').textContent = `${sorted.length.toLocaleString()} bills`;
+  document.getElementById('page-info').textContent = `Page ${page+1} of ${pages}`;
+  document.getElementById('btn-prev').disabled = page===0;
+  document.getElementById('btn-next').disabled = page>=pages-1;
+
+  document.getElementById('tbody').innerHTML = slice.map(b => `
+    <tr>
+      <td><strong>${b.bill_type||''}${b.bill_number||''}</strong></td>
+      <td>${d(b.introduced_date)}</td>
+      <td>${chamberBadge(b.origin_chamber)}</td>
+      <td>${partyBadge(b.sponsor_party)}</td>
+      <td>${b.sponsor_state||'—'}</td>
+      <td class="title-cell" title="${(b.title||'').replace(/"/g,'&quot;')}">${b.title||'—'}</td>
+      <td>${d(b.latest_action_date)}</td>
+    </tr>`).join('');
+}
+
+['f-party','f-chamber','f-state','f-type','f-from','f-to']
+  .forEach(id => document.getElementById(id).addEventListener('change', applyFilters));
+window.addEventListener('resize', renderCharts);
+
+load();
+</script>
+</body>
+</html>

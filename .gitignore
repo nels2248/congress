@@ -1,0 +1,26 @@
+# Environment / secrets
+.env
+*.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+*.egg-info/
+dist/
+build/
+
+# Anaconda / Spyder
+.spyproject/
+.spyderproject.cfg
+.spyder-py3/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# The DB is committed so GitHub Actions can read/write it.
+# Remove the line below if you prefer to keep it out of version control
+# and use a separate storage solution (S3, etc.).
+# congress.db
