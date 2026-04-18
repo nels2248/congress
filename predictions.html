@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vote Predictions — Congress Bill Explorer</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:          #ffffff;
+      --bg2:         #f7f7f5;
+      --bg3:         #f0efe9;
+      --border:      #e4e3dc;
+      --text:        #1a1a18;
+      --muted:       #6b6a63;
+      --hint:        #9b9a93;
+      --blue:        #185FA5;
+      --blue-bg:     #E6F1FB;
+      --blue-txt:    #0C447C;
+      --red:         #A32D2D;
+      --red-bg:      #FCEBEB;
+      --red-txt:     #791F1F;
+      --green:       #3B6D11;
+      --green-bg:    #EAF3DE;
+      --green-txt:   #27500A;
+      --amber:       #854F0B;
+      --amber-bg:    #FAEEDA;
+      --amber-txt:   #633806;
+      --purple:      #534AB7;
+      --purple-bg:   #EEEDFE;
+      --purple-txt:  #3C3489;
+      --teal:        #0F6E56;
+      --teal-bg:     #E1F5EE;
+      --teal-txt:    #085041;
+      --radius:      10px;
+      --radius-sm:   6px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg:          #1c1c1a;
+        --bg2:         #242422;
+        --bg3:         #2c2c2a;
+        --border:      #3a3a37;
+        --text:        #e8e7df;
+        --muted:       #a0a098;
+        --hint:        #6b6a63;
+        --blue:        #85B7EB;
+        --blue-bg:     #0C447C;
+        --blue-txt:    #B5D4F4;
+        --red:         #F09595;
+        --red-bg:      #791F1F;
+        --red-txt:     #F7C1C1;
+        --green:       #97C459;
+        --green-bg:    #27500A;
+        --green-txt:   #C0DD97;
+        --amber:       #EF9F27;
+        --amber-bg:    #633806;
+        --amber-txt:   #FAC775;
+        --purple:      #AFA9EC;
+        --purple-bg:   #3C3489;
+        --purple-txt:  #CECBF6;
+        --teal:        #5DCAA5;
+        --teal-bg:     #085041;
+        --teal-txt:    #9FE1CB;
+      }
+    }
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: var(--bg3);
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .page { max-width: 1100px; margin: 0 auto; padding: 1.5rem; }
+
+    /* ── Nav ── */
+    .nav {
+      display: flex; gap: 4px; margin-bottom: 1.25rem;
+    }
+    .nav a {
+      padding: 6px 14px; border-radius: var(--radius-sm);
+      font-size: 13px; font-weight: 500; text-decoration: none;
+      border: 0.5px solid var(--border);
+      color: var(--muted); background: var(--bg);
+    }
+    .nav a:hover { color: var(--text); border-color: var(--blue); }
+    .nav a.active { background: var(--blue-bg); color: var(--blue-txt); border-color: var(--blue); }
+
+    /* ── Header ── */
+    .header { margin-bottom: 1.25rem; }
+    .header h1 { font-size: 1.25rem; font-weight: 600; margin-bottom: 4px; }
+    .header .meta { font-size: 12px; color: var(--hint); display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    /* ── Model info banner ── */
+    .model-banner {
+      background: var(--bg);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 0.9rem 1.25rem;
+      margin-bottom: 1rem;
+      display: flex; gap: 2rem; flex-wrap: wrap; align-items: center;
+    }
+    .model-stat { display: flex; flex-direction: column; gap: 2px; }
+    .model-stat .val { font-size: 1.1rem; font-weight: 600; color: var(--blue); }
+    .model-stat .lbl { font-size: 11px; color: var(--hint); text-transform: uppercase; letter-spacing: .05em; }
+    .model-note { font-size: 12px; color: var(--muted); flex: 1; min-width: 200px; }
+
+    /* ── Filters ── */
+    .filter-bar {
+      background: var(--bg); border: 0.5px solid var(--border);
+      border-radius: var(--radius); padding: 1rem 1.25rem;
+      margin-bottom: 1rem; display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: flex-end;
+    }
+    .fg { display: flex; flex-direction: column; gap: 4px; }
+    .fg label { font-size: 11px; font-weight: 600; text-transform: uppercase;
+                 letter-spacing: .06em; color: var(--hint); }
+    select {
+      background: var(--bg2); border: 0.5px solid var(--border);
+      border-radius: var(--radius-sm); color: var(--text);
+      font-size: 13px; padding: 6px 10px; min-width: 130px;
+    }
+    select:focus { outline: none; border-color: var(--blue); }
+    .btn {
+      padding: 6px 14px; background: var(--bg2); border: 0.5px solid var(--border);
+      border-radius: var(--radius-sm); color: var(--muted); font-size: 13px;
+      cursor: pointer; align-self: flex-end;
+    }
+    .btn:hover { border-color: var(--blue); color: var(--blue); }
+
+    /* ── Stats ── */
+    .stats {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 0.75rem; margin-bottom: 1rem;
+    }
+    .stat {
+      background: var(--bg); border: 0.5px solid var(--border);
+      border-radius: var(--radius); padding: 0.9rem 1.1rem;
+    }
+    .stat .val { font-size: 1.6rem; font-weight: 600; line-height: 1.1; }
+    .stat .lbl { font-size: 12px; color: var(--muted); margin-top: 4px; }
+    .stat.green  .val { color: var(--green); }
+    .stat.amber  .val { color: var(--amber); }
+    .stat.blue   .val { color: var(--blue); }
+    .stat.purple .val { color: var(--purple); }
+
+    /* ── Charts ── */
+    .charts { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 0.75rem; }
+    .chart-card {
+      background: var(--bg); border: 0.5px solid var(--border);
+      border-radius: var(--radius); padding: 1rem 1.25rem;
+    }
+    .chart-card h2 { font-size: 11px; font-weight: 600; text-transform: uppercase;
+                      letter-spacing: .06em; color: var(--hint); margin-bottom: 0.75rem; }
+    svg.chart { overflow: visible; display: block; width: 100%; }
+    .axis text { font-size: 11px; fill: var(--muted); }
+    .axis path, .axis line { stroke: var(--border); }
+    .grid line { stroke: var(--border); stroke-opacity: 0.5; }
+    .grid path { stroke: none; }
+    .bar { transition: opacity .12s; }
+    .bar:hover { opacity: 0.7; }
+
+    /* ── Table ── */
+    .table-card {
+      background: var(--bg); border: 0.5px solid var(--border);
+      border-radius: var(--radius); overflow: hidden;
+    }
+    .table-header {
+      padding: 0.75rem 1.25rem; border-bottom: 0.5px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;
+    }
+    .table-header h2 { font-size: 11px; font-weight: 600; text-transform: uppercase;
+                        letter-spacing: .06em; color: var(--hint); }
+    .table-header span { font-size: 12px; color: var(--hint); }
+    .tbl-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    th {
+      text-align: left; padding: 8px 12px; background: var(--bg2);
+      border-bottom: 0.5px solid var(--border);
+      font-weight: 600; font-size: 11px; text-transform: uppercase;
+      letter-spacing: .05em; color: var(--hint);
+      cursor: pointer; user-select: none; white-space: nowrap;
+    }
+    th:hover { color: var(--text); }
+    th.sort-active { color: var(--blue); }
+    td { padding: 8px 12px; border-bottom: 0.5px solid var(--border); }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: var(--bg2); }
+    td.title-cell { max-width: 280px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+    /* ── Prob bar ── */
+    .prob-wrap { display: flex; align-items: center; gap: 6px; min-width: 110px; }
+    .prob-bar-bg {
+      flex: 1; height: 5px; background: var(--bg3);
+      border-radius: 99px; overflow: hidden;
+    }
+    .prob-bar-fill { height: 100%; border-radius: 99px; }
+    .prob-val { font-size: 11px; font-weight: 600; min-width: 32px; text-align: right; }
+
+    /* ── Badges ── */
+    .badge { display: inline-block; padding: 2px 8px; border-radius: 99px; font-size: 11px; font-weight: 600; }
+    .b-high   { background: var(--green-bg);  color: var(--green-txt); }
+    .b-medium { background: var(--amber-bg);  color: var(--amber-txt); }
+    .b-low    { background: var(--bg3);       color: var(--hint); }
+    .b-D      { background: var(--blue-bg);   color: var(--blue-txt); }
+    .b-R      { background: var(--red-bg);    color: var(--red-txt); }
+    .b-I      { background: var(--purple-bg); color: var(--purple-txt); }
+    .b-x      { background: var(--bg3);       color: var(--hint); }
+
+    /* ── Pager ── */
+    .pager {
+      padding: 10px 12px; border-top: 0.5px solid var(--border);
+      display: flex; gap: 8px; align-items: center;
+    }
+    .pager span { font-size: 12px; color: var(--hint); flex: 1; text-align: center; }
+
+    .error-bar {
+      background: var(--red-bg); color: var(--red-txt);
+      border: 0.5px solid var(--red); border-radius: var(--radius);
+      padding: 0.9rem 1.25rem; margin-bottom: 1rem; font-size: 13px;
+    }
+
+    @media (max-width: 600px) { .charts { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <nav class="nav">
+    <a href="index.html">Dashboard</a>
+    <a href="predictions.html" class="active">Vote predictions</a>
+  </nav>
+
+  <div class="header">
+    <h1>Vote likelihood predictions</h1>
+    <div class="meta">
+      <span id="meta-generated">Loading...</span>
+      <span id="meta-model"></span>
+    </div>
+  </div>
+
+  <div id="err" style="display:none" class="error-bar"></div>
+
+  <div class="model-banner" id="model-banner" style="display:none">
+    <div class="model-stat"><div class="val" id="m-auc">—</div><div class="lbl">ROC-AUC</div></div>
+    <div class="model-stat"><div class="val" id="m-cvauc">—</div><div class="lbl">CV AUC</div></div>
+    <div class="model-stat"><div class="val" id="m-train">—</div><div class="lbl">Training bills</div></div>
+    <div class="model-stat"><div class="val" id="m-pos">—</div><div class="lbl">Positive examples</div></div>
+    <p class="model-note">
+      Random Forest classifier trained on bill type, sponsoring party, state, chamber,
+      introduction date, and title length. ROC-AUC of 1.0 = perfect, 0.5 = random.
+    </p>
+  </div>
+
+  <div class="filter-bar">
+    <div class="fg">
+      <label>Tier</label>
+      <select id="f-tier">
+        <option value="">All tiers</option>
+        <option value="high">High</option>
+        <option value="medium">Medium</option>
+        <option value="low">Low</option>
+      </select>
+    </div>
+    <div class="fg">
+      <label>Party</label>
+      <select id="f-party">
+        <option value="">All parties</option>
+        <option value="D">Democrat</option>
+        <option value="R">Republican</option>
+        <option value="I">Independent</option>
+      </select>
+    </div>
+    <div class="fg">
+      <label>Chamber</label>
+      <select id="f-chamber">
+        <option value="">All chambers</option>
+        <option value="House">House</option>
+        <option value="Senate">Senate</option>
+      </select>
+    </div>
+    <div class="fg">
+      <label>Bill type</label>
+      <select id="f-type"><option value="">All types</option></select>
+    </div>
+    <div class="fg">
+      <label>Show</label>
+      <select id="f-got">
+        <option value="0">No vote yet</option>
+        <option value="">All bills</option>
+        <option value="1">Already voted</option>
+      </select>
+    </div>
+    <button class="btn" onclick="resetFilters()">Reset</button>
+  </div>
+
+  <div class="stats">
+    <div class="stat green"> <div class="val" id="s-high">—</div>   <div class="lbl">High likelihood</div></div>
+    <div class="stat amber"> <div class="val" id="s-medium">—</div> <div class="lbl">Medium likelihood</div></div>
+    <div class="stat blue">  <div class="val" id="s-total">—</div>  <div class="lbl">Bills shown</div></div>
+    <div class="stat purple"><div class="val" id="s-avg">—</div>    <div class="lbl">Avg probability</div></div>
+  </div>
+
+  <div class="charts">
+    <div class="chart-card">
+      <h2>Avg vote probability by bill type</h2>
+      <svg class="chart" id="c-type" height="200"></svg>
+    </div>
+    <div class="chart-card">
+      <h2>Avg vote probability by party</h2>
+      <svg class="chart" id="c-party" height="200"></svg>
+    </div>
+  </div>
+
+  <div class="table-card">
+    <div class="table-header">
+      <h2>Bills ranked by vote likelihood</h2>
+      <span id="tbl-count"></span>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th onclick="sortBy('vote_probability')" id="th-prob" class="sort-active">Probability ↓</th>
+            <th onclick="sortBy('vote_tier')"        id="th-tier">Tier</th>
+            <th onclick="sortBy('bill_id')"          id="th-id">Bill</th>
+            <th onclick="sortBy('sponsor_party')"    id="th-party">Party</th>
+            <th onclick="sortBy('sponsor_state')"    id="th-state">State</th>
+            <th onclick="sortBy('origin_chamber')"   id="th-ch">Chamber</th>
+            <th onclick="sortBy('introduced_date')"  id="th-date">Introduced</th>
+            <th onclick="sortBy('title')"            id="th-title">Title</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+    <div class="pager">
+      <button class="btn" id="btn-prev" onclick="prevPage()">← Prev</button>
+      <span id="page-info"></span>
+      <button class="btn" id="btn-next" onclick="nextPage()">Next →</button>
+    </div>
+  </div>
+
+</div>
+<script>
+const PAGE_SZ = 50;
+let allBills = [], filtered = [], metrics = {};
+let sortCol = 'vote_probability', sortAsc = false, page = 0;
+
+async function load() {
+  try {
+    const res  = await fetch('data/predictions.json');
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const json = await res.json();
+
+    allBills = json.all_bills || [];
+    metrics  = json.metrics  || {};
+
+    const gen = json.generated_at
+      ? new Date(json.generated_at).toLocaleString() : 'unknown';
+    document.getElementById('meta-generated').textContent = `Model run: ${gen}`;
+
+    if (json.metrics) {
+      const m = json.metrics;
+      document.getElementById('model-banner').style.display = 'flex';
+      document.getElementById('m-auc').textContent    = m.auc    || '—';
+      document.getElementById('m-cvauc').textContent  = m.cv_auc || '—';
+      document.getElementById('m-train').textContent  = (m.n_train || 0).toLocaleString();
+      document.getElementById('m-pos').textContent    = (m.n_positive || 0).toLocaleString();
+    }
+
+    buildTypeFilter();
+    applyFilters();
+  } catch(e) {
+    const el = document.getElementById('err');
+    el.style.display = 'block';
+    el.textContent = `Could not load data/predictions.json — run analyze.py first (${e.message})`;
+  }
+}
+
+function buildTypeFilter() {
+  const types = [...new Set(allBills.map(d => d.bill_type).filter(Boolean))].sort();
+  const ft = document.getElementById('f-type');
+  types.forEach(t => { const o = document.createElement('option'); o.value = o.textContent = t; ft.appendChild(o); });
+}
+
+function applyFilters() {
+  const tier    = document.getElementById('f-tier').value;
+  const party   = document.getElementById('f-party').value;
+  const chamber = document.getElementById('f-chamber').value;
+  const type    = document.getElementById('f-type').value;
+  const got     = document.getElementById('f-got').value;
+
+  filtered = allBills.filter(d =>
+    (!tier    || d.vote_tier      === tier)    &&
+    (!party   || d.sponsor_party  === party)   &&
+    (!chamber || d.origin_chamber === chamber) &&
+    (!type    || d.bill_type      === type)    &&
+    (got === '' || String(d.got_vote) === got)
+  );
+  page = 0;
+  render();
+}
+
+function resetFilters() {
+  ['f-tier','f-party','f-chamber','f-type'].forEach(id => document.getElementById(id).value = '');
+  document.getElementById('f-got').value = '0';
+  applyFilters();
+}
+
+function render() {
+  const high   = filtered.filter(d => d.vote_tier === 'high').length;
+  const medium = filtered.filter(d => d.vote_tier === 'medium').length;
+  const avg    = filtered.length
+    ? (filtered.reduce((s, d) => s + d.vote_probability, 0) / filtered.length)
+    : 0;
+
+  document.getElementById('s-high').textContent   = high.toLocaleString();
+  document.getElementById('s-medium').textContent = medium.toLocaleString();
+  document.getElementById('s-total').textContent  = filtered.length.toLocaleString();
+  document.getElementById('s-avg').textContent    = (avg * 100).toFixed(1) + '%';
+
+  renderCharts();
+  renderTable();
+}
+
+function dims(id, mb) {
+  const el = document.getElementById(id);
+  const W  = (el.parentElement.clientWidth || 500) - 40;
+  const H  = +el.getAttribute('height');
+  const m  = { top: 8, right: 16, bottom: mb || 38, left: 46 };
+  el.setAttribute('width', W);
+  return { W, H, m, w: W - m.left - m.right, h: H - m.top - m.bottom };
+}
+
+function barChart(id, data, xKey, yKey, colorFn, mb) {
+  const { m, w, h } = dims(id, mb);
+  const svg = d3.select('#' + id); svg.selectAll('*').remove();
+  if (!data.length) return;
+  const g = svg.append('g').attr('transform', `translate(${m.left},${m.top})`);
+  const x = d3.scaleBand().domain(data.map(d => d[xKey])).range([0, w]).padding(0.28);
+  const y = d3.scaleLinear().domain([0, d3.max(data, d => d[yKey])]).nice().range([h, 0]);
+  g.append('g').attr('class', 'grid')
+   .call(d3.axisLeft(y).ticks(4).tickSize(-w).tickFormat(''));
+  g.append('g').attr('transform', `translate(0,${h})`).attr('class', 'axis')
+   .call(d3.axisBottom(x))
+   .selectAll('text').attr('transform', 'rotate(-30)').style('text-anchor', 'end');
+  g.append('g').attr('class', 'axis')
+   .call(d3.axisLeft(y).ticks(4).tickFormat(v => (v * 100).toFixed(0) + '%'));
+  g.selectAll('.bar').data(data).join('rect').attr('class', 'bar')
+   .attr('x', d => x(d[xKey])).attr('y', d => y(d[yKey]))
+   .attr('width', x.bandwidth()).attr('height', d => h - y(d[yKey]))
+   .attr('fill', d => colorFn ? colorFn(d[xKey]) : '#185FA5').attr('rx', 3);
+}
+
+const PARTY_C  = { D: '#185FA5', R: '#A32D2D', I: '#534AB7' };
+const TIER_C   = { high: '#3B6D11', medium: '#854F0B', low: '#888780' };
+
+function renderCharts() {
+  // By bill type — use filtered data
+  const typeMap = {};
+  filtered.forEach(d => {
+    if (!d.bill_type) return;
+    if (!typeMap[d.bill_type]) typeMap[d.bill_type] = { sum: 0, n: 0 };
+    typeMap[d.bill_type].sum += d.vote_probability;
+    typeMap[d.bill_type].n++;
+  });
+  const byType = Object.entries(typeMap)
+    .map(([k, v]) => ({ type: k, avg_probability: v.sum / v.n }))
+    .sort((a, b) => b.avg_probability - a.avg_probability)
+    .slice(0, 12);
+  barChart('c-type', byType, 'type', 'avg_probability', () => '#185FA5', 44);
+
+  // By party
+  const partyMap = {};
+  filtered.forEach(d => {
+    if (!d.sponsor_party) return;
+    if (!partyMap[d.sponsor_party]) partyMap[d.sponsor_party] = { sum: 0, n: 0 };
+    partyMap[d.sponsor_party].sum += d.vote_probability;
+    partyMap[d.sponsor_party].n++;
+  });
+  const byParty = Object.entries(partyMap)
+    .map(([k, v]) => ({ party: k, avg_probability: v.sum / v.n }))
+    .sort((a, b) => b.avg_probability - a.avg_probability);
+  barChart('c-party', byParty, 'party', 'avg_probability',
+    k => PARTY_C[k] || '#888780', 44);
+}
+
+function probBar(p) {
+  const pct  = Math.round(p * 100);
+  const tier = p >= 0.6 ? 'high' : p >= 0.3 ? 'medium' : 'low';
+  const fill = tier === 'high' ? '#3B6D11' : tier === 'medium' ? '#854F0B' : '#9b9a93';
+  return `
+    <div class="prob-wrap">
+      <div class="prob-bar-bg">
+        <div class="prob-bar-fill" style="width:${pct}%;background:${fill}"></div>
+      </div>
+      <span class="prob-val" style="color:${fill}">${pct}%</span>
+    </div>`;
+}
+
+function tierBadge(t) {
+  if (t === 'high')   return '<span class="badge b-high">High</span>';
+  if (t === 'medium') return '<span class="badge b-medium">Medium</span>';
+  return '<span class="badge b-low">Low</span>';
+}
+function partyBadge(p) {
+  if (!p) return '<span class="badge b-x">—</span>';
+  return `<span class="badge b-${p}">${p}</span>`;
+}
+function fmt(d) { return d ? String(d).slice(0, 10) : '—'; }
+
+const TH_MAP = {
+  vote_probability: 'th-prob', vote_tier: 'th-tier', bill_id: 'th-id',
+  sponsor_party: 'th-party', sponsor_state: 'th-state',
+  origin_chamber: 'th-ch', introduced_date: 'th-date', title: 'th-title'
+};
+
+function sortBy(col) {
+  sortAsc = sortCol === col ? !sortAsc : (col === 'title' || col === 'vote_tier');
+  sortCol = col;
+  page = 0;
+  document.querySelectorAll('th').forEach(th => {
+    th.classList.remove('sort-active');
+    th.textContent = th.textContent.replace(/ [↑↓]$/, '');
+  });
+  const th = document.getElementById(TH_MAP[col]);
+  if (th) { th.classList.add('sort-active'); th.textContent += sortAsc ? ' ↑' : ' ↓'; }
+  renderTable();
+}
+
+function prevPage() { if (page > 0) { page--; renderTable(); } }
+function nextPage() { const p = Math.ceil(filtered.length / PAGE_SZ); if (page < p - 1) { page++; renderTable(); } }
+
+function renderTable() {
+  const sorted = [...filtered].sort((a, b) => {
+    const av = a[sortCol] ?? '', bv = b[sortCol] ?? '';
+    return sortAsc ? (av > bv ? 1 : -1) : (av < bv ? 1 : -1);
+  });
+  const pages = Math.ceil(sorted.length / PAGE_SZ) || 1;
+  const slice = sorted.slice(page * PAGE_SZ, (page + 1) * PAGE_SZ);
+
+  document.getElementById('tbl-count').textContent = `${sorted.length.toLocaleString()} bills`;
+  document.getElementById('page-info').textContent = `Page ${page + 1} of ${pages}`;
+  document.getElementById('btn-prev').disabled = page === 0;
+  document.getElementById('btn-next').disabled = page >= pages - 1;
+
+  document.getElementById('tbody').innerHTML = slice.map(b => `
+    <tr>
+      <td>${probBar(b.vote_probability)}</td>
+      <td>${tierBadge(b.vote_tier)}</td>
+      <td><strong>${b.bill_type || ''}${b.bill_number || ''}</strong></td>
+      <td>${partyBadge(b.sponsor_party)}</td>
+      <td>${b.sponsor_state || '—'}</td>
+      <td>${b.origin_chamber || '—'}</td>
+      <td>${fmt(b.introduced_date)}</td>
+      <td class="title-cell" title="${(b.title || '').replace(/"/g, '&quot;')}">${b.title || '—'}</td>
+    </tr>`).join('');
+}
+
+['f-tier','f-party','f-chamber','f-type','f-got']
+  .forEach(id => document.getElementById(id).addEventListener('change', applyFilters));
+window.addEventListener('resize', renderCharts);
+
+load();
+</script>
+</body>
+</html>
