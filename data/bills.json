@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-18T01:26:33.110342+00:00",
+  "last_updated": "2026-04-18T01:46:12.139789+00:00",
   "count": 13,
   "data": [
     {
@@ -15,7 +15,7 @@
       "sponsor_party": "R",
       "sponsor_state": "FL",
       "origin_chamber": "House",
-      "updated_at": "2026-04-18 01:26:26.938012"
+      "updated_at": "2026-04-18 01:46:11.133313"
     },
     {
       "bill_id": "119-HR-173",
@@ -30,7 +30,7 @@
       "sponsor_party": "R",
       "sponsor_state": "NY",
       "origin_chamber": "House",
-      "updated_at": "2026-04-18 01:26:27.452526"
+      "updated_at": "2026-04-18 01:46:11.648871"
     },
     {
       "bill_id": "119-HR-209",
@@ -45,7 +45,7 @@
       "sponsor_party": "R",
       "sponsor_state": "VA",
       "origin_chamber": "House",
-      "updated_at": "2026-04-18 01:26:27.975884"
+      "updated_at": "2026-04-18 01:46:12.122638"
     },
     {
       "bill_id": "119-HJRES-1",
