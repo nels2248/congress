@@ -2,7 +2,7 @@ name: Nightly Congress Scrape
 
 on:
   schedule:
-    - cron: "0 6 * * *"   # 1 AM EST / midnight CST every night
+    #- cron: "0 6 * * *"   # 1 AM EST / midnight CST every night
   workflow_dispatch:        # manual trigger from the Actions tab
 
 permissions:
