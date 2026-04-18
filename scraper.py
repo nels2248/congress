@@ -33,7 +33,7 @@ DATA_DIR = BASE_DIR / "data"
 
 CONFIG = {
     "limit":     250,
-    "dev_limit": 3,
+    "dev_limit": 15,
 }
 
 logging.basicConfig(

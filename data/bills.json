@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-04-18T01:46:12.139789+00:00",
-  "count": 13,
+  "last_updated": "2026-04-18T01:55:39.550028+00:00",
+  "count": 15,
   "data": [
     {
       "bill_id": "119-HR-134",
@@ -15,7 +15,7 @@
       "sponsor_party": "R",
       "sponsor_state": "FL",
       "origin_chamber": "House",
-      "updated_at": "2026-04-18 01:46:11.133313"
+      "updated_at": "2026-04-18 01:55:32.158484"
     },
     {
       "bill_id": "119-HR-173",
@@ -30,7 +30,7 @@
       "sponsor_party": "R",
       "sponsor_state": "NY",
       "origin_chamber": "House",
-      "updated_at": "2026-04-18 01:46:11.648871"
+      "updated_at": "2026-04-18 01:55:32.660772"
     },
     {
       "bill_id": "119-HR-209",
@@ -45,7 +45,7 @@
       "sponsor_party": "R",
       "sponsor_state": "VA",
       "origin_chamber": "House",
-      "updated_at": "2026-04-18 01:46:12.122638"
+      "updated_at": "2026-04-18 01:55:33.169165"
     },
     {
       "bill_id": "119-HJRES-1",
@@ -60,7 +60,7 @@
       "sponsor_party": "R",
       "sponsor_state": "AZ",
       "origin_chamber": "House",
-      "updated_at": "2026-04-18 01:26:28.488629"
+      "updated_at": "2026-04-18 01:55:33.704984"
     },
     {
       "bill_id": "119-HR-68",
@@ -75,7 +75,7 @@
       "sponsor_party": "D",
       "sponsor_state": "TX",
       "origin_chamber": "House",
-      "updated_at": "2026-04-18 01:26:29.051974"
+      "updated_at": "2026-04-18 01:55:34.208491"
     },
     {
       "bill_id": "119-HR-166",
@@ -90,7 +90,7 @@
       "sponsor_party": "D",
       "sponsor_state": "TX",
       "origin_chamber": "House",
-      "updated_at": "2026-04-18 01:26:29.572219"
+      "updated_at": "2026-04-18 01:55:34.720179"
     },
     {
       "bill_id": "119-HR-170",
@@ -105,7 +105,7 @@
       "sponsor_party": "R",
       "sponsor_state": "NY",
       "origin_chamber": "House",
-      "updated_at": "2026-04-18 01:26:30.068917"
+      "updated_at": "2026-04-18 01:55:35.216458"
     },
     {
       "bill_id": "119-HR-105",
@@ -120,7 +120,7 @@
       "sponsor_party": "R",
       "sponsor_state": "AZ",
       "origin_chamber": "House",
-      "updated_at": "2026-04-18 01:26:30.55461"
+      "updated_at": "2026-04-18 01:55:35.716454"
     },
     {
       "bill_id": "119-HR-37",
@@ -135,7 +135,7 @@
       "sponsor_party": "R",
       "sponsor_state": "IN",
       "origin_chamber": "House",
-      "updated_at": "2026-04-18 01:26:31.105946"
+      "updated_at": "2026-04-18 01:55:36.420741"
     },
     {
       "bill_id": "119-HR-50",
@@ -150,7 +150,7 @@
       "sponsor_party": "R",
       "sponsor_state": "AZ",
       "origin_chamber": "House",
-      "updated_at": "2026-04-18 01:26:31.596713"
+      "updated_at": "2026-04-18 01:55:36.934849"
     },
     {
       "bill_id": "119-HR-96",
@@ -165,7 +165,7 @@
       "sponsor_party": "R",
       "sponsor_state": "AZ",
       "origin_chamber": "House",
-      "updated_at": "2026-04-18 01:26:32.083108"
+      "updated_at": "2026-04-18 01:55:37.436898"
     },
     {
       "bill_id": "119-HJRES-3",
@@ -180,7 +180,7 @@
       "sponsor_party": "R",
       "sponsor_state": "FL",
       "origin_chamber": "House",
-      "updated_at": "2026-04-18 01:26:32.588204"
+      "updated_at": "2026-04-18 01:55:37.950178"
     },
     {
       "bill_id": "119-HJRES-10",
@@ -195,7 +195,37 @@
       "sponsor_party": "R",
       "sponsor_state": "IA",
       "origin_chamber": "House",
-      "updated_at": "2026-04-18 01:26:33.100766"
+      "updated_at": "2026-04-18 01:55:38.463573"
+    },
+    {
+      "bill_id": "119-HR-119",
+      "congress": 119,
+      "bill_type": "HR",
+      "bill_number": "119",
+      "title": "To prohibit any entity that receives Federal funds from the COVID relief packages from mandating employees receive a COVID-19 vaccine, and for other purposes.",
+      "introduced_date": "2025-01-03",
+      "latest_action": "Referred to the Committee on Oversight and Government Reform, and in addition to the Committee on Energy and Commerce, for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned.",
+      "latest_action_date": "2025-01-03",
+      "sponsor_name": "Rep. Biggs, Andy [R-AZ-5]",
+      "sponsor_party": "R",
+      "sponsor_state": "AZ",
+      "origin_chamber": "House",
+      "updated_at": "2026-04-18 01:55:38.997952"
+    },
+    {
+      "bill_id": "119-HRES-9",
+      "congress": 119,
+      "bill_type": "HRES",
+      "bill_number": "9",
+      "title": "Reaffirming that the United States is not a party to the Rome Statute and does not recognize the jurisdiction of the International Criminal Court.",
+      "introduced_date": "2025-01-03",
+      "latest_action": "Referred to the House Committee on Foreign Affairs.",
+      "latest_action_date": "2025-01-03",
+      "sponsor_name": "Rep. Biggs, Andy [R-AZ-5]",
+      "sponsor_party": "R",
+      "sponsor_state": "AZ",
+      "origin_chamber": "House",
+      "updated_at": "2026-04-18 01:55:39.538217"
     }
   ]
 }
