@@ -1,9 +1,23 @@
 # Congress Bill Tracker
 
+STATUS AS OF APRIL 24TH, 2026 AT 11 PM CENTRAL time
+HAVE 3 PAGES 
+1. INDEX - ALLOWS TO FILTER
+2. PREDICTIONS - WHETHER IT WILL BE VOTED On
+3. CLUSTERS
+
+NEED TO FIGURE OUT THE INCREMENTAL REFRESHES AS THAT IS PULLLING WAY MORE THAN I THOUGHT.
+
+DOES HAVE FULLL DATA AVAILABLE  
+
+HAS A MAP BUT NOT WORKING YET
+
 Scrapes bill data from the [Congress.gov API](https://api.congress.gov/) nightly,
 stores it in DuckDB, and serves an interactive D3.js dashboard via GitHub Pages — all for free.
 
 ---
+
+
 
 ## Project layout
 
@@ -195,3 +209,5 @@ con.execute("""
     FROM bills GROUP BY month ORDER BY month
 """).fetchdf()
 ```
+
+

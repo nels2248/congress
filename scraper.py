@@ -29,9 +29,9 @@ BASE_URL = "https://api.congress.gov/v3"
 CONGRESS = 119
 
 # Override via CLI args or env vars
-RUN_MODE     = os.getenv("RUN_MODE", "dev")       # dev | incremental | backfill
-BATCH_SIZE   = int(os.getenv("BATCH_SIZE", 50))   # records per backfill run
-BATCH_OFFSET = int(os.getenv("BATCH_OFFSET", 0))  # where to start in backfill
+RUN_MODE     = os.getenv("RUN_MODE", "incremental")       # dev | incremental | backfill
+BATCH_SIZE   = int(os.getenv("BATCH_SIZE", 1000))   # records per backfill run
+BATCH_OFFSET = int(os.getenv("BATCH_OFFSET", 15227))  # where to start in backfill
 
 BASE_DIR = Path(__file__).resolve().parent
 DB_PATH  = BASE_DIR / "congress.duckdb"
@@ -159,7 +159,7 @@ def scrape_dev(con):
 
 def scrape_incremental(con):
     """Look back 72 hours instead of 24 to account for publishing lag"""
-    since = (datetime.now(timezone.utc) - timedelta(hours=72)).strftime("%Y-%m-%dT%H:%M:%SZ")
+    since = (datetime.now(timezone.utc) - timedelta(hours=24)).strftime("%Y-%m-%dT%H:%M:%SZ")
     log.info(f"MODE: incremental (since {since})")
     offset = 0
     out    = []
@@ -219,7 +219,7 @@ def scrape_backfill(con, batch_size, batch_offset):
                 break
             try:
                 detail = fetch_bill_detail(b["congress"], b["type"], b["number"])
-                time.sleep(0.15)
+                #time.sleep(0.15)
             except Exception as e:
                 log.warning(f"Detail failed for {b.get('type')}{b.get('number')}: {e}")
                 detail = {}

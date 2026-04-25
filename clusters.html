@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Congress 119 — Bill Topic Clusters</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:       #0d0f14;
+    --surface:  #151820;
+    --border:   #242830;
+    --accent:   #e8c84a;
+    --accent2:  #4a9fe8;
+    --rep:      #e85a4a;
+    --dem:      #4a7fe8;
+    --ind:      #8be84a;
+    --muted:    #5a6070;
+    --text:     #d8dce8;
+    --text-dim: #7a8090;
+    --mono:     'IBM Plex Mono', monospace;
+    --sans:     'IBM Plex Sans', sans-serif;
+    --display:  'Bebas Neue', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 56px 1fr;
+    grid-template-columns: 1fr 320px;
+    overflow: hidden;
+  }
+
+  /* ── header ── */
+  header {
+    grid-column: 1 / -1;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 0 24px;
+  }
+  header h1 {
+    font-family: var(--display);
+    font-size: 26px;
+    letter-spacing: 2px;
+    color: var(--accent);
+  }
+  header .sub {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 1px;
+  }
+  .stats-bar {
+    margin-left: auto;
+    display: flex;
+    gap: 28px;
+  }
+  .stat {
+    text-align: right;
+  }
+  .stat-val {
+    font-family: var(--mono);
+    font-size: 18px;
+    color: var(--accent);
+    line-height: 1;
+  }
+  .stat-lbl {
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  /* ── canvas area ── */
+  #canvas-wrap {
+    position: relative;
+    overflow: hidden;
+    background: var(--bg);
+  }
+  #canvas-wrap svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* dot styles */
+  .dot {
+    cursor: pointer;
+    transition: opacity 0.15s;
+  }
+  .dot:hover { opacity: 1 !important; }
+
+  .cluster-label {
+    font-family: var(--mono);
+    font-size: 14px;
+
+    /* brighter text fill */
+    fill: rgba(235,240,255,0.92);
+
+    /* subtle outline around letters */
+    stroke: rgba(20,25,35,0.85);
+    stroke-width: 1.25px;
+    paint-order: stroke fill;
+
+    /* stronger glow / lift */
+    filter:
+      drop-shadow(0 2px 4px rgba(0,0,0,0.95))
+      drop-shadow(0 5px 10px rgba(0,0,0,0.55));
+
+    pointer-events: none;
+    text-anchor: middle;
+    dominant-baseline: middle;
+}
+
+  /* tooltip */
+  #tooltip {
+    position: absolute;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    font-size: 12px;
+    max-width: 280px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.1s;
+    z-index: 10;
+  }
+  #tooltip .t-id   { font-family: var(--mono); color: var(--accent); font-size: 10px; margin-bottom: 4px; }
+  #tooltip .t-title{ color: var(--text); line-height: 1.4; margin-bottom: 6px; }
+  #tooltip .t-meta { color: var(--muted); font-size: 11px; font-family: var(--mono); }
+
+  /* ── sidebar ── */
+  #sidebar {
+    background: var(--surface);
+    border-left: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .sb-section {
+    padding: 16px 18px;
+    border-bottom: 1px solid var(--border);
+  }
+  .sb-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  /* filter controls */
+  .filter-row {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .filter-row label {
+    font-size: 12px;
+    color: var(--text-dim);
+  }
+  select, input[type=range] {
+    width: 100%;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-family: var(--mono);
+    font-size: 12px;
+    padding: 6px 8px;
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+  }
+  select:focus { border-color: var(--accent); }
+
+  /* party legend */
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-bottom: 6px;
+    cursor: pointer;
+    user-select: none;
+  }
+  .legend-item.dimmed { opacity: 0.35; }
+  .legend-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* cluster list */
+  #cluster-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0;
+  }
+  #cluster-list::-webkit-scrollbar { width: 4px; }
+  #cluster-list::-webkit-scrollbar-track { background: var(--bg); }
+  #cluster-list::-webkit-scrollbar-thumb { background: var(--border); }
+
+  .cluster-item {
+    padding: 12px 18px;
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
+    transition: background 0.12s;
+  }
+  .cluster-item:hover { background: rgba(232,200,74,0.05); }
+  .cluster-item.active {
+    background: rgba(232,200,74,0.08);
+    border-left: 3px solid var(--accent);
+    padding-left: 15px;
+  }
+  .ci-label {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--accent);
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .ci-meta {
+    font-size: 11px;
+    color: var(--muted);
+    display: flex;
+    gap: 10px;
+  }
+  .ci-bar {
+    height: 3px;
+    margin-top: 6px;
+    background: var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .ci-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--dem), var(--rep));
+    border-radius: 2px;
+  }
+
+  /* detail panel (shown when cluster selected) */
+  #detail-panel {
+    display: none;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent2);
+    padding: 14px 18px;
+    width: 340px;
+    z-index: 5;
+  }
+  #detail-panel.visible { display: block; }
+  #detail-panel .dp-close {
+    position: absolute;
+    top: 8px; right: 10px;
+    cursor: pointer;
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1;
+  }
+  #detail-panel .dp-close:hover { color: var(--text); }
+  #detail-panel h3 {
+    font-family: var(--display);
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: var(--accent2);
+    margin-bottom: 8px;
+  }
+  .dp-kw {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 10px;
+  }
+  .dp-kw span {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text-dim);
+    padding: 3px 7px;
+    border-radius: 2px;
+  }
+  .dp-party-row {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    font-family: var(--mono);
+  }
+  .dp-party-row .r { color: var(--rep); }
+  .dp-party-row .d { color: var(--dem); }
+  .dp-party-row .i { color: var(--ind); }
+
+  /* loading state */
+  #loading {
+    position: fixed;
+    inset: 0;
+    background: var(--bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    gap: 16px;
+  }
+  #loading h2 {
+    font-family: var(--display);
+    font-size: 32px;
+    letter-spacing: 3px;
+    color: var(--accent);
+  }
+  #loading p {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .spinner {
+    width: 32px; height: 32px;
+    border: 2px solid var(--border);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  #error-msg {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: var(--bg);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 100;
+  }
+  #error-msg h2 { font-family: var(--display); color: var(--rep); font-size: 28px; }
+  #error-msg p  { font-family: var(--mono); color: var(--muted); font-size: 12px; }
+</style>
+</head>
+<body>
+	<nav class="nav">
+    <a href="index.html">Dashboard</a>
+    <a href="predictions.html" class="active">Vote predictions</a>
+	<a href="clusters.html" class="active">Clusters</a>
+  </nav>
+<div id="loading">
+  <div class="spinner"></div>
+  <h2>LOADING CLUSTERS</h2>
+  <p>Reading clusters.json …</p>
+</div>
+
+<div id="error-msg">
+  <h2>COULD NOT LOAD DATA</h2>
+  <p id="error-detail">Make sure clusters.json is in the same data/ directory.</p>
+</div>
+
+<header>
+  <h1>CONGRESS 119</h1>
+  <span class="sub">BILL TOPIC CLUSTERS // UMAP + HDBSCAN</span>
+  <div class="stats-bar">
+    <div class="stat"><div class="stat-val" id="st-bills">—</div><div class="stat-lbl">Bills</div></div>
+    <div class="stat"><div class="stat-val" id="st-clusters">—</div><div class="stat-lbl">Clusters</div></div>
+    <div class="stat"><div class="stat-val" id="st-noise">—</div><div class="stat-lbl">Unclustered</div></div>
+    <div class="stat"><div class="stat-val" id="st-updated">—</div><div class="stat-lbl">Generated</div></div>
+  </div>
+</header>
+
+<div id="canvas-wrap">
+  <svg id="scatter"></svg>
+  <div id="tooltip"></div>
+  <div id="detail-panel">
+    <span class="dp-close" id="dp-close">✕</span>
+    <h3 id="dp-title"></h3>
+    <div class="dp-kw" id="dp-kw"></div>
+    <div class="dp-party-row" id="dp-party"></div>
+  </div>
+</div>
+
+<div id="sidebar">
+  <div class="sb-section">
+    <div class="sb-label">Filter</div>
+    <div class="filter-row">
+      <label>Chamber</label>
+      <select id="filter-chamber">
+        <option value="all">All Chambers</option>
+        <option value="House">House</option>
+        <option value="Senate">Senate</option>
+      </select>
+      <label style="margin-top:6px">Party</label>
+      <select id="filter-party">
+        <option value="all">All Parties</option>
+        <option value="R">Republican</option>
+        <option value="D">Democrat</option>
+        <option value="I">Independent</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="sb-section">
+    <div class="sb-label">Color by Party</div>
+    <div id="legend">
+      <div class="legend-item" data-party="R">
+        <div class="legend-dot" style="background:var(--rep)"></div> Republican
+      </div>
+      <div class="legend-item" data-party="D">
+        <div class="legend-dot" style="background:var(--dem)"></div> Democrat
+      </div>
+      <div class="legend-item" data-party="I">
+        <div class="legend-dot" style="background:var(--ind)"></div> Independent / Other
+      </div>
+      <div class="legend-item" data-party="noise">
+        <div class="legend-dot" style="background:var(--muted)"></div> Unclustered
+      </div>
+    </div>
+  </div>
+
+  <div class="sb-label" style="padding:14px 18px 0">Clusters</div>
+  <div id="cluster-list"></div>
+</div>
+
+<script>
+// ── load data ──────────────────────────────────────────────────────────────
+async function loadData() {
+  const res = await fetch("data/clusters.json");
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  return res.json();
+}
+
+// ── color helpers ─────────────────────────────────────────────────────────
+const PARTY_COLOR = {
+  R: getComputedStyle(document.documentElement).getPropertyValue('--rep').trim() || '#e85a4a',
+  D: getComputedStyle(document.documentElement).getPropertyValue('--dem').trim() || '#4a7fe8',
+};
+function partyColor(p) {
+  if (!p) return '#5a6070';
+  if (p === 'R') return '#e85a4a';
+  if (p === 'D') return '#4a7fe8';
+  return '#8be84a';
+}
+
+// ── cluster color scale ───────────────────────────────────────────────────
+function clusterColors(n) {
+  const colors = d3.schemeTableau10.concat(d3.schemePastel1).concat(d3.schemeSet3);
+  return i => (i === -1) ? '#3a3f4a' : colors[i % colors.length];
+}
+
+// ── main ──────────────────────────────────────────────────────────────────
+(async () => {
+  try {
+    const data = await loadData();
+    document.getElementById('loading').style.display = 'none';
+    init(data);
+  } catch (e) {
+    document.getElementById('loading').style.display = 'none';
+    const em = document.getElementById('error-msg');
+    em.style.display = 'flex';
+    document.getElementById('error-detail').textContent =
+      `${e.message} — run cluster_topics.py first, then serve this file from the project root.`;
+  }
+})();
+
+function init(data) {
+  // ── header stats ────────────────────────────────────────────────────────
+  document.getElementById('st-bills').textContent    = data.total_bills.toLocaleString();
+  document.getElementById('st-clusters').textContent = data.n_clusters;
+  document.getElementById('st-noise').textContent    = data.noise_count.toLocaleString();
+  const dt = new Date(data.generated_at);
+  document.getElementById('st-updated').textContent  =
+    dt.toLocaleDateString('en-US', { month:'short', day:'numeric' });
+
+  // ── state ────────────────────────────────────────────────────────────────
+  let activeCluster   = null;
+  let filterChamber   = 'all';
+  let filterParty     = 'all';
+  const colorCluster  = clusterColors(data.n_clusters);
+
+  // ── sidebar cluster list ─────────────────────────────────────────────────
+  const list = document.getElementById('cluster-list');
+  data.clusters.forEach(c => {
+    const total = c.size;
+    const dPct  = ((c.party_breakdown['D'] || 0) / total * 100).toFixed(0);
+    const el    = document.createElement('div');
+    el.className  = 'cluster-item';
+    el.dataset.id = c.id;
+    el.innerHTML  = `
+      <div class="ci-label">${c.label}</div>
+      <div class="ci-meta">
+        <span>${total} bills</span>
+        <span style="color:${colorCluster(c.id)};font-size:10px">●</span>
+      </div>
+      <div class="ci-bar"><div class="ci-bar-fill" style="width:${dPct}%"></div></div>
+    `;
+    el.addEventListener('click', () => selectCluster(c.id));
+    list.appendChild(el);
+  });
+
+  // ── SVG setup ────────────────────────────────────────────────────────────
+  const wrap = document.getElementById('canvas-wrap');
+  const svg  = d3.select('#scatter');
+
+  let W, H, xScale, yScale;
+
+  function resize() {
+    W = wrap.clientWidth;
+    H = wrap.clientHeight;
+    svg.attr('viewBox', `0 0 ${W} ${H}`);
+    redraw();
+  }
+
+  // ── draw ─────────────────────────────────────────────────────────────────
+  const g      = svg.append('g');
+  const labelsG = svg.append('g').attr('class', 'labels-group');
+
+  // zoom
+  const zoom = d3.zoom()
+    .scaleExtent([0.4, 12])
+    .on('zoom', e => {
+      g.attr('transform', e.transform);
+      labelsG.attr('transform', e.transform);
+    });
+  svg.call(zoom);
+
+  function visiblePoints() {
+    return data.points.filter(p => {
+      if (filterChamber !== 'all' && p.origin_chamber !== filterChamber) return false;
+      if (filterParty   !== 'all' && p.sponsor_party   !== filterParty)   return false;
+      return true;
+    });
+  }
+
+  function redraw() {
+    const pts = visiblePoints();
+
+    const xs = pts.map(p => p.x), ys = pts.map(p => p.y);
+    const pad = 48;
+
+    xScale = d3.scaleLinear()
+      .domain([d3.min(xs), d3.max(xs)])
+      .range([pad, W - pad]);
+    yScale = d3.scaleLinear()
+      .domain([d3.min(ys), d3.max(ys)])
+      .range([H - pad, pad]);
+
+    // dots
+    const dots = g.selectAll('.dot').data(pts, d => d.bill_id);
+
+    dots.enter().append('circle')
+        .attr('class', 'dot')
+        .attr('r', d => d.cluster === -1 ? 2 : 3.5)
+        .merge(dots)
+        .attr('cx', d => xScale(d.x))
+        .attr('cy', d => yScale(d.y))
+        .attr('fill', d => {
+          if (d.cluster === -1) return '#3a3f4a';
+          return colorCluster(d.cluster);
+        })
+        .attr('opacity', d => {
+          if (activeCluster !== null && d.cluster !== activeCluster) return 0.08;
+          return d.cluster === -1 ? 0.3 : 0.75;
+        })
+        .on('mousemove', showTooltip)
+        .on('mouseleave', hideTooltip);
+
+    dots.exit().remove();
+
+    // cluster centroid labels
+    const centroids = {};
+    pts.forEach(p => {
+      if (p.cluster === -1) return;
+      if (!centroids[p.cluster]) centroids[p.cluster] = { xs:[], ys:[], id: p.cluster };
+      centroids[p.cluster].xs.push(xScale(p.x));
+      centroids[p.cluster].ys.push(yScale(p.y));
+    });
+
+    const centroidData = Object.values(centroids).map(c => ({
+      id:    c.id,
+      cx:    d3.mean(c.xs),
+      cy:    d3.mean(c.ys),
+      label: (data.clusters.find(cl => cl.id === c.id) || {}).label || `#${c.id}`,
+    }));
+
+    const lbls = labelsG.selectAll('.cluster-label').data(centroidData, d => d.id);
+    lbls.enter().append('text')
+        .attr('class', 'cluster-label')
+        .merge(lbls)
+        .attr('x', d => d.cx)
+        .attr('y', d => d.cy)
+        .text(d => d.label.split(',')[0].toUpperCase());
+    lbls.exit().remove();
+  }
+
+  window.addEventListener('resize', resize);
+  resize();
+
+  // ── tooltip ───────────────────────────────────────────────────────────────
+  const tip = document.getElementById('tooltip');
+  function showTooltip(event, d) {
+    const clusterInfo = data.clusters.find(c => c.id === d.cluster);
+    tip.innerHTML = `
+      <div class="t-id">${d.bill_id}</div>
+      <div class="t-title">${d.title}</div>
+      <div class="t-meta">
+        ${d.sponsor_party || '?'} · ${d.sponsor_state || '?'} · ${d.origin_chamber || '?'}<br>
+        ${clusterInfo ? '⬡ ' + clusterInfo.label : 'unclustered'}
+      </div>
+    `;
+    tip.style.opacity = '1';
+    positionTip(event);
+  }
+  function hideTooltip() { tip.style.opacity = '0'; }
+  function positionTip(e) {
+    const x = e.clientX - wrap.getBoundingClientRect().left;
+    const y = e.clientY - wrap.getBoundingClientRect().top;
+    const tw = 290, th = 100;
+    tip.style.left = (x + 14 + tw > W ? x - tw - 14 : x + 14) + 'px';
+    tip.style.top  = (y + 14 + th > H ? y - th - 14 : y + 14) + 'px';
+  }
+  svg.on('mousemove', e => { if (tip.style.opacity === '1') positionTip(e); });
+
+  // ── cluster selection ─────────────────────────────────────────────────────
+  function selectCluster(id) {
+    activeCluster = (activeCluster === id) ? null : id;
+
+    list.querySelectorAll('.cluster-item').forEach(el => {
+      el.classList.toggle('active', parseInt(el.dataset.id) === activeCluster);
+    });
+
+    if (activeCluster !== null) {
+      const c = data.clusters.find(cl => cl.id === activeCluster);
+      if (c) showDetail(c);
+    } else {
+      document.getElementById('detail-panel').classList.remove('visible');
+    }
+
+    redraw();
+  }
+
+  function showDetail(c) {
+    document.getElementById('dp-title').textContent = c.label.toUpperCase();
+    document.getElementById('dp-kw').innerHTML =
+      c.keywords.map(k => `<span>${k}</span>`).join('');
+
+    const pb = c.party_breakdown;
+    const parts = [];
+    if (pb.R) parts.push(`<span class="r">■ R: ${pb.R}</span>`);
+    if (pb.D) parts.push(`<span class="d">■ D: ${pb.D}</span>`);
+    Object.entries(pb).forEach(([k,v]) => {
+      if (k!=='R' && k!=='D') parts.push(`<span class="i">■ ${k}: ${v}</span>`);
+    });
+    document.getElementById('dp-party').innerHTML = parts.join('');
+    document.getElementById('detail-panel').classList.add('visible');
+  }
+
+  document.getElementById('dp-close').addEventListener('click', () => {
+    activeCluster = null;
+    document.getElementById('detail-panel').classList.remove('visible');
+    list.querySelectorAll('.cluster-item').forEach(el => el.classList.remove('active'));
+    redraw();
+  });
+
+  // ── filters ───────────────────────────────────────────────────────────────
+  document.getElementById('filter-chamber').addEventListener('change', e => {
+    filterChamber = e.target.value;
+    redraw();
+  });
+  document.getElementById('filter-party').addEventListener('change', e => {
+    filterParty = e.target.value;
+    redraw();
+  });
+
+  // click on canvas to deselect
+  svg.on('click', (e) => {
+    if (e.target.tagName !== 'circle') {
+      activeCluster = null;
+      document.getElementById('detail-panel').classList.remove('visible');
+      list.querySelectorAll('.cluster-item').forEach(el => el.classList.remove('active'));
+      redraw();
+    }
+  });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<script>
+
+const map = L.map('map').setView([39.5, -98.5], 4);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+    attribution:'© OpenStreetMap'
+}).addTo(map);
+
+// US States GeoJSON (reliable source)
+fetch("https://raw.githubusercontent.com/PublicaMundi/MappingAPI/master/data/geojson/us-states.json")
+.then(res => res.json())
+.then(states => {
+
+    // load your metrics
+    fetch("data/state_metrics.json")
+    .then(res => res.json())
+    .then(metrics => {
+
+        const lookup = {};
+        metrics.data.forEach(d => {
+            lookup[d.state] = d.value;
+        });
+
+        function getColor(d) {
+            return d > 200 ? '#800026' :
+                   d > 100 ? '#BD0026' :
+                   d > 50  ? '#E31A1C' :
+                   d > 20  ? '#FC4E2A' :
+                   d > 10  ? '#FD8D3C' :
+                   d > 0   ? '#FEB24C' :
+                             '#FFEDA0';
+        }
+
+        L.geoJSON(states, {
+            style: function(feature) {
+
+                const val = lookup[feature.properties.name] || 0;
+
+                return {
+                    color: "#333",
+                    weight: 1,
+                    fillOpacity: 0.7,
+                    fillColor: getColor(val)
+                };
+            },
+            onEachFeature: function(feature, layer) {
+
+                const val = lookup[feature.properties.name] || 0;
+
+                layer.bindPopup(
+                    `<b>${feature.properties.name}</b><br>
+                     Bills: ${val}`
+                );
+            }
+        }).addTo(map);
+    });
+});
+
+</script>

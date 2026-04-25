@@ -16,7 +16,7 @@ import os
 from pathlib import Path
 
 PORT    = 8000
-DOCROOT = Path(__file__).parent / "docs"
+DOCROOT = Path(__file__).parent
 
 
 class Handler(http.server.SimpleHTTPRequestHandler):
