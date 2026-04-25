@@ -157,8 +157,7 @@ def scrape_dev(con):
     return out
 
 
-def scrape_incremental(con):
-    """Look back 72 hours instead of 24 to account for publishing lag"""
+def scrape_incremental(con): 
     since = (datetime.now(timezone.utc) - timedelta(hours=24)).strftime("%Y-%m-%dT%H:%M:%SZ")
     log.info(f"MODE: incremental (since {since})")
     offset = 0
@@ -173,7 +172,7 @@ def scrape_incremental(con):
         for b in bills:
             try:
                 detail = fetch_bill_detail(b["congress"], b["type"], b["number"])
-                time.sleep(0.15)
+                #time.sleep(0.15)
             except Exception as e:
                 log.warning(f"Detail failed for {b.get('type')}{b.get('number')}: {e}")
                 detail = {}
@@ -183,7 +182,7 @@ def scrape_incremental(con):
             log.info(f"  {row['bill_id']} | {row['sponsor_party']} | {row['introduced_date']}")
 
         offset += 250
-        time.sleep(0.2)
+        #time.sleep(0.2)
 
     log.info(f"Incremental: {len(out)} bills updated")
     return out
