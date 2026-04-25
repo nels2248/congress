@@ -2,8 +2,8 @@ name: Nightly Congress Scrape
 
 on:
   schedule:
-    #- cron: "0 6 * * *"   # 1 AM EST / midnight CST every night
-  workflow_dispatch:        # manual trigger from the Actions tab
+    - cron: "0 6 * * *"   # 1 AM EST / midnight CST every night
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -11,6 +11,7 @@ permissions:
 jobs:
   scrape:
     runs-on: ubuntu-latest
+
     steps:
       - name: Check out repo
         uses: actions/checkout@v4
@@ -23,19 +24,33 @@ jobs:
           python-version: "3.12"
 
       - name: Install dependencies
-        run: pip install httpx duckdb pandas python-dotenv scikit-learn sentence_transformers umap-learn hdbscan
+        run: |
+          pip install httpx duckdb pandas python-dotenv scikit-learn sentence_transformers umap-learn hdbscan
 
+      # 1. RUN SCRAPER
       - name: Run scraper
         env:
           CONGRESS_API_KEY: ${{ secrets.CONGRESS_API_KEY }}
           RUN_MODE: incremental
         run: python scraper.py
 
+      # 2. RUN CLASSIFICATIONS
+      - name: Run classifications
+        run: python classifications.py
+
+      # 3. RUN TOPIC CLUSTERING
+      - name: Run topic clustering
+        run: python cluster_topics.py
+
+      # 4. COMMIT RESULTS
       - name: Commit updated DB and JSON exports
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+
           git add congress.duckdb data/
+
           git diff --cached --quiet \
-            || git commit -m "chore: nightly refresh $(date -u +'%Y-%m-%d')" \
-            && git push
+            || git commit -m "chore: nightly refresh $(date -u +'%Y-%m-%d')"
+
+          git push

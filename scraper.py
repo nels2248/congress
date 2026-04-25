@@ -31,7 +31,7 @@ CONGRESS = 119
 # Override via CLI args or env vars
 RUN_MODE     = os.getenv("RUN_MODE", "incremental")       # dev | incremental | backfill
 BATCH_SIZE   = int(os.getenv("BATCH_SIZE", 1000))   # records per backfill run
-BATCH_OFFSET = int(os.getenv("BATCH_OFFSET", 15227))  # where to start in backfill
+BATCH_OFFSET = int(os.getenv("BATCH_OFFSET", 0))  # where to start in backfill
 
 BASE_DIR = Path(__file__).resolve().parent
 DB_PATH  = BASE_DIR / "congress.duckdb"
@@ -85,6 +85,7 @@ def fetch_bills(congress, limit=250, offset=0, from_date=None):
         # filtering directly on latestAction.actionDate
         params["fromDateTime"] = from_date
     r = httpx.get(f"{BASE_URL}/bill/{congress}", params=params, timeout=30)
+    print(r)
     r.raise_for_status()
     return r.json()
 
@@ -233,7 +234,7 @@ def scrape_backfill(con, batch_size, batch_offset):
 
         api_offset += api_limit
         skip = 0
-        time.sleep(0.2)
+        #time.sleep(0.2)
 
     log.info(f"Backfill batch done: {len(out)} fetched")
     log.info(f"Next batch offset: {batch_offset + len(out)}")
