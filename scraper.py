@@ -242,7 +242,7 @@ def scrape_incremental(con):
 
     since = (
         datetime.now(timezone.utc)
-        - timedelta(hours=48)
+        - timedelta(hours=72)
     ).strftime("%Y-%m-%dT%H:%M:%SZ")
 
     log.info(f"MODE: INCREMENTAL since {since}")
