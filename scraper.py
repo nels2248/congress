@@ -1,20 +1,14 @@
 """
-Congress.gov FAST ETL Pipeline
-Spyder / Jupyter / GitHub Actions Safe
+Congress.gov FAST ETL Pipeline (Stable Version)
 
-Modes:
-dev         = quick 5 row test
-incremental = last 24 hour changes
-backfill    = full refresh
-
-Features:
-✓ async requests
-✓ Spyder-safe event loop
-✓ retries
-✓ concurrency control
-✓ bulk DuckDB upserts
-✓ progress logging
-✓ JSON export
+Includes:
+- Bills
+- Cosponsors
+- Actions
+- Committees
+- Related Bills
+- Amendments
+- JSON export with child counts
 """
 
 import os
@@ -23,18 +17,12 @@ import duckdb
 import httpx
 import asyncio
 import pandas as pd
-import argparse
 import logging
 import nest_asyncio
 
 from pathlib import Path
 from dotenv import load_dotenv
 from datetime import datetime, timezone, timedelta
-from time import perf_counter
-
-# --------------------------------------------------
-# SPYDER / JUPYTER FIX
-# --------------------------------------------------
 
 nest_asyncio.apply()
 
@@ -55,15 +43,21 @@ BASE_DIR = Path(__file__).resolve().parent
 DB_PATH = BASE_DIR / "congress.duckdb"
 DATA_DIR = BASE_DIR / "data"
 
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s %(levelname)s %(message)s"
-)
-
+logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger(__name__)
 
 # --------------------------------------------------
-# ASYNC RUNNER
+# SAFE HELPERS
+# --------------------------------------------------
+
+def safe_dict(x):
+    return x if isinstance(x, dict) else {}
+
+def safe_list(x):
+    return x if isinstance(x, list) else []
+
+# --------------------------------------------------
+# RUNNER
 # --------------------------------------------------
 
 def run_async(coro):
@@ -83,7 +77,7 @@ def get_db():
 
     con.execute("""
     CREATE TABLE IF NOT EXISTS bills (
-        bill_id VARCHAR PRIMARY KEY,
+        bill_id VARCHAR,
         congress INTEGER,
         bill_type VARCHAR,
         bill_number VARCHAR,
@@ -99,10 +93,74 @@ def get_db():
     )
     """)
 
+    con.execute("""
+    CREATE TABLE IF NOT EXISTS bill_cosponsors (
+        bill_id VARCHAR,
+        bioguide_id VARCHAR,
+        full_name VARCHAR,
+        party VARCHAR,
+        state VARCHAR,
+        district VARCHAR,
+        sponsorship_date DATE,
+        is_original BOOLEAN
+    )
+    """)
+
+    con.execute("""
+    CREATE TABLE IF NOT EXISTS bill_actions (
+        bill_id VARCHAR,
+        action_date DATE,
+        action_text VARCHAR,
+        action_type VARCHAR,
+        action_code VARCHAR,
+        source_system VARCHAR
+    )
+    """)
+
+    con.execute("""
+    CREATE TABLE IF NOT EXISTS bill_committees (
+        bill_id VARCHAR,
+        committee_code VARCHAR,
+        committee_name VARCHAR,
+        chamber VARCHAR,
+        committee_type VARCHAR,
+        activity_name VARCHAR,
+        activity_date TIMESTAMP
+    )
+    """)
+
+    con.execute("""
+    CREATE TABLE IF NOT EXISTS bill_relatedbills (
+        bill_id VARCHAR,
+        related_congress INTEGER,
+        related_type VARCHAR,
+        related_number VARCHAR,
+        related_title VARCHAR,
+        relationship_type VARCHAR,
+        identified_by VARCHAR,
+        latest_action_date DATE
+    )
+    """)
+
+    con.execute("""
+    CREATE TABLE IF NOT EXISTS bill_amendments (
+        bill_id VARCHAR,
+        amendment_number VARCHAR,
+        amendment_type VARCHAR,
+        congress INTEGER,
+        purpose VARCHAR,
+        description VARCHAR,
+        update_date TIMESTAMP,
+        action_date DATE,
+        action_text VARCHAR,
+        url VARCHAR
+    )
+    """)
+
     return con
 
 # --------------------------------------------------
-# API
+# FETCH
 # --------------------------------------------------
 
 def fetch_bills_page(limit=250, offset=0, from_date=None):
@@ -118,64 +176,92 @@ def fetch_bills_page(limit=250, offset=0, from_date=None):
     if from_date:
         params["fromDateTime"] = from_date
 
-    r = httpx.get(
-        f"{BASE_URL}/bill/{CONGRESS}",
-        params=params,
-        timeout=60
-    )
-
+    r = httpx.get(f"{BASE_URL}/bill/{CONGRESS}", params=params, timeout=60)
     r.raise_for_status()
 
     return r.json().get("bills", [])
 
-
 SEM = asyncio.Semaphore(CONCURRENCY)
 
+# --------------------------------------------------
+# PAGINATION
+# --------------------------------------------------
 
-async def fetch_detail(client, bill):
+async def fetch_all(client, url, root):
 
-    congress = bill["congress"]
-    bill_type = bill["type"].lower()
-    bill_number = bill["number"]
+    offset, limit = 0, 250
+    out = []
 
-    url = f"{BASE_URL}/bill/{congress}/{bill_type}/{bill_number}"
+    while True:
 
-    async with SEM:
+        async with SEM:
+            r = await client.get(
+                url,
+                params={
+                    "api_key": API_KEY,
+                    "format": "json",
+                    "limit": limit,
+                    "offset": offset
+                },
+                timeout=60
+            )
 
-        for attempt in range(3):
+        data = safe_dict(r.json())
+        items = safe_list(data.get(root))
 
-            try:
-                r = await client.get(
-                    url,
-                    params={
-                        "api_key": API_KEY,
-                        "format": "json"
-                    },
-                    timeout=60
-                )
+        if not items:
+            break
 
-                r.raise_for_status()
+        out.extend(items)
 
-                return r.json().get("bill", {})
+        if len(items) < limit:
+            break
 
-            except Exception:
+        offset += limit
 
-                await asyncio.sleep(1)
+    return out
 
-    return {}
+# --------------------------------------------------
+# ENDPOINTS
+# --------------------------------------------------
 
+async def fetch_detail(client, b):
+    url = f"{BASE_URL}/bill/{b['congress']}/{b['type'].lower()}/{b['number']}"
+    res = await fetch_all(client, url, "bill")
+    return res[0] if res else {}
 
-def build_row(b, d):
+async def fetch_cosponsors(client, c, t, n):
+    return await fetch_all(client, f"{BASE_URL}/bill/{c}/{t}/{n}/cosponsors", "cosponsors")
 
-    latest = d.get("latestAction") or b.get("latestAction") or {}
+async def fetch_actions(client, c, t, n):
+    return await fetch_all(client, f"{BASE_URL}/bill/{c}/{t}/{n}/actions", "actions")
 
-    sponsor = (d.get("sponsors") or [{}])[0]
+async def fetch_committees(client, c, t, n):
+    return await fetch_all(client, f"{BASE_URL}/bill/{c}/{t}/{n}/committees", "committees")
+
+async def fetch_related(client, c, t, n):
+    return await fetch_all(client, f"{BASE_URL}/bill/{c}/{t}/{n}/relatedbills", "relatedBills")
+
+async def fetch_amendments(client, c, t, n):
+    return await fetch_all(client, f"{BASE_URL}/bill/{c}/{t}/{n}/amendments", "amendments")
+
+# --------------------------------------------------
+# BUILDERS
+# --------------------------------------------------
+
+def build_bill(b, d):
+
+    b = safe_dict(b)
+    d = safe_dict(d)
+
+    latest = safe_dict(b.get("latestAction") or d.get("latestAction"))
+    sponsor = safe_dict((d.get("sponsors") or [{}])[0] if isinstance(d.get("sponsors"), list) else {})
 
     return {
-        "bill_id": f"{b['congress']}-{b['type']}-{b['number']}",
-        "congress": b["congress"],
-        "bill_type": b["type"],
-        "bill_number": b["number"],
+        "bill_id": f"{b.get('congress')}-{b.get('type')}-{b.get('number')}",
+        "congress": b.get("congress"),
+        "bill_type": b.get("type"),
+        "bill_number": b.get("number"),
         "title": d.get("title") or b.get("title"),
         "introduced_date": d.get("introducedDate"),
         "latest_action": latest.get("text"),
@@ -187,149 +273,200 @@ def build_row(b, d):
         "updated_at": datetime.now(timezone.utc)
     }
 
+# --------------------------------------------------
+# CHILD BUILDERS
+# --------------------------------------------------
+
+def build_cosponsors(bill_id, rows):
+    return [{
+        "bill_id": bill_id,
+        "bioguide_id": r.get("bioguideId"),
+        "full_name": r.get("fullName"),
+        "party": r.get("party"),
+        "state": r.get("state"),
+        "district": r.get("district"),
+        "sponsorship_date": r.get("sponsorshipDate"),
+        "is_original": r.get("isOriginalCosponsor")
+    } for r in safe_list(rows)]
+
+def build_actions(bill_id, rows):
+    return [{
+        "bill_id": bill_id,
+        "action_date": r.get("actionDate"),
+        "action_text": r.get("text"),
+        "action_type": r.get("type"),
+        "action_code": r.get("actionCode"),
+        "source_system": safe_dict(r.get("sourceSystem")).get("name")
+    } for r in safe_list(rows)]
+
+def build_committees(bill_id, rows):
+
+    out = []
+
+    for r in safe_list(rows):
+
+        acts = safe_list(r.get("activities"))
+
+        if not acts:
+            out.append({
+                "bill_id": bill_id,
+                "committee_code": r.get("systemCode"),
+                "committee_name": r.get("name"),
+                "chamber": r.get("chamber"),
+                "committee_type": r.get("type"),
+                "activity_name": None,
+                "activity_date": None
+            })
+
+        for a in acts:
+            out.append({
+                "bill_id": bill_id,
+                "committee_code": r.get("systemCode"),
+                "committee_name": r.get("name"),
+                "chamber": r.get("chamber"),
+                "committee_type": r.get("type"),
+                "activity_name": a.get("name"),
+                "activity_date": a.get("date")
+            })
+
+    return out
+
+def build_related(bill_id, rows):
+
+    out = []
+
+    for r in safe_list(rows):
+        for rel in safe_list(r.get("relationshipDetails")):
+            out.append({
+                "bill_id": bill_id,
+                "related_congress": r.get("congress"),
+                "related_type": r.get("type"),
+                "related_number": r.get("number"),
+                "related_title": r.get("title"),
+                "relationship_type": rel.get("type"),
+                "identified_by": rel.get("identifiedBy"),
+                "latest_action_date": safe_dict(r.get("latestAction")).get("actionDate")
+            })
+
+    return out
+
+def build_amendments(bill_id, rows):
+
+    out = []
+
+    for r in safe_list(rows):
+
+        latest = safe_dict(r.get("latestAction"))
+
+        out.append({
+            "bill_id": bill_id,
+            "amendment_number": r.get("number"),
+            "amendment_type": r.get("type"),
+            "congress": r.get("congress"),
+            "purpose": r.get("purpose"),
+            "description": r.get("description"),
+            "update_date": r.get("updateDate"),
+            "action_date": latest.get("actionDate"),
+            "action_text": latest.get("text"),
+            "url": r.get("url")
+        })
+
+    return out
+
+# --------------------------------------------------
+# PROCESS
+# --------------------------------------------------
 
 async def process_bills(bills):
 
     async with httpx.AsyncClient() as client:
 
-        tasks = [fetch_detail(client, b) for b in bills]
+        bill_rows, cos, act, com, rel, amz = [], [], [], [], [], []
 
-        details = await asyncio.gather(*tasks)
+        for b in bills:
 
-        rows = []
+            c, t, n = b["congress"], b["type"].lower(), b["number"]
+            bill_id = f"{c}-{b['type']}-{n}"
 
-        for b, d in zip(bills, details):
-            rows.append(build_row(b, d))
+            detail, cs, ac, cm, rl, am = await asyncio.gather(
+                fetch_detail(client, b),
+                fetch_cosponsors(client, c, t, n),
+                fetch_actions(client, c, t, n),
+                fetch_committees(client, c, t, n),
+                fetch_related(client, c, t, n),
+                fetch_amendments(client, c, t, n)
+            )
 
-        return rows
+            bill_rows.append(build_bill(b, detail))
+            cos.extend(build_cosponsors(bill_id, cs))
+            act.extend(build_actions(bill_id, ac))
+            com.extend(build_committees(bill_id, cm))
+            rel.extend(build_related(bill_id, rl))
+            amz.extend(build_amendments(bill_id, am))
 
-# --------------------------------------------------
-# BULK UPSERT
-# --------------------------------------------------
-
-def bulk_upsert(con, rows):
-
-    if not rows:
-        return
-
-    df = pd.DataFrame(rows)
-
-    con.register("tmp_bills", df)
-
-    con.execute("""
-        INSERT OR REPLACE INTO bills
-        SELECT * FROM tmp_bills
-    """)
-
-# --------------------------------------------------
-# MODES
-# --------------------------------------------------
-
-def scrape_dev(con):
-
-    log.info("MODE: DEV")
-
-    bills = fetch_bills_page(limit=5)
-
-    rows = run_async(process_bills(bills))
-
-    bulk_upsert(con, rows)
-
-    return rows
-
-
-def scrape_incremental(con):
-
-    since = (
-        datetime.now(timezone.utc)
-        - timedelta(hours=24)
-    ).strftime("%Y-%m-%dT%H:%M:%SZ")
-
-    log.info(f"MODE: INCREMENTAL since {since}")
-
-    offset = 0
-    total_rows = []
-    start = perf_counter()
-
-    while True:
-
-        bills = fetch_bills_page(
-            limit=250,
-            offset=offset,
-            from_date=since
-        )
-
-        if not bills:
-            break
-
-        rows = run_async(process_bills(bills))
-
-        bulk_upsert(con, rows)
-
-        total_rows.extend(rows)
-
-        elapsed = perf_counter() - start
-
-        log.info(
-            f"Processed {len(total_rows)} rows "
-            f"in {elapsed:.1f}s"
-        )
-
-        offset += 250
-
-    return total_rows
-
-
-def scrape_backfill(con):
-
-    log.info("MODE: FULL REFRESH")
-
-    con.execute("DELETE FROM bills")
-
-    offset = 0
-    total_rows = []
-
-    start = perf_counter()
-
-    while True:
-
-        bills = fetch_bills_page(
-            limit=250,
-            offset=offset
-        )
-
-        if not bills:
-            break
-
-        rows = run_async(process_bills(bills))
-
-        bulk_upsert(con, rows)
-
-        total_rows.extend(rows)
-
-        elapsed = perf_counter() - start
-        rate = len(total_rows) / elapsed if elapsed else 0
-
-        log.info(
-            f"Loaded {len(total_rows)} rows | "
-            f"{rate:.1f} rows/sec | "
-            f"offset={offset}"
-        )
-
-        offset += 250
-
-    total = perf_counter() - start
-
-    log.info(
-        f"FULL REFRESH COMPLETE: "
-        f"{len(total_rows)} rows in {total:.1f}s"
-    )
-
-    return total_rows
+        return {
+            "bills": bill_rows,
+            "cosponsors": cos,
+            "actions": act,
+            "committees": com,
+            "relatedbills": rel,
+            "amendments": amz
+        }
 
 # --------------------------------------------------
-# EXPORT JSON
+# UPSERT
 # --------------------------------------------------
+
+def bulk_upsert_all(con, data):
+
+    def upsert(table, df):
+        con.register("tmp", df)
+        con.execute(f"DELETE FROM {table} WHERE bill_id IN (SELECT bill_id FROM tmp)")
+        con.execute(f"INSERT INTO {table} SELECT * FROM tmp")
+
+    for k, t in [
+        ("bills", "bills"),
+        ("cosponsors", "bill_cosponsors"),
+        ("actions", "bill_actions"),
+        ("committees", "bill_committees"),
+        ("relatedbills", "bill_relatedbills"),
+        ("amendments", "bill_amendments")
+    ]:
+        if data.get(k):
+            upsert(t, pd.DataFrame(data[k]))
+
+# --------------------------------------------------
+# JSON EXPORT WITH COUNTS
+# --------------------------------------------------
+
+def get_child_counts(con, bill_id):
+
+    return {
+        "cosponsors_count": con.execute(
+            "SELECT COUNT(*) FROM bill_cosponsors WHERE bill_id = ?",
+            [bill_id]
+        ).fetchone()[0],
+
+        "actions_count": con.execute(
+            "SELECT COUNT(*) FROM bill_actions WHERE bill_id = ?",
+            [bill_id]
+        ).fetchone()[0],
+
+        "committees_count": con.execute(
+            "SELECT COUNT(*) FROM bill_committees WHERE bill_id = ?",
+            [bill_id]
+        ).fetchone()[0],
+
+        "relatedbills_count": con.execute(
+            "SELECT COUNT(*) FROM bill_relatedbills WHERE bill_id = ?",
+            [bill_id]
+        ).fetchone()[0],
+
+        "amendments_count": con.execute(
+            "SELECT COUNT(*) FROM bill_amendments WHERE bill_id = ?",
+            [bill_id]
+        ).fetchone()[0],
+    }
 
 def export_json(con):
 
@@ -341,12 +478,16 @@ def export_json(con):
         ORDER BY introduced_date DESC NULLS LAST
     """).fetchdf()
 
-    rows = df.to_dict(orient="records")
+    rows = []
+
+    for r in df.to_dict("records"):
+        rows.append({
+            **r,
+            **get_child_counts(con, r["bill_id"])
+        })
 
     payload = {
-        "last_updated": datetime.now(
-            timezone.utc
-        ).isoformat(),
+        "last_updated": datetime.now(timezone.utc).isoformat(),
         "count": len(rows),
         "data": rows
     }
@@ -357,21 +498,6 @@ def export_json(con):
     log.info("Exported data/bills.json")
 
 # --------------------------------------------------
-# CLI
-# --------------------------------------------------
-
-def parse_args():
-
-    p = argparse.ArgumentParser()
-
-    p.add_argument(
-        "--mode",
-        choices=["dev", "incremental", "backfill"]
-    )
-
-    return p.parse_args()
-
-# --------------------------------------------------
 # MAIN
 # --------------------------------------------------
 
@@ -380,26 +506,47 @@ if __name__ == "__main__":
     if not API_KEY:
         raise SystemExit("Missing CONGRESS_API_KEY")
 
-    args = parse_args()
-
-    mode = args.mode or RUN_MODE
-
     con = get_db()
 
+    import sys
+    mode = sys.argv[1] if len(sys.argv) > 1 else RUN_MODE
+
     if mode == "dev":
-        rows = scrape_dev(con)
+        bills = fetch_bills_page(limit=5)
+        data = run_async(process_bills(bills))
+        bulk_upsert_all(con, data)
+        export_json(con)
 
     elif mode == "incremental":
-        rows = scrape_incremental(con)
+        since = (datetime.now(timezone.utc) - timedelta(hours=1)).strftime("%Y-%m-%dT%H:%M:%SZ")
 
-    elif mode == "backfill":
-        rows = scrape_backfill(con)
+        offset = 0
+        while True:
+            bills = fetch_bills_page(limit=250, offset=offset, from_date=since)
+            if not bills:
+                break
+
+            data = run_async(process_bills(bills))
+            bulk_upsert_all(con, data)
+
+            offset += 250
+
+        export_json(con)
 
     else:
-        raise SystemExit("Invalid mode")
+        con.execute("DELETE FROM bills")
 
-    export_json(con)
+        offset = 0
+        while True:
+            bills = fetch_bills_page(limit=250, offset=offset)
+            if not bills:
+                break
+
+            data = run_async(process_bills(bills))
+            bulk_upsert_all(con, data)
+
+            offset += 250
+
+        export_json(con)
 
     con.close()
-
-    log.info(f"DONE ✓ {len(rows)} rows processed")
