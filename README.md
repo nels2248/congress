@@ -1,213 +1,266 @@
-# Congress Bill Tracker
+# Congress Data Dashboard
 
-STATUS AS OF APRIL 24TH, 2026 AT 11 PM CENTRAL time
-HAVE 3 PAGES 
-1. INDEX - ALLOWS TO FILTER
-2. PREDICTIONS - WHETHER IT WILL BE VOTED On
-3. CLUSTERS
+## Overview
 
-NEED TO FIGURE OUT THE INCREMENTAL REFRESHES AS THAT IS PULLLING WAY MORE THAN I THOUGHT.
+The Congress Data Dashboard is a data engineering and analytics project focused on processing, analyzing, and visualizing U.S. congressional bill activity.
 
-DOES HAVE FULLL DATA AVAILABLE  
+The system extracts raw legislative XML data, transforms it into structured analytical datasets, stores the results in DuckDB, and generates interactive dashboards using D3.js.
 
-HAS A MAP BUT NOT WORKING YET
-
-Scrapes bill data from the [Congress.gov API](https://api.congress.gov/) nightly,
-stores it in DuckDB, and serves an interactive D3.js dashboard via GitHub Pages — all for free.
+In addition to traditional reporting and visualization, the project also includes machine learning components for legislative next-step prediction and congressional bill clustering analysis.
 
 ---
 
+# Project Goals
 
+This project was designed to demonstrate:
 
-## Project layout
-
-```
-congress-tracker/
-├── scraper.py                   ← main scraper + JSON exporter
-├── local_server.py              ← dev web server for the D3 dashboard
-├── environment.yml              ← Conda environment definition
-├── .env.example                 ← copy to .env and add your API key
-├── .gitignore
-├── congress.db                  ← DuckDB file (auto-created + committed)
-├── docs/
-│   ├── index.html               ← D3 dashboard (served by GitHub Pages)
-│   └── data/
-│       ├── bills.json
-│       ├── by_party.json
-│       ├── by_state.json
-│       ├── over_time.json
-│       └── by_chamber.json
-├── tests/
-│   └── test_scraper.py
-└── .github/
-    └── workflows/
-        └── scrape.yml           ← nightly GitHub Actions cron
-```
+- End-to-end ETL pipeline development
+- XML data parsing and transformation
+- Analytical database design using DuckDB
+- JSON-based dashboard architecture
+- Interactive frontend visualization with D3.js
+- Machine learning integration for legislative analytics
+- Feature engineering and predictive modeling
+- Clustering analysis for identifying legislative behavior patterns
 
 ---
 
-## 1 · Get a free API key
+# Current Project Status
 
-Sign up at <https://api.congress.gov/sign-up/> — no credit card, instant approval.
+The project currently operates as a manually refreshed analytical pipeline.
+
+Originally, the system was planned to support nightly automated processing and incremental congressional data updates. During development, a more complete and higher-quality legislative dataset was discovered late in the project timeline.
+
+Because of this improved data source, the nightly automation process is temporarily paused while the pipeline architecture is being redesigned around the new dataset.
+
+The current implementation still demonstrates the full analytical workflow and system architecture.
+
+Planned future enhancements include:
+
+- Automated nightly ETL processing
+- Incremental update tracking
+- Expanded congressional datasets
+- Enhanced machine learning models
+- Additional dashboard visualizations and analytics
+- Trend monitoring over time
 
 ---
 
-## 2 · Local setup with Anaconda + Spyder
+# System Architecture
 
-### Create the Conda environment
+## 1. Data Extraction
 
-Open **Anaconda Prompt** (Windows) or a terminal (Mac/Linux):
+The pipeline reads raw XML congressional bill files containing:
 
-```bash
-# Navigate to the project folder
-cd path/to/congress-tracker
+- Bill metadata
+- Sponsor information
+- Legislative actions
+- Co-sponsor data
+- Status updates
 
-# Create the environment from the provided file
-conda env create -f environment.yml
+---
 
-# Activate it
-conda activate congress-tracker
-```
+## 2. Data Transformation
 
-### Set your API key locally
+The ETL process cleans and structures the raw XML data into analytical datasets.
 
-```bash
-# Copy the example file
-cp .env.example .env
+### Generated Tables
 
-# Edit .env and replace your_key_here with your real key
-```
+### Bills
+Contains:
+- Bill number
+- Title
+- Bill type
+- Sponsor
+- Chamber
+- Introduced date
 
-On **Windows** use Notepad or any text editor to edit `.env`.
+### Actions
+Contains:
+- Legislative timeline events
+- Action descriptions
+- Action dates
 
-### Run the scraper from Spyder
+### CoSponsors
+Contains:
+- Co-sponsor names
+- Supporting legislator data
 
-1. Open Spyder, then open `scraper.py`
-2. In **Spyder → Preferences → Python interpreter**, choose the
-   `congress-tracker` conda environment you just created
-3. In the top-right of Spyder, make sure the working directory is the
-   project root (where `scraper.py` lives)
-4. Run the script with **F5** or the green play button
+---
 
-Alternatively, from the **IPython console** pane at the bottom of Spyder:
+## 3. Data Loading
 
-```python
-# Make sure your key is loaded — python-dotenv picks up .env automatically
-import os
-os.environ["CONGRESS_API_KEY"] = "your_key_here"  # or use .env
+The transformed datasets are loaded into a local analytical database using DuckDB.
 
-%run scraper.py
-```
+The system also exports processed data into JSON format for frontend visualization.
 
-### Preview the dashboard locally
+### Generated Output
 
-After the scraper has run and exported JSON, start the dev server:
-
-```bash
-# From a terminal (or Spyder's IPython console)
-python local_server.py
-```
-
-This opens <http://localhost:8000> in your browser automatically.
-The server is needed because browsers block `file://` AJAX requests (CORS).
-
-### Run tests
-
-```bash
-pytest tests/
+```text
+congress_dashboard.json
 ```
 
 ---
 
-## 3 · Deploy to GitHub
+# Dashboard Features
 
-### First-time setup
+The frontend dashboard is built using HTML, CSS, JavaScript, and D3.js.
 
-```bash
-git init
-git add .
-git commit -m "init: congress tracker"
+## Included Features
 
-# Create a repo on GitHub, then:
-git remote add origin https://github.com/YOUR_USERNAME/congress-tracker.git
-git branch -M main
-git push -u origin main
-```
+### Bill Explorer
+- Searchable bill table
+- Sorting by columns
+- Pagination
+- Sponsor filtering
 
-### Add your API key as a GitHub secret
+### Detail View
+Displays:
+- Full bill details
+- Co-sponsor information
+- Legislative timeline
+- Bill activity metrics
 
-1. GitHub repo → **Settings → Secrets and variables → Actions**
-2. Click **New repository secret**
-3. Name: `CONGRESS_API_KEY`   Value: your key
-
-### Enable GitHub Pages
-
-1. GitHub repo → **Settings → Pages**
-2. Source: **Deploy from a branch**
-3. Branch: `main`   Folder: `/docs`
-4. Save — your dashboard will be live at
-   `https://YOUR_USERNAME.github.io/congress-tracker/`
-
-### Trigger the first scrape manually
-
-GitHub → **Actions tab** → **Nightly Congress Scrape** → **Run workflow**
-
-After it finishes, the DB and JSON files will be committed automatically,
-and GitHub Pages will redeploy the dashboard within ~60 seconds.
+### Metrics Dashboard
+Displays:
+- Total bills processed
+- Total actions
+- Total co-sponsors
+- Average activity levels
 
 ---
 
-## 4 · Hosting cost summary
+# Machine Learning Components
 
-| Component | Where | Cost |
-|-----------|-------|------|
-| Nightly scraper | GitHub Actions (2,000 min/month free) | **Free** |
-| DB + JSON storage | Git repo | **Free** |
-| D3 dashboard | GitHub Pages | **Free** |
-| Live query API (optional) | Railway / Fly.io free tier | Free–$3/mo |
+## 1. Legislative Next-Step Prediction
+
+This machine learning component attempts to predict the likely next legislative action or progression step for congressional bills.
+
+### Features Used
+- Bill type
+- Chamber
+- Sponsor data
+- Action history
+- Co-sponsor counts
+- Current status
+
+### Models Tested
+- Random Forest
+- Extra Trees
+- Gradient Boosting
+- Logistic Regression
+
+The dashboard compares prediction confidence and classification performance between models.
 
 ---
 
-## 5 · Customising the scraper
+## 2. Congressional Bill Clustering
 
-Edit the constants at the top of `scraper.py`:
+The project also includes unsupervised machine learning analysis using clustering techniques.
 
-| Variable | Default | Description |
-|----------|---------|-------------|
-| `CONGRESS` | `119` | Which congress to scrape |
-| `MAX_PAGES` | `20` | Max pages per run (250 bills/page) |
-| `DB_PATH` | `congress.db` | Path to the DuckDB file |
-| `DATA_DIR` | `docs/data/` | Where JSON exports land |
+The clustering system groups bills based on shared characteristics and legislative behavior patterns.
 
-To scrape a different bill type (Senate resolutions, joint resolutions, etc.)
-edit the `fetch_bills` function's URL path:
-```python
-# e.g. Senate bills only:
-f"{BASE_URL}/bill/{congress}/s"
+### Clustering Inputs
+- Action counts
+- Co-sponsor participation
+- Activity levels
+- Legislative progression patterns
+- Structural bill similarities
+
+### Clustering Goals
+Identify:
+- Highly active legislation
+- Low-engagement bills
+- Similar bill behavior patterns
+- Legislative trend groupings
+
+---
+
+# Technologies Used
+
+## Backend / Data Engineering
+- Python
+- DuckDB
+- Pandas
+- XML Parsing
+- JSON Processing
+
+## Machine Learning
+- Scikit-learn
+- Classification Models
+- Clustering Algorithms
+
+## Frontend / Visualization
+- HTML
+- CSS
+- JavaScript
+- D3.js
+
+---
+
+# Project Structure
+
+```text
+/project
+│
+├── data/
+│   ├── raw_xml/
+│   ├── processed/
+│
+├── db/
+│   └── congress.duckdb
+│
+├── output/
+│   └── congress_dashboard.json
+│
+├── dashboards/
+│   ├── index.html
+│   ├── details.html
+│   ├── cluster_groups.html
+│   └── ml_dashboard.html
+│
+├── scripts/
+│   ├── etl_pipeline.py
+│   ├── clustering.py
+│   └── prediction_models.py
+│
+└── README.md
 ```
 
 ---
 
-## 6 · Querying the DB directly in Spyder
+# Future Improvements
 
-```python
-import duckdb
-con = duckdb.connect("congress.db")
+Planned future enhancements include:
 
-# All Democratic bills from Minnesota
-con.execute("""
-    SELECT title, introduced_date, latest_action
-    FROM bills
-    WHERE sponsor_party = 'D' AND sponsor_state = 'MN'
-    ORDER BY introduced_date DESC
-    LIMIT 20
-""").fetchdf()
+- Real-time data ingestion
+- Automated nightly processing
+- Expanded legislative datasets
+- Improved feature engineering
+- Additional machine learning models
+- Geographic visualizations
+- Trend forecasting dashboards
+- Cloud deployment options
 
-# Monthly bill counts
-con.execute("""
-    SELECT strftime(introduced_date, '%Y-%m') AS month, COUNT(*) AS n
-    FROM bills GROUP BY month ORDER BY month
-""").fetchdf()
-```
+---
 
+# Educational Value
 
+This project demonstrates practical applications of:
+
+- Data engineering
+- ETL pipeline development
+- Database management
+- Data visualization
+- Predictive analytics
+- Machine learning workflows
+- Frontend analytical dashboard development
+
+---
+
+# Author
+
+Chad Alan Nelson
+
+Master's of Data Science Program  
+Business Intelligence / Data Engineering / Analytics
