@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<billStatus>
+  <version>3.0.0</version>
+  <bill>
+    <number>14</number>
+    <updateDate>2025-01-31T21:10:47Z</updateDate>
+    <updateDateIncludingText>2025-01-31T21:10:47Z</updateDateIncludingText>
+    <originChamber>House</originChamber>
+    <originChamberCode>H</originChamberCode>
+    <type>HRES</type>
+    <introducedDate>2025-01-06</introducedDate>
+    <congress>119</congress>
+    <cdata/>
+    <actions>
+      <item>
+        <actionDate>2025-01-06</actionDate>
+        <actionTime>13:48:26</actionTime>
+        <text>Motion to reconsider laid on the table Agreed to without objection.</text>
+        <type>Floor</type>
+        <actionCode>H38310</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-01-06</actionDate>
+        <actionTime>13:48:22</actionTime>
+        <text>On agreeing to the resolution Agreed to without objection. (text: CR H49)</text>
+        <type>Floor</type>
+        <actionCode>H37100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-01-06</actionDate>
+        <actionTime>13:48:22</actionTime>
+        <text>Passed/agreed to in House: On agreeing to the resolution Agreed to without objection. (text: CR H49)</text>
+        <type>Floor</type>
+        <actionCode>8000</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-01-06</actionDate>
+        <actionTime>13:47:59</actionTime>
+        <text>Considered as privileged matter. (consideration: CR H49)</text>
+        <type>Floor</type>
+        <actionCode>H30000</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-01-06</actionDate>
+        <text>Submitted in House</text>
+        <type>Committee</type>
+        <actionCode>H12100</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-01-06</actionDate>
+        <text>Submitted in House</text>
+        <type>IntroReferral</type>
+        <actionCode>1025</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+    </actions>
+    <sponsors>
+      <item>
+        <bioguideId>A000371</bioguideId>
+        <fullName>Rep. Aguilar, Pete [D-CA-33]</fullName>
+        <firstName>Pete</firstName>
+        <lastName>Aguilar</lastName>
+        <party>D</party>
+        <state>CA</state>
+        <district>33</district>
+        <isByRequest>N</isByRequest>
+      </item>
+    </sponsors>
+    <policyArea>
+      <name>Congress</name>
+    </policyArea>
+    <subjects>
+      <legislativeSubjects>
+        <item>
+          <name>Congressional committees</name>
+          <updateDate>2025-01-14T21:23:23Z</updateDate>
+        </item>
+        <item>
+          <name>House Committee on Agriculture</name>
+          <updateDate>2025-01-14T21:23:38Z</updateDate>
+        </item>
+        <item>
+          <name>House Committee on Appropriations</name>
+          <updateDate>2025-01-14T21:23:47Z</updateDate>
+        </item>
+        <item>
+          <name>House Committee on Armed Services</name>
+          <updateDate>2025-01-14T21:24:00Z</updateDate>
+        </item>
+        <item>
+          <name>House Committee on Education and Workforce</name>
+          <updateDate>2025-01-30T13:08:18Z</updateDate>
+        </item>
+        <item>
+          <name>House Committee on Energy and Commerce</name>
+          <updateDate>2025-01-14T21:24:14Z</updateDate>
+        </item>
+        <item>
+          <name>House Committee on Financial Services</name>
+          <updateDate>2025-01-14T21:24:40Z</updateDate>
+        </item>
+        <item>
+          <name>House Committee on Foreign Affairs</name>
+          <updateDate>2025-01-14T21:24:46Z</updateDate>
+        </item>
+        <item>
+          <name>House Committee on Homeland Security</name>
+          <updateDate>2025-01-14T21:24:51Z</updateDate>
+        </item>
+        <item>
+          <name>House Committee on Natural Resources</name>
+          <updateDate>2025-01-14T21:25:03Z</updateDate>
+        </item>
+        <item>
+          <name>House Committee on Oversight and Government Reform</name>
+          <updateDate>2025-01-14T21:25:10Z</updateDate>
+        </item>
+        <item>
+          <name>House Committee on Science, Space, and Technology</name>
+          <updateDate>2025-01-14T21:25:17Z</updateDate>
+        </item>
+        <item>
+          <name>House Committee on Small Business</name>
+          <updateDate>2025-01-14T21:25:23Z</updateDate>
+        </item>
+        <item>
+          <name>House Committee on Transportation and Infrastructure</name>
+          <updateDate>2025-01-14T21:25:30Z</updateDate>
+        </item>
+        <item>
+          <name>House Committee on Veterans' Affairs</name>
+          <updateDate>2025-01-14T21:25:35Z</updateDate>
+        </item>
+        <item>
+          <name>House Committee on Ways and Means</name>
+          <updateDate>2025-01-14T21:25:40Z</updateDate>
+        </item>
+        <item>
+          <name>House Committee on the Budget</name>
+          <updateDate>2025-01-14T21:24:26Z</updateDate>
+        </item>
+        <item>
+          <name>House Committee on the Judiciary</name>
+          <updateDate>2025-01-14T21:24:57Z</updateDate>
+        </item>
+        <item>
+          <name>House of Representatives</name>
+          <updateDate>2025-01-14T21:23:34Z</updateDate>
+        </item>
+        <item>
+          <name>Members of Congress</name>
+          <updateDate>2025-01-14T21:23:29Z</updateDate>
+        </item>
+      </legislativeSubjects>
+      <policyArea>
+        <name>Congress</name>
+        <updateDate>2025-01-08T14:13:47Z</updateDate>
+      </policyArea>
+    </subjects>
+    <summaries>
+      <summary>
+        <versionCode>00</versionCode>
+        <actionDate>2025-01-06</actionDate>
+        <actionDesc>Introduced in House</actionDesc>
+        <updateDate>2025-01-31T21:10:43Z</updateDate>
+        <cdata>
+          <text>&lt;p&gt;This resolution elects members to standing committees of the House of Representatives.&amp;nbsp;&lt;/p&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;</text>
+        </cdata>
+      </summary>
+    </summaries>
+    <title>Electing Members to certain standing committees of the House of Representatives.</title>
+    <titles>
+      <item>
+        <titleType>Display Title</titleType>
+        <titleTypeCode>45</titleTypeCode>
+        <title>Electing Members to certain standing committees of the House of Representatives.</title>
+        <updateDate>2025-01-07T14:06:23Z</updateDate>
+      </item>
+      <item>
+        <titleType>Official Title as Introduced</titleType>
+        <titleTypeCode>6</titleTypeCode>
+        <title>Electing Members to certain standing committees of the House of Representatives.</title>
+        <updateDate>2025-01-07T14:06:23Z</updateDate>
+      </item>
+    </titles>
+    <textVersions>
+      <item>
+        <type>Engrossed in House</type>
+        <date>2025-01-06T05:00:00Z</date>
+        <formats>
+          <item>
+            <url>https://www.govinfo.gov/content/pkg/BILLS-119hres14eh/xml/BILLS-119hres14eh.xml</url>
+          </item>
+        </formats>
+      </item>
+    </textVersions>
+    <latestAction>
+      <actionDate>2025-01-06</actionDate>
+      <text>Motion to reconsider laid on the table Agreed to without objection.</text>
+      <actionTime>13:48:26</actionTime>
+    </latestAction>
+  </bill>
+  <dublinCore xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:format>text/xml</dc:format>
+    <dc:language>EN</dc:language>
+    <dc:rights>Pursuant to Title 17 Section 105 of the United States Code, this file is not subject to copyright protection and is in the public domain.</dc:rights>
+    <dc:contributor>Congressional Research Service, Library of Congress</dc:contributor>
+    <dc:description>This file contains bill summaries and statuses for federal legislation. A bill summary describes the most significant provisions of a piece of legislation and details the effects the legislative text may have on current law and federal programs. Bill summaries are authored by the Congressional Research Service (CRS) of the Library of Congress. As stated in Public Law 91-510 (2 USC 166 (d)(6)), one of the duties of CRS is "to prepare summaries and digests of bills and resolutions of a public general nature introduced in the Senate or House of Representatives". For more information, refer to the User Guide that accompanies this file.</dc:description>
+  </dublinCore>
+</billStatus>

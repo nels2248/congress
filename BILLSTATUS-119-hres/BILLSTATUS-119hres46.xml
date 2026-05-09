@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<billStatus>
+  <version>3.0.0</version>
+  <bill>
+    <number>46</number>
+    <updateDate>2025-07-03T20:03:50Z</updateDate>
+    <updateDateIncludingText>2025-07-03T20:03:50Z</updateDateIncludingText>
+    <originChamber>House</originChamber>
+    <originChamberCode>H</originChamberCode>
+    <type>HRES</type>
+    <introducedDate>2025-01-15</introducedDate>
+    <congress>119</congress>
+    <cdata/>
+    <committees>
+      <item>
+        <systemCode>hsru00</systemCode>
+        <name>Rules Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Referred To</name>
+            <date>2025-01-15T15:07:10Z</date>
+          </item>
+        </activities>
+      </item>
+    </committees>
+    <actions>
+      <item>
+        <actionDate>2025-01-15</actionDate>
+        <text>Referred to the House Committee on Rules.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsru00</systemCode>
+            <name>Rules Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-01-15</actionDate>
+        <text>Submitted in House</text>
+        <type>Committee</type>
+        <actionCode>H12100</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-01-15</actionDate>
+        <text>Submitted in House</text>
+        <type>IntroReferral</type>
+        <actionCode>1025</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+    </actions>
+    <sponsors>
+      <item>
+        <bioguideId>M001216</bioguideId>
+        <fullName>Rep. Mills, Cory [R-FL-7]</fullName>
+        <firstName>Cory</firstName>
+        <lastName>Mills</lastName>
+        <party>R</party>
+        <state>FL</state>
+        <district>7</district>
+        <isByRequest>N</isByRequest>
+      </item>
+    </sponsors>
+    <cosponsors>
+      <item>
+        <bioguideId>H001098</bioguideId>
+        <fullName>Rep. Hamadeh, Abraham J. [R-AZ-8]</fullName>
+        <firstName>Abraham</firstName>
+        <lastName>Hamadeh</lastName>
+        <party>R</party>
+        <state>AZ</state>
+        <middleName>J.</middleName>
+        <district>8</district>
+        <sponsorshipDate>2025-07-02</sponsorshipDate>
+        <isOriginalCosponsor>False</isOriginalCosponsor>
+      </item>
+    </cosponsors>
+    <policyArea>
+      <name>Congress</name>
+    </policyArea>
+    <subjects>
+      <legislativeSubjects>
+        <item>
+          <name>Congressional committees</name>
+          <updateDate>2025-01-22T15:32:18Z</updateDate>
+        </item>
+        <item>
+          <name>Congressional officers and employees</name>
+          <updateDate>2025-01-22T15:31:55Z</updateDate>
+        </item>
+        <item>
+          <name>House Committee on Appropriations</name>
+          <updateDate>2025-01-22T15:32:51Z</updateDate>
+        </item>
+        <item>
+          <name>House Committee on Armed Services</name>
+          <updateDate>2025-01-22T15:32:58Z</updateDate>
+        </item>
+        <item>
+          <name>House Committee on Foreign Affairs</name>
+          <updateDate>2025-01-22T15:33:04Z</updateDate>
+        </item>
+        <item>
+          <name>House Committee on Homeland Security</name>
+          <updateDate>2025-01-22T15:33:10Z</updateDate>
+        </item>
+        <item>
+          <name>House Permanent Select Committee on Intelligence</name>
+          <updateDate>2025-01-22T15:33:17Z</updateDate>
+        </item>
+        <item>
+          <name>House of Representatives</name>
+          <updateDate>2025-01-22T15:31:36Z</updateDate>
+        </item>
+        <item>
+          <name>Intelligence activities, surveillance, classified information</name>
+          <updateDate>2025-01-22T15:33:25Z</updateDate>
+        </item>
+        <item>
+          <name>Legislative rules and procedure</name>
+          <updateDate>2025-01-22T15:31:42Z</updateDate>
+        </item>
+        <item>
+          <name>Military personnel and dependents</name>
+          <updateDate>2025-01-22T15:32:11Z</updateDate>
+        </item>
+      </legislativeSubjects>
+      <policyArea>
+        <name>Congress</name>
+        <updateDate>2025-01-21T12:48:57Z</updateDate>
+      </policyArea>
+    </subjects>
+    <summaries>
+      <summary>
+        <versionCode>00</versionCode>
+        <actionDate>2025-01-15</actionDate>
+        <actionDesc>Introduced in House</actionDesc>
+        <updateDate>2025-02-07T19:38:47Z</updateDate>
+        <cdata>
+          <text>&lt;p&gt;This resolution creates an exception to the House limit on&amp;nbsp;the number of employees who may hold security clearances within certain Member offices. Specifically, any member of the Armed Forces who holds a security clearance issued by the Department of Defense does not count toward the&amp;nbsp;number of employees of a Member who may hold security clearances issued by the Office of House Security. The exception applies to employees of Members on the Committees on Armed Services, Foreign Affairs, or Homeland Security; the Permanent Select Committee on Intelligence; or specified subcommittees of the Committee on Appropriations.&lt;/p&gt;</text>
+        </cdata>
+      </summary>
+    </summaries>
+    <title>Amending the Rules of the House of Representatives to exclude employees of the offices of Members who serve on certain committees of the House from the allotment of the number of employees of the office who may hold security clearances processed by the Office of House Security if such employees are members of the armed forces who hold a security clearance issued by the Department of Defense, and for other purposes.</title>
+    <titles>
+      <item>
+        <titleType>Official Title as Introduced</titleType>
+        <titleTypeCode>6</titleTypeCode>
+        <title>Amending the Rules of the House of Representatives to exclude employees of the offices of Members who serve on certain committees of the House from the allotment of the number of employees of the office who may hold security clearances processed by the Office of House Security if such employees are members of the armed forces who hold a security clearance issued by the Department of Defense, and for other purposes.</title>
+        <updateDate>2025-01-17T09:33:23Z</updateDate>
+        <billTextVersionName>Introduced in House</billTextVersionName>
+        <billTextVersionCode>IH</billTextVersionCode>
+      </item>
+      <item>
+        <titleType>Display Title</titleType>
+        <titleTypeCode>45</titleTypeCode>
+        <title>Amending the Rules of the House of Representatives to exclude employees of the offices of Members who serve on certain committees of the House from the allotment of the number of employees of the office who may hold security clearances processed by the Office of House Security if such employees are members of the armed forces who hold a security clearance issued by the Department of Defense, and for other purposes.</title>
+        <updateDate>2025-01-16T09:05:41Z</updateDate>
+      </item>
+    </titles>
+    <textVersions>
+      <item>
+        <type>Introduced in House</type>
+        <date>2025-01-15T05:00:00Z</date>
+        <formats>
+          <item>
+            <url>https://www.govinfo.gov/content/pkg/BILLS-119hres46ih/xml/BILLS-119hres46ih.xml</url>
+          </item>
+        </formats>
+      </item>
+    </textVersions>
+    <latestAction>
+      <actionDate>2025-01-15</actionDate>
+      <text>Referred to the House Committee on Rules.</text>
+    </latestAction>
+  </bill>
+  <dublinCore xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:format>text/xml</dc:format>
+    <dc:language>EN</dc:language>
+    <dc:rights>Pursuant to Title 17 Section 105 of the United States Code, this file is not subject to copyright protection and is in the public domain.</dc:rights>
+    <dc:contributor>Congressional Research Service, Library of Congress</dc:contributor>
+    <dc:description>This file contains bill summaries and statuses for federal legislation. A bill summary describes the most significant provisions of a piece of legislation and details the effects the legislative text may have on current law and federal programs. Bill summaries are authored by the Congressional Research Service (CRS) of the Library of Congress. As stated in Public Law 91-510 (2 USC 166 (d)(6)), one of the duties of CRS is "to prepare summaries and digests of bills and resolutions of a public general nature introduced in the Senate or House of Representatives". For more information, refer to the User Guide that accompanies this file.</dc:description>
+  </dublinCore>
+</billStatus>

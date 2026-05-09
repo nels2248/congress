@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<billStatus>
+  <version>3.0.0</version>
+  <bill>
+    <number>177</number>
+    <updateDate>2025-05-27T14:12:48Z</updateDate>
+    <updateDateIncludingText>2025-05-27T14:12:48Z</updateDateIncludingText>
+    <originChamber>House</originChamber>
+    <originChamberCode>H</originChamberCode>
+    <type>HRES</type>
+    <introducedDate>2025-03-03</introducedDate>
+    <congress>119</congress>
+    <cdata/>
+    <committees>
+      <item>
+        <systemCode>hsru00</systemCode>
+        <name>Rules Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Reported Original Measure</name>
+            <date>2025-03-04T00:17:33Z</date>
+          </item>
+        </activities>
+      </item>
+    </committees>
+    <committeeReports>
+      <committeeReport>
+        <citation>H. Rept. 119-8</citation>
+      </committeeReport>
+    </committeeReports>
+    <relatedBills>
+      <item>
+        <title>Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Department of Energy relating to "Energy Conservation Program for Appliance Standards: Certification Requirements, Labeling Requirements, and Enforcement Provisions for Certain Consumer Products and Commercial Equipment".</title>
+        <congress>119</congress>
+        <number>42</number>
+        <type>HJRES</type>
+        <latestAction>
+          <actionDate>2025-05-09</actionDate>
+          <text>Became Public Law No: 119-8.</text>
+        </latestAction>
+        <relationshipDetails>
+          <item>
+            <type>Procedurally-related</type>
+            <identifiedBy>House</identifiedBy>
+          </item>
+          <item>
+            <type>Related bill</type>
+            <identifiedBy>House</identifiedBy>
+          </item>
+        </relationshipDetails>
+      </item>
+      <item>
+        <title>Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Environmental Protection Agency relating to "National Emission Standards for Hazardous Air Pollutants: Rubber Tire Manufacturing".</title>
+        <congress>119</congress>
+        <number>61</number>
+        <type>HJRES</type>
+        <latestAction>
+          <actionDate>2025-05-16</actionDate>
+          <text>Presented to President.</text>
+        </latestAction>
+        <relationshipDetails>
+          <item>
+            <type>Procedurally-related</type>
+            <identifiedBy>House</identifiedBy>
+          </item>
+          <item>
+            <type>Related bill</type>
+            <identifiedBy>House</identifiedBy>
+          </item>
+        </relationshipDetails>
+      </item>
+      <item>
+        <title>A joint resolution providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Ocean Energy Management relating to "Protection of Marine Archaeological Resources".</title>
+        <congress>119</congress>
+        <number>11</number>
+        <type>SJRES</type>
+        <latestAction>
+          <actionDate>2025-03-14</actionDate>
+          <text>Became Public Law No: 119-3.</text>
+        </latestAction>
+        <relationshipDetails>
+          <item>
+            <type>Related bill</type>
+            <identifiedBy>House</identifiedBy>
+          </item>
+          <item>
+            <type>Procedurally-related</type>
+            <identifiedBy>House</identifiedBy>
+          </item>
+        </relationshipDetails>
+      </item>
+    </relatedBills>
+    <actions>
+      <item>
+        <actionDate>2025-03-04</actionDate>
+        <actionTime>14:03:41</actionTime>
+        <text>Motion to reconsider laid on the table Agreed to without objection.</text>
+        <type>Floor</type>
+        <actionCode>H38310</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-03-04</actionDate>
+        <actionTime>14:03:40</actionTime>
+        <text>On agreeing to the resolution Agreed to by recorded vote: 211 - 209 (Roll no. 57). (text: CR H955)</text>
+        <type>Floor</type>
+        <actionCode>H37100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <recordedVotes>
+          <recordedVote>
+            <rollNumber>57</rollNumber>
+            <url>https://clerk.house.gov/evs/2025/roll057.xml</url>
+            <chamber>House</chamber>
+            <congress>119</congress>
+            <date>2025-03-04T19:03:40Z</date>
+            <sessionNumber>1</sessionNumber>
+          </recordedVote>
+        </recordedVotes>
+      </item>
+      <item>
+        <actionDate>2025-03-04</actionDate>
+        <actionTime>14:03:40</actionTime>
+        <text>Passed/agreed to in House: On agreeing to the resolution Agreed to by recorded vote: 211 - 209 (Roll no. 57). (text: CR H955)</text>
+        <type>Floor</type>
+        <actionCode>8000</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+        <recordedVotes>
+          <recordedVote>
+            <rollNumber>57</rollNumber>
+            <url>https://clerk.house.gov/evs/2025/roll057.xml</url>
+            <chamber>House</chamber>
+            <congress>119</congress>
+            <date>2025-03-04T19:03:40Z</date>
+            <sessionNumber>1</sessionNumber>
+          </recordedVote>
+        </recordedVotes>
+      </item>
+      <item>
+        <actionDate>2025-03-04</actionDate>
+        <actionTime>14:03:40</actionTime>
+        <text>Passed/agreed to in House: On agreeing to the resolution Agreed to by recorded vote: 211 - 209 (Roll no. 57). (text: CR H955)</text>
+        <type>Floor</type>
+        <actionCode>8000</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+        <recordedVotes>
+          <recordedVote>
+            <rollNumber>57</rollNumber>
+            <url>https://clerk.house.gov/evs/2025/roll057.xml</url>
+            <chamber>House</chamber>
+            <congress>119</congress>
+            <date>2025-03-04T19:03:40Z</date>
+            <sessionNumber>1</sessionNumber>
+          </recordedVote>
+        </recordedVotes>
+      </item>
+      <item>
+        <actionDate>2025-03-04</actionDate>
+        <actionTime>13:56:05</actionTime>
+        <text>On ordering the previous question Agreed to by the Yeas and Nays: 196 - 187 (Roll no. 56). (consideration: CR H961)</text>
+        <type>Floor</type>
+        <actionCode>H35000</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <recordedVotes>
+          <recordedVote>
+            <rollNumber>56</rollNumber>
+            <url>https://clerk.house.gov/evs/2025/roll056.xml</url>
+            <chamber>House</chamber>
+            <congress>119</congress>
+            <date>2025-03-04T18:56:05Z</date>
+            <sessionNumber>1</sessionNumber>
+          </recordedVote>
+        </recordedVotes>
+      </item>
+      <item>
+        <actionDate>2025-03-04</actionDate>
+        <actionTime>13:30:41</actionTime>
+        <text>Considered as unfinished business. (consideration: CR H961-962)</text>
+        <type>Floor</type>
+        <actionCode>H30000</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-03-04</actionDate>
+        <actionTime>13:05:44</actionTime>
+        <text>POSTPONED PROCEEDINGS - At the conclusion of debate on H. Res. 177, the Chair put the question on ordering the previous question and by voice vote, announced that the ayes had prevailed. Mr. Neguse demanded the yeas and nays and the Chair postponed further proceedings until a time to be announced.</text>
+        <type>Floor</type>
+        <actionCode>H8D000</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-03-04</actionDate>
+        <actionTime>12:14:42</actionTime>
+        <text>DEBATE - The House proceeded with one hour of debate on H. Res. 177.</text>
+        <type>Floor</type>
+        <actionCode>H8D000</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-03-04</actionDate>
+        <actionTime>12:11:56</actionTime>
+        <text>Considered as privileged matter. (consideration: CR H955-960)</text>
+        <type>Floor</type>
+        <actionCode>H30000</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-03-03</actionDate>
+        <text>Placed on the House Calendar, Calendar No. 5.</text>
+        <type>Calendars</type>
+        <actionCode>H12420</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-03-03</actionDate>
+        <actionTime>19:17:34</actionTime>
+        <text>The resolution provides for consideration of H.J. Res. 42, H.J. Res. 61, and S.J. Res. 11 under a closed rule with one hour of general debate on each measure. The resolution also provides for one motion to recommit on H.J. Res. 42 and H.J. Res. 61 and one motion to commit on S.J. Res. 11.</text>
+        <type>Floor</type>
+        <actionCode>H12700</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-03-03</actionDate>
+        <text>The House Committee on Rules reported an original measure, H. Rept. 119-8, by Mr. Langworthy.</text>
+        <type>Committee</type>
+        <actionCode>H12100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsru00</systemCode>
+            <name>Rules Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-03-03</actionDate>
+        <text>The House Committee on Rules reported an original measure, H. Rept. 119-8, by Mr. Langworthy.</text>
+        <type>Committee</type>
+        <actionCode>5000</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsru00</systemCode>
+            <name>Rules Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-03-03</actionDate>
+        <text>The House Committee on Rules reported an original measure, H. Rept. 119-8, by Mr. Langworthy.</text>
+        <type>Committee</type>
+        <actionCode>1010</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsru00</systemCode>
+            <name>Rules Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-03-03</actionDate>
+        <text>Reported in House</text>
+        <type>Committee</type>
+        <actionCode>1010</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+    </actions>
+    <sponsors>
+      <item>
+        <bioguideId>L000600</bioguideId>
+        <fullName>Rep. Langworthy, Nicholas A. [R-NY-23]</fullName>
+        <firstName>Nicholas</firstName>
+        <lastName>Langworthy</lastName>
+        <party>R</party>
+        <state>NY</state>
+        <middleName>A.</middleName>
+        <district>23</district>
+        <isByRequest>N</isByRequest>
+      </item>
+    </sponsors>
+    <policyArea>
+      <name>Congress</name>
+    </policyArea>
+    <subjects>
+      <legislativeSubjects>
+        <item>
+          <name>House of Representatives</name>
+          <updateDate>2025-03-06T18:44:27Z</updateDate>
+        </item>
+        <item>
+          <name>Legislative rules and procedure</name>
+          <updateDate>2025-03-06T18:44:35Z</updateDate>
+        </item>
+      </legislativeSubjects>
+      <policyArea>
+        <name>Congress</name>
+        <updateDate>2025-03-06T13:33:38Z</updateDate>
+      </policyArea>
+    </subjects>
+    <summaries>
+      <summary>
+        <versionCode>00</versionCode>
+        <actionDate>2025-03-03</actionDate>
+        <actionDesc>Introduced in House</actionDesc>
+        <updateDate>2025-03-19T18:57:02Z</updateDate>
+        <cdata>
+          <text>&lt;p&gt;This resolution provides for the House of Representatives to consider the following measures:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;H.J. Res.42, Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Department of Energy relating to &lt;em&gt;Energy Conservation Program for Appliance Standards: Certification Requirements, Labeling Requirements, and Enforcement Provisions for Certain Consumer Products and Commercial Equipment&lt;/em&gt;;&amp;nbsp;&lt;/li&gt;&lt;li&gt;H.J. Res. 61, Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Environmental Protection Agency relating to&lt;em&gt; National Emission Standards for Hazardous Air Pollutants: Rubber Tire Manufacturing&lt;/em&gt;; and&lt;/li&gt;&lt;li&gt;S.J. Res. 11, Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Ocean Energy Management relating to &lt;em&gt;Protection of Marine Archaeological Resources&lt;/em&gt;.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Under the resolution, all points of order against consideration of each measure are waived; the measures shall be considered as read; and all points of order against provisions in the measures are waived. The resolution further provides that the previous question shall be considered as ordered on each measure (and any amendment thereto) to final passage without intervening motion except one hour of debate and one motion to recommit.&lt;/p&gt;</text>
+        </cdata>
+      </summary>
+    </summaries>
+    <title>Providing for consideration of the joint resolution (H.J. Res. 42) providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Department of Energy relating to "Energy Conservation Program for Appliance Standards: Certification Requirements, Labeling Requirements, and Enforcement Provisions for Certain Consumer Products and Commercial Equipment"; providing for consideration of the joint resolution (H.J. Res. 61) providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Environmental Protection Agency relating to "National Emission Standards for Hazardous Air Pollutants: Rubber Tire Manufacturing"; and providing for consideration of the joint resolution (S.J. Res. 11) providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Ocean Energy Management relating to "Protection of Marine Archaeological Resources".</title>
+    <titles>
+      <item>
+        <titleType>Display Title</titleType>
+        <titleTypeCode>45</titleTypeCode>
+        <title>Providing for consideration of the joint resolution (H.J. Res. 42) providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Department of Energy relating to "Energy Conservation Program for Appliance Standards: Certification Requirements, Labeling Requirements, and Enforcement Provisions for Certain Consumer Products and Commercial Equipment"; providing for consideration of the joint resolution (H.J. Res. 61) providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Environmental Protection Agency relating to "National Emission Standards for Hazardous Air Pollutants: Rubber Tire Manufacturing"; and providing for consideration of the joint resolution (S.J. Res. 11) providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Ocean Energy Management relating to "Protection of Marine Archaeological Resources".</title>
+        <updateDate>2025-03-04T09:06:13Z</updateDate>
+      </item>
+      <item>
+        <titleType>Official Title as Introduced</titleType>
+        <titleTypeCode>6</titleTypeCode>
+        <title>Providing for consideration of the joint resolution (H.J. Res. 42) providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Department of Energy relating to "Energy Conservation Program for Appliance Standards: Certification Requirements, Labeling Requirements, and Enforcement Provisions for Certain Consumer Products and Commercial Equipment"; providing for consideration of the joint resolution (H.J. Res. 61) providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Environmental Protection Agency relating to "National Emission Standards for Hazardous Air Pollutants: Rubber Tire Manufacturing"; and providing for consideration of the joint resolution (S.J. Res. 11) providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Ocean Energy Management relating to "Protection of Marine Archaeological Resources".</title>
+        <updateDate>2025-03-04T09:06:13Z</updateDate>
+      </item>
+    </titles>
+    <textVersions>
+      <item>
+        <type>Engrossed in House</type>
+        <date>2025-03-04T05:00:00Z</date>
+        <formats>
+          <item>
+            <url>https://www.govinfo.gov/content/pkg/BILLS-119hres177eh/xml/BILLS-119hres177eh.xml</url>
+          </item>
+        </formats>
+      </item>
+      <item>
+        <type>Reported in House</type>
+        <date>2025-03-03T05:00:00Z</date>
+        <formats>
+          <item>
+            <url>https://www.govinfo.gov/content/pkg/BILLS-119hres177rh/xml/BILLS-119hres177rh.xml</url>
+          </item>
+        </formats>
+      </item>
+    </textVersions>
+    <latestAction>
+      <actionDate>2025-03-04</actionDate>
+      <text>Motion to reconsider laid on the table Agreed to without objection.</text>
+      <actionTime>14:03:41</actionTime>
+    </latestAction>
+  </bill>
+  <dublinCore xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:format>text/xml</dc:format>
+    <dc:language>EN</dc:language>
+    <dc:rights>Pursuant to Title 17 Section 105 of the United States Code, this file is not subject to copyright protection and is in the public domain.</dc:rights>
+    <dc:contributor>Congressional Research Service, Library of Congress</dc:contributor>
+    <dc:description>This file contains bill summaries and statuses for federal legislation. A bill summary describes the most significant provisions of a piece of legislation and details the effects the legislative text may have on current law and federal programs. Bill summaries are authored by the Congressional Research Service (CRS) of the Library of Congress. As stated in Public Law 91-510 (2 USC 166 (d)(6)), one of the duties of CRS is "to prepare summaries and digests of bills and resolutions of a public general nature introduced in the Senate or House of Representatives". For more information, refer to the User Guide that accompanies this file.</dc:description>
+  </dublinCore>
+</billStatus>

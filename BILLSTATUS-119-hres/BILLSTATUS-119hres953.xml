@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<billStatus>
+  <version>3.0.0</version>
+  <bill>
+    <number>953</number>
+    <updateDate>2026-03-18T20:12:37Z</updateDate>
+    <updateDateIncludingText>2026-03-18T20:12:37Z</updateDateIncludingText>
+    <originChamber>House</originChamber>
+    <originChamberCode>H</originChamberCode>
+    <type>HRES</type>
+    <introducedDate>2025-12-17</introducedDate>
+    <congress>119</congress>
+    <legislationUrl>https://www.congress.gov/bill/119th-congress/house-resolution/953</legislationUrl>
+    <cdata/>
+    <committees>
+      <item>
+        <systemCode>hsru00</systemCode>
+        <name>Rules Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Reported Original Measure</name>
+            <date>2025-12-17T14:00:01Z</date>
+          </item>
+        </activities>
+      </item>
+    </committees>
+    <committeeReports>
+      <committeeReport>
+        <citation>H. Rept. 119-411</citation>
+      </committeeReport>
+    </committeeReports>
+    <relatedBills>
+      <item>
+        <title>Lower Health Care Premiums for All Americans Act</title>
+        <congress>119</congress>
+        <number>6703</number>
+        <type>HR</type>
+        <latestAction>
+          <actionDate>2025-12-18</actionDate>
+          <text>Received in the Senate.</text>
+        </latestAction>
+        <relationshipDetails>
+          <item>
+            <type>Related bill</type>
+            <identifiedBy>House</identifiedBy>
+          </item>
+          <item>
+            <type>Procedurally related</type>
+            <identifiedBy>House</identifiedBy>
+          </item>
+        </relationshipDetails>
+      </item>
+      <item>
+        <title>Do No Harm in Medicaid Act</title>
+        <congress>119</congress>
+        <number>498</number>
+        <type>HR</type>
+        <latestAction>
+          <actionDate>2025-12-18</actionDate>
+          <text>Received in the Senate and Read twice and referred to the Committee on Finance.</text>
+        </latestAction>
+        <relationshipDetails>
+          <item>
+            <type>Related bill</type>
+            <identifiedBy>House</identifiedBy>
+          </item>
+          <item>
+            <type>Procedurally related</type>
+            <identifiedBy>House</identifiedBy>
+          </item>
+        </relationshipDetails>
+      </item>
+      <item>
+        <title>Protect Children’s Innocence Act</title>
+        <congress>119</congress>
+        <number>3492</number>
+        <type>HR</type>
+        <latestAction>
+          <actionDate>2025-12-18</actionDate>
+          <text>Received in the Senate and Read twice and referred to the Committee on the Judiciary.</text>
+        </latestAction>
+        <relationshipDetails>
+          <item>
+            <type>Related bill</type>
+            <identifiedBy>House</identifiedBy>
+          </item>
+          <item>
+            <type>Procedurally related</type>
+            <identifiedBy>House</identifiedBy>
+          </item>
+        </relationshipDetails>
+      </item>
+      <item>
+        <title>SPEED Act</title>
+        <congress>119</congress>
+        <number>4776</number>
+        <type>HR</type>
+        <latestAction>
+          <actionDate>2025-12-18</actionDate>
+          <text>Received in the Senate and Read twice and referred to the Committee on Environment and Public Works.</text>
+        </latestAction>
+        <relationshipDetails>
+          <item>
+            <type>Related bill</type>
+            <identifiedBy>House</identifiedBy>
+          </item>
+        </relationshipDetails>
+      </item>
+    </relatedBills>
+    <actions>
+      <item>
+        <actionDate>2025-12-17</actionDate>
+        <actionTime>11:07:03</actionTime>
+        <text>Motion to reconsider laid on the table Agreed to without objection.</text>
+        <type>Floor</type>
+        <actionCode>H38310</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-12-17</actionDate>
+        <actionTime>11:07:01</actionTime>
+        <text>On agreeing to the resolution Agreed to by recorded vote: 213 - 209 (Roll no. 344). (text: CR H5947)</text>
+        <type>Floor</type>
+        <actionCode>H37100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <recordedVotes>
+          <recordedVote>
+            <rollNumber>344</rollNumber>
+            <url>https://clerk.house.gov/evs/2025/roll344.xml</url>
+            <chamber>House</chamber>
+            <congress>119</congress>
+            <date>2025-12-17T16:07:01Z</date>
+            <sessionNumber>1</sessionNumber>
+          </recordedVote>
+        </recordedVotes>
+      </item>
+      <item>
+        <actionDate>2025-12-17</actionDate>
+        <actionTime>11:07:01</actionTime>
+        <text>Passed/agreed to in House: On agreeing to the resolution Agreed to by recorded vote: 213 - 209 (Roll no. 344).</text>
+        <type>Floor</type>
+        <actionCode>8000</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+        <recordedVotes>
+          <recordedVote>
+            <rollNumber>344</rollNumber>
+            <url>https://clerk.house.gov/evs/2025/roll344.xml</url>
+            <chamber>House</chamber>
+            <congress>119</congress>
+            <date>2025-12-17T16:07:01Z</date>
+            <sessionNumber>1</sessionNumber>
+          </recordedVote>
+        </recordedVotes>
+      </item>
+      <item>
+        <actionDate>2025-12-17</actionDate>
+        <actionTime>10:52:44</actionTime>
+        <text>On ordering the previous question Agreed to by the Yeas and Nays: 204 - 203 (Roll no. 343).</text>
+        <type>Floor</type>
+        <actionCode>H35000</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <recordedVotes>
+          <recordedVote>
+            <rollNumber>343</rollNumber>
+            <url>https://clerk.house.gov/evs/2025/roll343.xml</url>
+            <chamber>House</chamber>
+            <congress>119</congress>
+            <date>2025-12-17T15:52:44Z</date>
+            <sessionNumber>1</sessionNumber>
+          </recordedVote>
+        </recordedVotes>
+      </item>
+      <item>
+        <actionDate>2025-12-17</actionDate>
+        <actionTime>10:08:21</actionTime>
+        <text>DEBATE - The House resumed debate on H. Res. 953.</text>
+        <type>Floor</type>
+        <actionCode>H8D000</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-12-17</actionDate>
+        <actionTime>09:23:11</actionTime>
+        <text>DEBATE - The House proceeded with one hour of debate on H. Res. 953.</text>
+        <type>Floor</type>
+        <actionCode>H8D000</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-12-17</actionDate>
+        <actionTime>09:18:33</actionTime>
+        <text>Considered as privileged matter. (consideration: CR H5947-5956)</text>
+        <type>Floor</type>
+        <actionCode>H30000</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-12-17</actionDate>
+        <text>Placed on the House Calendar, Calendar No. 51.</text>
+        <type>Calendars</type>
+        <actionCode>H12420</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <calendarNumber>
+          <calendar>H00051</calendar>
+        </calendarNumber>
+      </item>
+      <item>
+        <actionDate>2025-12-17</actionDate>
+        <actionTime>09:00:05</actionTime>
+        <text>The resolution provides for consideration of H.R. 6703 and H.R. 498 under a closed rule and H.R. 3492 under a structured rule with one hour of general debate and one motion to recommit on each bill.</text>
+        <type>Floor</type>
+        <actionCode>H12700</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-12-17</actionDate>
+        <text>The House Committee on Rules reported an original measure, H. Rept. 119-411, by Mr. Griffith.</text>
+        <type>Committee</type>
+        <actionCode>H12100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsru00</systemCode>
+            <name>Rules Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-12-17</actionDate>
+        <text>The House Committee on Rules reported an original measure, H. Rept. 119-411, by Mr. Griffith.</text>
+        <type>Committee</type>
+        <actionCode>1010</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsru00</systemCode>
+            <name>Rules Committee</name>
+          </item>
+        </committees>
+      </item>
+    </actions>
+    <sponsors>
+      <item>
+        <bioguideId>G000568</bioguideId>
+        <fullName>Rep. Griffith, H. Morgan [R-VA-9]</fullName>
+        <firstName>H.</firstName>
+        <lastName>Griffith</lastName>
+        <party>R</party>
+        <state>VA</state>
+        <middleName>Morgan</middleName>
+        <district>9</district>
+        <isByRequest>N</isByRequest>
+      </item>
+    </sponsors>
+    <policyArea>
+      <name>Congress</name>
+    </policyArea>
+    <subjects>
+      <legislativeSubjects>
+        <item>
+          <name>House of Representatives</name>
+          <updateDate>2026-01-20T16:23:32Z</updateDate>
+        </item>
+        <item>
+          <name>Legislative rules and procedure</name>
+          <updateDate>2026-01-20T16:23:27Z</updateDate>
+        </item>
+      </legislativeSubjects>
+      <policyArea>
+        <name>Congress</name>
+        <updateDate>2026-03-18T20:12:27Z</updateDate>
+      </policyArea>
+    </subjects>
+    <summaries>
+      <summary>
+        <versionCode>07</versionCode>
+        <actionDate>2025-12-17</actionDate>
+        <actionDesc>Reported to House</actionDesc>
+        <updateDate>2026-03-13T12:10:53Z</updateDate>
+        <text><![CDATA[This resolution provides for the consideration of the bill (H.R. 6703) to ensure access to affordable health insurance; providing for consideration of the bill (H.R. 498) to amend title XIX of the Social Security Act to prohibit Federal Medicaid funding for gender transition procedures for minors; providing for consideration of the bill (H.R. 3492) to amend section 116 of title 18, United States Code, with respect to genital and bodily mutilation and chemical castration of minors; and relating to consideration of the bill (H.R. 4776) to amend the National Environmental Policy Act of 1969 to clarify ambiguous provisions and facilitate a more efficient, effective, and timely environmental review process.]]></text>
+      </summary>
+    </summaries>
+    <title>Providing for consideration of the bill (H.R. 6703) to ensure access to affordable health insurance; providing for consideration of the bill (H.R. 498) to amend title XIX of the Social Security Act to prohibit Federal Medicaid funding for gender transition procedures for minors; providing for consideration of the bill (H.R. 3492) to amend section 116 of title 18, United States Code, with respect to genital and bodily mutilation and chemical castration of minors; and relating to consideration of the bill (H.R. 4776) to amend the National Environmental Policy Act of 1969 to clarify ambiguous provisions and facilitate a more efficient, effective, and timely environmental review process.</title>
+    <titles>
+      <item>
+        <titleType>Official Titles from EH (Engrossed in House) bill text</titleType>
+        <titleTypeCode>259</titleTypeCode>
+        <title>Providing for consideration of the bill (H.R. 6703) to ensure access to affordable health insurance; providing for consideration of the bill (H.R. 498) to amend title XIX of the Social Security Act to prohibit Federal Medicaid funding for gender transition procedures for minors; providing for consideration of the bill (H.R. 3492) to amend section 116 of title 18, United States Code, with respect to genital and bodily mutilation and chemical castration of minors; and relating to consideration of the bill (H.R. 4776) to amend the National Environmental Policy Act of 1969 to clarify ambiguous provisions and facilitate a more efficient, effective, and timely environmental review process.</title>
+        <updateDate>2025-12-19T05:08:19Z</updateDate>
+        <chamberCode>H</chamberCode>
+        <chamberName>House</chamberName>
+        <billTextVersionName>Engrossed in House</billTextVersionName>
+        <billTextVersionCode>EH</billTextVersionCode>
+      </item>
+      <item>
+        <titleType>Display Title</titleType>
+        <titleTypeCode>45</titleTypeCode>
+        <title>Providing for consideration of the bill (H.R. 6703) to ensure access to affordable health insurance; providing for consideration of the bill (H.R. 498) to amend title XIX of the Social Security Act to prohibit Federal Medicaid funding for gender transition procedures for minors; providing for consideration of the bill (H.R. 3492) to amend section 116 of title 18, United States Code, with respect to genital and bodily mutilation and chemical castration of minors; and relating to consideration of the bill (H.R. 4776) to amend the National Environmental Policy Act of 1969 to clarify ambiguous provisions and facilitate a more efficient, effective, and timely environmental review process.</title>
+        <updateDate>2025-12-18T09:07:15Z</updateDate>
+      </item>
+      <item>
+        <titleType>Official Title as Introduced</titleType>
+        <titleTypeCode>6</titleTypeCode>
+        <title>Providing for consideration of the bill (H.R. 6703) to ensure access to affordable health insurance; providing for consideration of the bill (H.R. 498) to amend title XIX of the Social Security Act to prohibit Federal Medicaid funding for gender transition procedures for minors; providing for consideration of the bill (H.R. 3492) to amend section 116 of title 18, United States Code, with respect to genital and bodily mutilation and chemical castration of minors; and relating to consideration of the bill (H.R. 4776) to amend the National Environmental Policy Act of 1969 to clarify ambiguous provisions and facilitate a more efficient, effective, and timely environmental review process.</title>
+        <updateDate>2025-12-18T09:07:15Z</updateDate>
+      </item>
+    </titles>
+    <textVersions>
+      <item>
+        <type>Reported in House</type>
+        <date>2025-12-17T05:00:00Z</date>
+        <formats>
+          <item>
+            <url>https://www.govinfo.gov/content/pkg/BILLS-119hres953rh/xml/BILLS-119hres953rh.xml</url>
+          </item>
+        </formats>
+      </item>
+      <item>
+        <type>Engrossed in House</type>
+        <date>2025-12-17T05:00:00Z</date>
+        <formats>
+          <item>
+            <url>https://www.govinfo.gov/content/pkg/BILLS-119hres953eh/xml/BILLS-119hres953eh.xml</url>
+          </item>
+        </formats>
+      </item>
+    </textVersions>
+    <latestAction>
+      <actionDate>2025-12-17</actionDate>
+      <text>Motion to reconsider laid on the table Agreed to without objection.</text>
+      <actionTime>11:07:03</actionTime>
+    </latestAction>
+  </bill>
+  <dublinCore xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:format>text/xml</dc:format>
+    <dc:language>EN</dc:language>
+    <dc:rights>Pursuant to Title 17 Section 105 of the United States Code, this file is not subject to copyright protection and is in the public domain.</dc:rights>
+    <dc:contributor>Congressional Research Service, Library of Congress</dc:contributor>
+    <dc:description>This file contains bill summaries and statuses for federal legislation. A bill summary describes the most significant provisions of a piece of legislation and details the effects the legislative text may have on current law and federal programs. Bill summaries are authored by the Congressional Research Service (CRS) of the Library of Congress. As stated in Public Law 91-510 (2 USC 166 (d)(6)), one of the duties of CRS is "to prepare summaries and digests of bills and resolutions of a public general nature introduced in the Senate or House of Representatives". For more information, refer to the User Guide that accompanies this file.</dc:description>
+  </dublinCore>
+</billStatus>

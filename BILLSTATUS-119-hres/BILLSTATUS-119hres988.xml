@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<billStatus>
+  <version>3.0.0</version>
+  <bill>
+    <number>988</number>
+    <updateDate>2026-03-17T15:59:07Z</updateDate>
+    <updateDateIncludingText>2026-03-17T15:59:07Z</updateDateIncludingText>
+    <originChamber>House</originChamber>
+    <originChamberCode>H</originChamberCode>
+    <type>HRES</type>
+    <introducedDate>2026-01-12</introducedDate>
+    <congress>119</congress>
+    <legislationUrl>https://www.congress.gov/bill/119th-congress/house-resolution/988</legislationUrl>
+    <cdata/>
+    <committees>
+      <item>
+        <systemCode>hsru00</systemCode>
+        <name>Rules Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Reported Original Measure</name>
+            <date>2026-01-12T23:48:31Z</date>
+          </item>
+        </activities>
+      </item>
+    </committees>
+    <committeeReports>
+      <committeeReport>
+        <citation>H. Rept. 119-440</citation>
+      </committeeReport>
+    </committeeReports>
+    <relatedBills>
+      <item>
+        <title>Protecting Prudent Investment of Retirement Savings Act</title>
+        <congress>119</congress>
+        <number>2988</number>
+        <type>HR</type>
+        <latestAction>
+          <actionDate>2026-01-26</actionDate>
+          <text>Received in the Senate and Read twice and referred to the Committee on Health, Education, Labor, and Pensions.</text>
+        </latestAction>
+        <relationshipDetails>
+          <item>
+            <type>Related bill</type>
+            <identifiedBy>House</identifiedBy>
+          </item>
+          <item>
+            <type>Procedurally related</type>
+            <identifiedBy>House</identifiedBy>
+          </item>
+        </relationshipDetails>
+      </item>
+      <item>
+        <title>Flexibility for Workers Education Act</title>
+        <congress>119</congress>
+        <number>2262</number>
+        <type>HR</type>
+        <latestAction>
+          <actionDate>2026-01-13</actionDate>
+          <text>Motion to reconsider laid on the table Agreed to without objection.</text>
+          <actionTime>17:52:11</actionTime>
+        </latestAction>
+        <relationshipDetails>
+          <item>
+            <type>Related bill</type>
+            <identifiedBy>House</identifiedBy>
+          </item>
+          <item>
+            <type>Procedurally related</type>
+            <identifiedBy>House</identifiedBy>
+          </item>
+        </relationshipDetails>
+      </item>
+      <item>
+        <title>Empowering Employer Child and Elder Care Solutions Act</title>
+        <congress>119</congress>
+        <number>2270</number>
+        <type>HR</type>
+        <latestAction>
+          <actionDate>2026-01-13</actionDate>
+          <text>POSTPONED PROCEEDINGS - Pursuant to clause 1(c) of rule XIX, the Chair announced that further proceedings on H.R. 2270 is postponed.</text>
+          <actionTime>17:58:29</actionTime>
+        </latestAction>
+        <relationshipDetails>
+          <item>
+            <type>Related bill</type>
+            <identifiedBy>House</identifiedBy>
+          </item>
+          <item>
+            <type>Procedurally related</type>
+            <identifiedBy>House</identifiedBy>
+          </item>
+        </relationshipDetails>
+      </item>
+      <item>
+        <title>Tipped Employee Protection Act</title>
+        <congress>119</congress>
+        <number>2312</number>
+        <type>HR</type>
+        <latestAction>
+          <actionDate>2026-01-13</actionDate>
+          <text>POSTPONED PROCEEDINGS - Pursuant to clause 1(c) of rule XIX, the Chair announced that further proceedings on H.R. 2312 is postponed.</text>
+          <actionTime>18:04:37</actionTime>
+        </latestAction>
+        <relationshipDetails>
+          <item>
+            <type>Related bill</type>
+            <identifiedBy>House</identifiedBy>
+          </item>
+          <item>
+            <type>Procedurally related</type>
+            <identifiedBy>House</identifiedBy>
+          </item>
+        </relationshipDetails>
+      </item>
+      <item>
+        <title>Save Local Business Act</title>
+        <congress>119</congress>
+        <number>4366</number>
+        <type>HR</type>
+        <latestAction>
+          <actionDate>2026-01-13</actionDate>
+          <text>Rule H. Res. 988 passed House.</text>
+          <actionTime>14:04:07</actionTime>
+        </latestAction>
+        <relationshipDetails>
+          <item>
+            <type>Procedurally related</type>
+            <identifiedBy>House</identifiedBy>
+          </item>
+        </relationshipDetails>
+      </item>
+    </relatedBills>
+    <actions>
+      <item>
+        <actionDate>2026-01-13</actionDate>
+        <actionTime>14:04:08</actionTime>
+        <text>Motion to reconsider laid on the table Agreed to without objection.</text>
+        <type>Floor</type>
+        <actionCode>H38310</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2026-01-13</actionDate>
+        <actionTime>14:04:06</actionTime>
+        <text>On agreeing to the resolution Agreed to by recorded vote: 214 - 207 (Roll no. 17). (text: CR H670-671)</text>
+        <type>Floor</type>
+        <actionCode>H37100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <recordedVotes>
+          <recordedVote>
+            <rollNumber>17</rollNumber>
+            <url>https://clerk.house.gov/evs/2026/roll017.xml</url>
+            <chamber>House</chamber>
+            <congress>119</congress>
+            <date>2026-01-13T19:04:06Z</date>
+            <sessionNumber>2</sessionNumber>
+          </recordedVote>
+        </recordedVotes>
+      </item>
+      <item>
+        <actionDate>2026-01-13</actionDate>
+        <actionTime>14:04:06</actionTime>
+        <text>Passed/agreed to in House: On agreeing to the resolution Agreed to by recorded vote: 214 - 207 (Roll no. 17).</text>
+        <type>Floor</type>
+        <actionCode>8000</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+        <recordedVotes>
+          <recordedVote>
+            <rollNumber>17</rollNumber>
+            <url>https://clerk.house.gov/evs/2026/roll017.xml</url>
+            <chamber>House</chamber>
+            <congress>119</congress>
+            <date>2026-01-13T19:04:06Z</date>
+            <sessionNumber>2</sessionNumber>
+          </recordedVote>
+        </recordedVotes>
+      </item>
+      <item>
+        <actionDate>2026-01-13</actionDate>
+        <actionTime>13:55:56</actionTime>
+        <text>On ordering the previous question Agreed to by the Yeas and Nays: 206 - 205 (Roll no. 16).</text>
+        <type>Floor</type>
+        <actionCode>H35000</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <recordedVotes>
+          <recordedVote>
+            <rollNumber>16</rollNumber>
+            <url>https://clerk.house.gov/evs/2026/roll016.xml</url>
+            <chamber>House</chamber>
+            <congress>119</congress>
+            <date>2026-01-13T18:55:56Z</date>
+            <sessionNumber>2</sessionNumber>
+          </recordedVote>
+        </recordedVotes>
+      </item>
+      <item>
+        <actionDate>2026-01-13</actionDate>
+        <actionTime>13:30:46</actionTime>
+        <text>Considered as unfinished business. (consideration: CR H676-677)</text>
+        <type>Floor</type>
+        <actionCode>H30000</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2026-01-13</actionDate>
+        <actionTime>12:53:46</actionTime>
+        <text>POSTPONED PROCEEDINGS - At the conclusion of debate on H. Res. 988, the Chair put the question on ordering the previous question and by voice vote, announced the ayes had prevailed. Ms. Leger Fernandez demanded the yeas and nays and the Chair postponed further proceedings until a time to be announced.</text>
+        <type>Floor</type>
+        <actionCode>H8D000</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2026-01-13</actionDate>
+        <actionTime>12:15:18</actionTime>
+        <text>DEBATE - The House proceeded with one hour of debate on H. Res. 988.</text>
+        <type>Floor</type>
+        <actionCode>H8D000</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2026-01-13</actionDate>
+        <actionTime>12:11:03</actionTime>
+        <text>Considered as privileged matter. (consideration: CR H670-676)</text>
+        <type>Floor</type>
+        <actionCode>H30000</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2026-01-12</actionDate>
+        <text>Placed on the House Calendar, Calendar No. 53.</text>
+        <type>Calendars</type>
+        <actionCode>H12420</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <calendarNumber>
+          <calendar>H00053</calendar>
+        </calendarNumber>
+      </item>
+      <item>
+        <actionDate>2026-01-12</actionDate>
+        <actionTime>18:48:32</actionTime>
+        <text>The resolution provides for consideration of H.R. 2988 under a structured rule, and H.R. 2262, H.R. 2270, H.R. 2312, and H.R. 4366 under a closed rule. The rule provides for one hour of general debate and one motion to recommit on each bill.</text>
+        <type>Floor</type>
+        <actionCode>H12700</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2026-01-12</actionDate>
+        <text>The House Committee on Rules reported an original measure, H. Rept. 119-440, by Mrs. Fischbach.</text>
+        <type>Committee</type>
+        <actionCode>H12100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsru00</systemCode>
+            <name>Rules Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2026-01-12</actionDate>
+        <text>The House Committee on Rules reported an original measure, H. Rept. 119-440, by Mrs. Fischbach.</text>
+        <type>Committee</type>
+        <actionCode>1010</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsru00</systemCode>
+            <name>Rules Committee</name>
+          </item>
+        </committees>
+      </item>
+    </actions>
+    <sponsors>
+      <item>
+        <bioguideId>F000470</bioguideId>
+        <fullName>Rep. Fischbach, Michelle [R-MN-7]</fullName>
+        <firstName>Michelle</firstName>
+        <lastName>Fischbach</lastName>
+        <party>R</party>
+        <state>MN</state>
+        <district>7</district>
+        <isByRequest>N</isByRequest>
+      </item>
+    </sponsors>
+    <policyArea>
+      <name>Congress</name>
+    </policyArea>
+    <subjects>
+      <legislativeSubjects>
+        <item>
+          <name>House of Representatives</name>
+          <updateDate>2026-01-20T16:25:56Z</updateDate>
+        </item>
+        <item>
+          <name>Legislative rules and procedure</name>
+          <updateDate>2026-01-20T16:25:49Z</updateDate>
+        </item>
+      </legislativeSubjects>
+      <policyArea>
+        <name>Congress</name>
+        <updateDate>2026-01-15T13:50:48Z</updateDate>
+      </policyArea>
+    </subjects>
+    <summaries>
+      <summary>
+        <versionCode>07</versionCode>
+        <actionDate>2026-01-12</actionDate>
+        <actionDesc>Reported to House</actionDesc>
+        <updateDate>2026-03-13T12:10:54Z</updateDate>
+        <text><![CDATA[This resolution provides for the consideration of the bill (H.R. 2988) to amend the Employee Retirement Income Security Act of 1974 to specify requirements concerning the consideration of pecuniary and non-pecuniary factors, and for other purposes; providing for consideration of the bill (H.R. 2262) to amend the Fair Labor Standards Act of 1938 to exclude certain activities from hours worked, and for other purposes; providing for consideration of the bill (H.R. 2270) to amend the Fair Labor Standards Act of 1938 to exclude child and dependent care services and payments from the rate used to compute overtime compensation; providing for consideration of the bill (H.R. 2312) to amend the Fair Labor Standards Act of 1938 to revise the definition of the term ''tipped employee'', and for other purposes; and providing for consideration of the bill (H.R. 4366) to clarify the treatment of 2 or more employers as joint employers under the National Labor Relations Act and the Fair Labor Standards Act of 1938.]]></text>
+      </summary>
+    </summaries>
+    <title>Providing for consideration of the bill (H.R. 2988) to amend the Employee Retirement Income Security Act of 1974 to specify requirements concerning the consideration of pecuniary and non-pecuniary factors, and for other purposes; providing for consideration of the bill (H.R. 2262) to amend the Fair Labor Standards Act of 1938 to exclude certain activities from hours worked, and for other purposes; providing for consideration of the bill (H.R. 2270) to amend the Fair Labor Standards Act of 1938 to exclude child and dependent care services and payments from the rate used to compute overtime compensation; providing for consideration of the bill (H.R. 2312) to amend the Fair Labor Standards Act of 1938 to revise the definition of the term ''tipped employee'', and for other purposes; and providing for consideration of the bill (H.R. 4366) to clarify the treatment of 2 or more employers as joint employers under the National Labor Relations Act and the Fair Labor Standards Act of 1938.</title>
+    <titles>
+      <item>
+        <titleType>Official Titles from EH (Engrossed in House) bill text</titleType>
+        <titleTypeCode>259</titleTypeCode>
+        <title>Providing for consideration of the bill (H.R. 2988) to amend the Employee Retirement Income Security Act of 1974 to specify requirements concerning the consideration of pecuniary and non-pecuniary factors, and for other purposes; providing for consideration of the bill (H.R. 2262) to amend the Fair Labor Standards Act of 1938 to exclude certain activities from hours worked, and for other purposes; providing for consideration of the bill (H.R. 2270) to amend the Fair Labor Standards Act of 1938 to exclude child and dependent care services and payments from the rate used to compute overtime compensation; providing for consideration of the bill (H.R. 2312) to amend the Fair Labor Standards Act of 1938 to revise the definition of the term ''tipped employee'', and for other purposes; and providing for consideration of the bill (H.R. 4366) to clarify the treatment of 2 or more employers as joint employers under the National Labor Relations Act and the Fair Labor Standards Act of 1938.</title>
+        <updateDate>2026-01-15T04:08:18Z</updateDate>
+        <chamberCode>H</chamberCode>
+        <chamberName>House</chamberName>
+        <billTextVersionName>Engrossed in House</billTextVersionName>
+        <billTextVersionCode>EH</billTextVersionCode>
+      </item>
+      <item>
+        <titleType>Display Title</titleType>
+        <titleTypeCode>45</titleTypeCode>
+        <title>Providing for consideration of the bill (H.R. 2988) to amend the Employee Retirement Income Security Act of 1974 to specify requirements concerning the consideration of pecuniary and non-pecuniary factors, and for other purposes; providing for consideration of the bill (H.R. 2262) to amend the Fair Labor Standards Act of 1938 to exclude certain activities from hours worked, and for other purposes; providing for consideration of the bill (H.R. 2270) to amend the Fair Labor Standards Act of 1938 to exclude child and dependent care services and payments from the rate used to compute overtime compensation; providing for consideration of the bill (H.R. 2312) to amend the Fair Labor Standards Act of 1938 to revise the definition of the term ''tipped employee'', and for other purposes; and providing for consideration of the bill (H.R. 4366) to clarify the treatment of 2 or more employers as joint employers under the National Labor Relations Act and the Fair Labor Standards Act of 1938.</title>
+        <updateDate>2026-01-13T09:05:40Z</updateDate>
+      </item>
+      <item>
+        <titleType>Official Title as Introduced</titleType>
+        <titleTypeCode>6</titleTypeCode>
+        <title>Providing for consideration of the bill (H.R. 2988) to amend the Employee Retirement Income Security Act of 1974 to specify requirements concerning the consideration of pecuniary and non-pecuniary factors, and for other purposes; providing for consideration of the bill (H.R. 2262) to amend the Fair Labor Standards Act of 1938 to exclude certain activities from hours worked, and for other purposes; providing for consideration of the bill (H.R. 2270) to amend the Fair Labor Standards Act of 1938 to exclude child and dependent care services and payments from the rate used to compute overtime compensation; providing for consideration of the bill (H.R. 2312) to amend the Fair Labor Standards Act of 1938 to revise the definition of the term ''tipped employee'', and for other purposes; and providing for consideration of the bill (H.R. 4366) to clarify the treatment of 2 or more employers as joint employers under the National Labor Relations Act and the Fair Labor Standards Act of 1938.</title>
+        <updateDate>2026-01-13T09:05:40Z</updateDate>
+      </item>
+    </titles>
+    <textVersions>
+      <item>
+        <type>Engrossed in House</type>
+        <date>2026-01-13T05:00:00Z</date>
+        <formats>
+          <item>
+            <url>https://www.govinfo.gov/content/pkg/BILLS-119hres988eh/xml/BILLS-119hres988eh.xml</url>
+          </item>
+        </formats>
+      </item>
+      <item>
+        <type>Reported in House</type>
+        <date>2026-01-12T05:00:00Z</date>
+        <formats>
+          <item>
+            <url>https://www.govinfo.gov/content/pkg/BILLS-119hres988rh/xml/BILLS-119hres988rh.xml</url>
+          </item>
+        </formats>
+      </item>
+    </textVersions>
+    <latestAction>
+      <actionDate>2026-01-13</actionDate>
+      <text>Motion to reconsider laid on the table Agreed to without objection.</text>
+      <actionTime>14:04:08</actionTime>
+    </latestAction>
+  </bill>
+  <dublinCore xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:format>text/xml</dc:format>
+    <dc:language>EN</dc:language>
+    <dc:rights>Pursuant to Title 17 Section 105 of the United States Code, this file is not subject to copyright protection and is in the public domain.</dc:rights>
+    <dc:contributor>Congressional Research Service, Library of Congress</dc:contributor>
+    <dc:description>This file contains bill summaries and statuses for federal legislation. A bill summary describes the most significant provisions of a piece of legislation and details the effects the legislative text may have on current law and federal programs. Bill summaries are authored by the Congressional Research Service (CRS) of the Library of Congress. As stated in Public Law 91-510 (2 USC 166 (d)(6)), one of the duties of CRS is "to prepare summaries and digests of bills and resolutions of a public general nature introduced in the Senate or House of Representatives". For more information, refer to the User Guide that accompanies this file.</dc:description>
+  </dublinCore>
+</billStatus>

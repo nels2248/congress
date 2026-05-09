@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<billStatus>
+  <version>3.0.0</version>
+  <bill>
+    <number>20</number>
+    <updateDate>2025-04-22T13:36:54Z</updateDate>
+    <updateDateIncludingText>2025-04-22T13:36:54Z</updateDateIncludingText>
+    <originChamber>House</originChamber>
+    <originChamberCode>H</originChamberCode>
+    <type>HRES</type>
+    <introducedDate>2025-01-07</introducedDate>
+    <congress>119</congress>
+    <cdata/>
+    <committees>
+      <item>
+        <systemCode>hsru00</systemCode>
+        <name>Rules Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Referred To</name>
+            <date>2025-01-07T16:00:30Z</date>
+          </item>
+        </activities>
+      </item>
+    </committees>
+    <actions>
+      <item>
+        <actionDate>2025-01-07</actionDate>
+        <text>Referred to the House Committee on Rules.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsru00</systemCode>
+            <name>Rules Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-01-07</actionDate>
+        <text>Submitted in House</text>
+        <type>Committee</type>
+        <actionCode>H12100</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-01-07</actionDate>
+        <text>Submitted in House</text>
+        <type>IntroReferral</type>
+        <actionCode>1025</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+    </actions>
+    <sponsors>
+      <item>
+        <bioguideId>G000600</bioguideId>
+        <fullName>Rep. Perez, Marie Gluesenkamp [D-WA-3]</fullName>
+        <firstName>Marie</firstName>
+        <lastName>Perez</lastName>
+        <party>D</party>
+        <state>WA</state>
+        <middleName>Gluesenkamp</middleName>
+        <district>3</district>
+        <isByRequest>N</isByRequest>
+      </item>
+    </sponsors>
+    <cosponsors>
+      <item>
+        <bioguideId>G000592</bioguideId>
+        <fullName>Rep. Golden, Jared F. [D-ME-2]</fullName>
+        <firstName>Jared</firstName>
+        <lastName>Golden</lastName>
+        <party>D</party>
+        <state>ME</state>
+        <middleName>F.</middleName>
+        <district>2</district>
+        <sponsorshipDate>2025-01-07</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+    </cosponsors>
+    <policyArea>
+      <name>Congress</name>
+    </policyArea>
+    <subjects>
+      <legislativeSubjects>
+        <item>
+          <name>Congressional committees</name>
+          <updateDate>2025-01-15T18:42:52Z</updateDate>
+        </item>
+        <item>
+          <name>Congressional districts and representation</name>
+          <updateDate>2025-01-15T18:43:22Z</updateDate>
+        </item>
+        <item>
+          <name>Congressional elections</name>
+          <updateDate>2025-01-15T18:43:46Z</updateDate>
+        </item>
+        <item>
+          <name>Congressional operations and organization</name>
+          <updateDate>2025-01-15T18:43:00Z</updateDate>
+        </item>
+        <item>
+          <name>Congressional oversight</name>
+          <updateDate>2025-01-15T18:43:33Z</updateDate>
+        </item>
+        <item>
+          <name>Elections, voting, political campaign regulation</name>
+          <updateDate>2025-01-15T18:43:14Z</updateDate>
+        </item>
+        <item>
+          <name>Legislative rules and procedure</name>
+          <updateDate>2025-01-15T18:43:39Z</updateDate>
+        </item>
+        <item>
+          <name>Members of Congress</name>
+          <updateDate>2025-01-15T18:43:27Z</updateDate>
+        </item>
+      </legislativeSubjects>
+      <policyArea>
+        <name>Congress</name>
+        <updateDate>2025-01-08T16:31:54Z</updateDate>
+      </policyArea>
+    </subjects>
+    <summaries>
+      <summary>
+        <versionCode>00</versionCode>
+        <actionDate>2025-01-07</actionDate>
+        <actionDesc>Introduced in House</actionDesc>
+        <updateDate>2025-04-22T13:36:44Z</updateDate>
+        <cdata>
+          <text>&lt;p&gt;This resolution establishes&amp;nbsp;the House Select Committee on Electoral Reform to examine current methods of electing Members of Congress, consider alternative&amp;nbsp;methods of election, and report appropriate recommendations to Congress and the President.&lt;/p&gt;&lt;p&gt;Specifically, the committee must (1) determine how alternative methods of election would affect the responsiveness, accountability, and functionality of Congress; (2) conduct hearings to take testimony and receive evidence from appropriate expert witnesses; and (3) examine federal barriers to state experimentation with alternative electoral systems.&amp;nbsp;The committee must consider alternatives to current methods that include&amp;nbsp;adopting multi-member congressional districts with proportional representation;&amp;nbsp;adjusting the total number of Members of the House of Representatives; adopting alternative methods of voting (e.g., ranked-choice voting); and holding open and nonpartisan primaries.&lt;/p&gt;&lt;p&gt;The committee shall be made up of 14 Members of Congress appointed by the Speaker of the House, 7 of whom shall be appointed in consultation with the minority leader. The committee's co-chairs shall be designated by the Speaker and minority leader, respectively.&amp;nbsp;The resolution provides that the committee must hold its first meeting within 30 days after all of its members have been appointed.&lt;/p&gt;&lt;p&gt;The committee shall issue its final report to Congress and the President within one year after the committee's first meeting.&lt;/p&gt;</text>
+        </cdata>
+      </summary>
+    </summaries>
+    <title>Establishing the Select Committee on Electoral Reform.</title>
+    <titles>
+      <item>
+        <titleType>Official Title as Introduced</titleType>
+        <titleTypeCode>6</titleTypeCode>
+        <title>Establishing the Select Committee on Electoral Reform.</title>
+        <updateDate>2025-01-08T09:18:15Z</updateDate>
+        <billTextVersionName>Introduced in House</billTextVersionName>
+        <billTextVersionCode>IH</billTextVersionCode>
+      </item>
+      <item>
+        <titleType>Display Title</titleType>
+        <titleTypeCode>45</titleTypeCode>
+        <title>Establishing the Select Committee on Electoral Reform.</title>
+        <updateDate>2025-01-08T09:05:17Z</updateDate>
+      </item>
+    </titles>
+    <textVersions>
+      <item>
+        <type>Introduced in House</type>
+        <date>2025-01-07T05:00:00Z</date>
+        <formats>
+          <item>
+            <url>https://www.govinfo.gov/content/pkg/BILLS-119hres20ih/xml/BILLS-119hres20ih.xml</url>
+          </item>
+        </formats>
+      </item>
+    </textVersions>
+    <latestAction>
+      <actionDate>2025-01-07</actionDate>
+      <text>Referred to the House Committee on Rules.</text>
+    </latestAction>
+  </bill>
+  <dublinCore xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:format>text/xml</dc:format>
+    <dc:language>EN</dc:language>
+    <dc:rights>Pursuant to Title 17 Section 105 of the United States Code, this file is not subject to copyright protection and is in the public domain.</dc:rights>
+    <dc:contributor>Congressional Research Service, Library of Congress</dc:contributor>
+    <dc:description>This file contains bill summaries and statuses for federal legislation. A bill summary describes the most significant provisions of a piece of legislation and details the effects the legislative text may have on current law and federal programs. Bill summaries are authored by the Congressional Research Service (CRS) of the Library of Congress. As stated in Public Law 91-510 (2 USC 166 (d)(6)), one of the duties of CRS is "to prepare summaries and digests of bills and resolutions of a public general nature introduced in the Senate or House of Representatives". For more information, refer to the User Guide that accompanies this file.</dc:description>
+  </dublinCore>
+</billStatus>

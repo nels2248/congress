@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<billStatus>
+  <version>3.0.0</version>
+  <bill>
+    <number>1100</number>
+    <updateDate>2026-03-10T15:01:34Z</updateDate>
+    <updateDateIncludingText>2026-03-10T15:01:34Z</updateDateIncludingText>
+    <originChamber>House</originChamber>
+    <originChamberCode>H</originChamberCode>
+    <type>HRES</type>
+    <introducedDate>2026-03-04</introducedDate>
+    <congress>119</congress>
+    <legislationUrl>https://www.congress.gov/bill/119th-congress/house-resolution/1100</legislationUrl>
+    <cdata/>
+    <committees>
+      <item>
+        <systemCode>hsso00</systemCode>
+        <name>Ethics Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Referred To</name>
+            <date>2026-03-04T19:33:58Z</date>
+          </item>
+          <item>
+            <name>Unknown</name>
+            <date>2026-03-04T19:33:57Z</date>
+          </item>
+          <item>
+            <name>Unknown</name>
+            <date>2026-03-04T19:26:58Z</date>
+          </item>
+        </activities>
+      </item>
+    </committees>
+    <actions>
+      <item>
+        <actionDate>2026-03-04</actionDate>
+        <actionTime>14:33:59</actionTime>
+        <text>Motion to reconsider laid on the table Agreed to without objection.</text>
+        <type>Floor</type>
+        <actionCode>H8D000</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2026-03-04</actionDate>
+        <text>Referred to the House Committee on Ethics.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsso00</systemCode>
+            <name>Ethics Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2026-03-04</actionDate>
+        <actionTime>14:33:57</actionTime>
+        <text>On motion to refer Agreed to by the Yeas and Nays: 357 - 65, 1 Present (Roll no. 83).</text>
+        <type>Floor</type>
+        <actionCode>H36710</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsso00</systemCode>
+            <name>Ethics Committee</name>
+          </item>
+        </committees>
+        <recordedVotes>
+          <recordedVote>
+            <rollNumber>83</rollNumber>
+            <url>https://clerk.house.gov/evs/2026/roll083.xml</url>
+            <chamber>House</chamber>
+            <congress>119</congress>
+            <date>2026-03-04T19:33:57Z</date>
+            <sessionNumber>2</sessionNumber>
+          </recordedVote>
+        </recordedVotes>
+      </item>
+      <item>
+        <actionDate>2026-03-04</actionDate>
+        <actionTime>14:27:45</actionTime>
+        <text>The previous question on the motion to refer was ordered without objection.</text>
+        <type>Floor</type>
+        <actionCode>H8A000</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2026-03-04</actionDate>
+        <actionTime>14:26:58</actionTime>
+        <text>Mr. Garbarino moved to refer to Ethics. (CR H2391)</text>
+        <type>Floor</type>
+        <actionCode>H36700</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsso00</systemCode>
+            <name>Ethics Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2026-03-04</actionDate>
+        <actionTime>14:26:17</actionTime>
+        <text>Considered as privileged matter. (consideration: CR H2391-2392; text: CR H2391)</text>
+        <type>Floor</type>
+        <actionCode>H30000</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2026-03-04</actionDate>
+        <actionTime>00:00:00</actionTime>
+        <text>Submitted in House</text>
+        <type>Floor</type>
+        <actionCode>H30000</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2026-03-04</actionDate>
+        <text>Submitted in House</text>
+        <type>IntroReferral</type>
+        <actionCode>1025</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+    </actions>
+    <sponsors>
+      <item>
+        <bioguideId>M000194</bioguideId>
+        <fullName>Rep. Mace, Nancy [R-SC-1]</fullName>
+        <firstName>Nancy</firstName>
+        <lastName>Mace</lastName>
+        <party>R</party>
+        <state>SC</state>
+        <district>1</district>
+        <isByRequest>N</isByRequest>
+      </item>
+    </sponsors>
+    <policyArea>
+      <name>Congress</name>
+    </policyArea>
+    <subjects>
+      <legislativeSubjects>
+        <item>
+          <name>Government information and archives</name>
+          <updateDate>2026-03-09T14:06:53Z</updateDate>
+        </item>
+        <item>
+          <name>Government studies and investigations</name>
+          <updateDate>2026-03-09T14:06:41Z</updateDate>
+        </item>
+        <item>
+          <name>House Committee on Ethics</name>
+          <updateDate>2026-03-09T14:06:28Z</updateDate>
+        </item>
+        <item>
+          <name>Sex offenses</name>
+          <updateDate>2026-03-09T14:05:34Z</updateDate>
+        </item>
+      </legislativeSubjects>
+      <policyArea>
+        <name>Congress</name>
+        <updateDate>2026-03-09T11:32:43Z</updateDate>
+      </policyArea>
+    </subjects>
+    <summaries>
+      <summary>
+        <versionCode>00</versionCode>
+        <actionDate>2026-03-04</actionDate>
+        <actionDesc>Introduced in House</actionDesc>
+        <updateDate>2026-03-10T14:51:33Z</updateDate>
+        <text><![CDATA[<p>This resolution directs the House Committee on Ethics to preserve and publicly disclose records related to violations or alleged violations of the Code of Official Conduct involving acts of sexual harassment, unwelcome sexual advance, or sexual assault by a Member, Delegate, or Resident Commissioner. (The Code of Official Conduct is Rule XXIII of the Rules of the House of Representatives.)&nbsp;</p><p>Under the resolution, the committee must preserve all records (including investigative materials) of such a violation or alleged violation.</p><p>Further, within 60 days after the resolution is adopted, the committee must publicly release available reports, conclusions, recommendations, exhibits, and attachments related to such investigations. The personally identifiable information of victims, alleged victims, and witnesses must be redacted.</p>]]></text>
+      </summary>
+    </summaries>
+    <title>Directing the Committee on Ethics to preserve and publicly release records of the Committee's review of violations or alleged violations of clause 9 (as it pertains to acts of sexual harassment) and clause 18 of rule XXIII of the Rules of the House of Representatives.</title>
+    <titles>
+      <item>
+        <titleType>Official Title as Introduced</titleType>
+        <titleTypeCode>6</titleTypeCode>
+        <title>Directing the Committee on Ethics to preserve and publicly release records of the Committee's review of violations or alleged violations of clause 9 (as it pertains to acts of sexual harassment) and clause 18 of rule XXIII of the Rules of the House of Representatives.</title>
+        <updateDate>2026-03-05T09:18:26Z</updateDate>
+        <billTextVersionName>Introduced in House</billTextVersionName>
+        <billTextVersionCode>IH</billTextVersionCode>
+      </item>
+      <item>
+        <titleType>Display Title</titleType>
+        <titleTypeCode>45</titleTypeCode>
+        <title>Directing the Committee on Ethics to preserve and publicly release records of the Committee's review of violations or alleged violations of clause 9 (as it pertains to acts of sexual harassment) and clause 18 of rule XXIII of the Rules of the House of Representatives.</title>
+        <updateDate>2026-03-05T09:06:30Z</updateDate>
+      </item>
+    </titles>
+    <textVersions>
+      <item>
+        <type>Introduced in House</type>
+        <date>2026-03-04T05:00:00Z</date>
+        <formats>
+          <item>
+            <url>https://www.govinfo.gov/content/pkg/BILLS-119hres1100ih/xml/BILLS-119hres1100ih.xml</url>
+          </item>
+        </formats>
+      </item>
+    </textVersions>
+    <latestAction>
+      <actionDate>2026-03-04</actionDate>
+      <text>Motion to reconsider laid on the table Agreed to without objection.</text>
+      <actionTime>14:33:59</actionTime>
+    </latestAction>
+  </bill>
+  <dublinCore xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:format>text/xml</dc:format>
+    <dc:language>EN</dc:language>
+    <dc:rights>Pursuant to Title 17 Section 105 of the United States Code, this file is not subject to copyright protection and is in the public domain.</dc:rights>
+    <dc:contributor>Congressional Research Service, Library of Congress</dc:contributor>
+    <dc:description>This file contains bill summaries and statuses for federal legislation. A bill summary describes the most significant provisions of a piece of legislation and details the effects the legislative text may have on current law and federal programs. Bill summaries are authored by the Congressional Research Service (CRS) of the Library of Congress. As stated in Public Law 91-510 (2 USC 166 (d)(6)), one of the duties of CRS is "to prepare summaries and digests of bills and resolutions of a public general nature introduced in the Senate or House of Representatives". For more information, refer to the User Guide that accompanies this file.</dc:description>
+  </dublinCore>
+</billStatus>

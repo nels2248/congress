@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<billStatus>
+  <version>3.0.0</version>
+  <bill>
+    <number>923</number>
+    <updateDate>2025-12-17T15:51:20Z</updateDate>
+    <updateDateIncludingText>2025-12-17T15:51:20Z</updateDateIncludingText>
+    <originChamber>House</originChamber>
+    <originChamberCode>H</originChamberCode>
+    <type>HRES</type>
+    <introducedDate>2025-12-03</introducedDate>
+    <congress>119</congress>
+    <legislationUrl>https://www.congress.gov/bill/119th-congress/house-resolution/923</legislationUrl>
+    <cdata/>
+    <committees>
+      <item>
+        <systemCode>hsas00</systemCode>
+        <name>Armed Services Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Referred To</name>
+            <date>2025-12-03T15:01:15Z</date>
+          </item>
+        </activities>
+      </item>
+    </committees>
+    <relatedBills>
+      <item>
+        <title>A resolution honoring the service and sacrifice of United States Army Specialist Sarah Beckstrom and United States Air Force Staff Sergeant Andrew Wolfe, who were tragically shot in Washington, D.C., in a targeted assault against United States service members on November 26, 2025.</title>
+        <congress>119</congress>
+        <number>537</number>
+        <type>SRES</type>
+        <latestAction>
+          <actionDate>2025-12-09</actionDate>
+          <text>Submitted in the Senate, considered, and agreed to without amendment and with a preamble by Unanimous Consent. (consideration: CR S8580; text: CR S8579)</text>
+        </latestAction>
+        <relationshipDetails>
+          <item>
+            <type>Related bill</type>
+            <identifiedBy>CRS</identifiedBy>
+          </item>
+        </relationshipDetails>
+      </item>
+    </relatedBills>
+    <actions>
+      <item>
+        <actionDate>2025-12-15</actionDate>
+        <actionTime>15:24:44</actionTime>
+        <text>Motion to reconsider laid on the table Agreed to without objection.</text>
+        <type>Floor</type>
+        <actionCode>H8D000</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-12-15</actionDate>
+        <actionTime>15:24:43</actionTime>
+        <text>On motion to suspend the rules and agree to the resolution, as amended Agreed to by voice vote. (text: CR H5864-5865)</text>
+        <type>Floor</type>
+        <actionCode>H37300</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-12-15</actionDate>
+        <actionTime>15:24:43</actionTime>
+        <text>Passed/agreed to in House: On motion to suspend the rules and agree to the resolution, as amended Agreed to by voice vote. (text: CR H5864-5865)</text>
+        <type>Floor</type>
+        <actionCode>8000</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-12-15</actionDate>
+        <actionTime>15:03:07</actionTime>
+        <text>DEBATE - The House proceeded with forty minutes of debate on H. Res. 923.</text>
+        <type>Floor</type>
+        <actionCode>H8D000</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-12-15</actionDate>
+        <actionTime>15:03:06</actionTime>
+        <text>Considered under suspension of the rules. (consideration: CR H5864-5869)</text>
+        <type>Floor</type>
+        <actionCode>H30000</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-12-15</actionDate>
+        <actionTime>15:02:50</actionTime>
+        <text>Mr. Wittman moved to suspend the rules and agree to the resolution, as amended.</text>
+        <type>Floor</type>
+        <actionCode>H30300</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-12-03</actionDate>
+        <text>Referred to the House Committee on Armed Services.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsas00</systemCode>
+            <name>Armed Services Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-12-03</actionDate>
+        <text>Submitted in House</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-12-03</actionDate>
+        <text>Submitted in House</text>
+        <type>IntroReferral</type>
+        <actionCode>1025</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+    </actions>
+    <sponsors>
+      <item>
+        <bioguideId>M001205</bioguideId>
+        <fullName>Rep. Miller, Carol D. [R-WV-1]</fullName>
+        <firstName>Carol</firstName>
+        <lastName>Miller</lastName>
+        <party>R</party>
+        <state>WV</state>
+        <middleName>D.</middleName>
+        <district>1</district>
+        <isByRequest>N</isByRequest>
+      </item>
+    </sponsors>
+    <cosponsors>
+      <item>
+        <bioguideId>M001235</bioguideId>
+        <fullName>Rep. Moore, Riley M. [R-WV-2]</fullName>
+        <firstName>Riley</firstName>
+        <lastName>Moore</lastName>
+        <party>R</party>
+        <state>WV</state>
+        <middleName>M.</middleName>
+        <district>2</district>
+        <sponsorshipDate>2025-12-03</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+    </cosponsors>
+    <policyArea>
+      <name>Armed Forces and National Security</name>
+    </policyArea>
+    <subjects>
+      <legislativeSubjects>
+        <item>
+          <name>Congressional tributes</name>
+          <updateDate>2025-12-17T15:51:20Z</updateDate>
+        </item>
+        <item>
+          <name>District of Columbia</name>
+          <updateDate>2025-12-17T15:47:48Z</updateDate>
+        </item>
+        <item>
+          <name>Military personnel and dependents</name>
+          <updateDate>2025-12-17T15:47:36Z</updateDate>
+        </item>
+        <item>
+          <name>National Guard and reserves</name>
+          <updateDate>2025-12-17T15:50:43Z</updateDate>
+        </item>
+        <item>
+          <name>Terrorism</name>
+          <updateDate>2025-12-17T15:50:59Z</updateDate>
+        </item>
+        <item>
+          <name>West Virginia</name>
+          <updateDate>2025-12-17T15:50:51Z</updateDate>
+        </item>
+      </legislativeSubjects>
+      <policyArea>
+        <name>Armed Forces and National Security</name>
+        <updateDate>2025-12-04T20:33:28Z</updateDate>
+      </policyArea>
+    </subjects>
+    <summaries>
+      <summary>
+        <versionCode>00</versionCode>
+        <actionDate>2025-12-03</actionDate>
+        <actionDesc>Introduced in House</actionDesc>
+        <updateDate>2025-12-15T20:32:40Z</updateDate>
+        <cdata>
+          <text>&lt;p&gt;This resolution honors the service and sacrifice of U.S. Army Specialist Sarah Beckstrom and U.S. Air Force Staff Sergeant Andrew Wolfe as members of the West Virginia National Guard and extends sympathy, gratitude, and support for their families in the wake of the attack on November 26, 2025, in Washington, DC.&lt;/p&gt;&lt;p&gt;The resolution also honors the bravery of&amp;nbsp;the other National Guard members on the scene, expresses gratitude for the action of first responders, and condemns&amp;nbsp;the attack.&lt;/p&gt;</text>
+        </cdata>
+      </summary>
+    </summaries>
+    <title>A resolution honoring the service and sacrifice of United States Army Specialist Sarah Beckstrom and United States Air Force Staff Sergeant Andrew Wolfe, who were tragically shot in Washington, D.C., in a targeted assault against United States service members on November 26, 2025.</title>
+    <titles>
+      <item>
+        <titleType>Official Titles from EH (Engrossed in House) bill text</titleType>
+        <titleTypeCode>259</titleTypeCode>
+        <title>A resolution honoring the service and sacrifice of United States Army Specialist Sarah Beckstrom and United States Air Force Staff Sergeant Andrew Wolfe, who were tragically shot in Washington, D.C., in a targeted assault against United States service members on November 26, 2025.</title>
+        <updateDate>2025-12-17T04:23:22Z</updateDate>
+        <chamberCode>H</chamberCode>
+        <chamberName>House</chamberName>
+        <billTextVersionName>Engrossed in House</billTextVersionName>
+        <billTextVersionCode>EH</billTextVersionCode>
+      </item>
+      <item>
+        <titleType>Official Title as Introduced</titleType>
+        <titleTypeCode>6</titleTypeCode>
+        <title>A resolution honoring the service and sacrifice of United States Army Specialist Sarah Beckstrom and United States Air Force Staff Sergeant Andrew Wolfe, who were tragically shot in Washington, D.C., in a targeted assault against United States service members on November 26, 2025.</title>
+        <updateDate>2025-12-04T09:18:29Z</updateDate>
+        <billTextVersionName>Introduced in House</billTextVersionName>
+        <billTextVersionCode>IH</billTextVersionCode>
+      </item>
+      <item>
+        <titleType>Display Title</titleType>
+        <titleTypeCode>45</titleTypeCode>
+        <title>A resolution honoring the service and sacrifice of United States Army Specialist Sarah Beckstrom and United States Air Force Staff Sergeant Andrew Wolfe, who were tragically shot in Washington, D.C., in a targeted assault against United States service members on November 26, 2025.</title>
+        <updateDate>2025-12-04T09:06:27Z</updateDate>
+      </item>
+    </titles>
+    <textVersions>
+      <item>
+        <type>Engrossed in House</type>
+        <date>2025-12-15T05:00:00Z</date>
+        <formats>
+          <item>
+            <url>https://www.govinfo.gov/content/pkg/BILLS-119hres923eh/xml/BILLS-119hres923eh.xml</url>
+          </item>
+        </formats>
+      </item>
+      <item>
+        <type>Introduced in House</type>
+        <date>2025-12-03T05:00:00Z</date>
+        <formats>
+          <item>
+            <url>https://www.govinfo.gov/content/pkg/BILLS-119hres923ih/xml/BILLS-119hres923ih.xml</url>
+          </item>
+        </formats>
+      </item>
+    </textVersions>
+    <latestAction>
+      <actionDate>2025-12-15</actionDate>
+      <text>Motion to reconsider laid on the table Agreed to without objection.</text>
+      <actionTime>15:24:44</actionTime>
+    </latestAction>
+  </bill>
+  <dublinCore xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:format>text/xml</dc:format>
+    <dc:language>EN</dc:language>
+    <dc:rights>Pursuant to Title 17 Section 105 of the United States Code, this file is not subject to copyright protection and is in the public domain.</dc:rights>
+    <dc:contributor>Congressional Research Service, Library of Congress</dc:contributor>
+    <dc:description>This file contains bill summaries and statuses for federal legislation. A bill summary describes the most significant provisions of a piece of legislation and details the effects the legislative text may have on current law and federal programs. Bill summaries are authored by the Congressional Research Service (CRS) of the Library of Congress. As stated in Public Law 91-510 (2 USC 166 (d)(6)), one of the duties of CRS is "to prepare summaries and digests of bills and resolutions of a public general nature introduced in the Senate or House of Representatives". For more information, refer to the User Guide that accompanies this file.</dc:description>
+  </dublinCore>
+</billStatus>

@@ -1,0 +1,143 @@
+{
+  "last_updated": "2026-05-08T23:38:49.719590+00:00",
+  "bills_over_time": [
+    {
+      "month": "2025-02",
+      "count": 1
+    },
+    {
+      "month": "2025-04",
+      "count": 3
+    },
+    {
+      "month": "2025-06",
+      "count": 1
+    },
+    {
+      "month": "2025-09",
+      "count": 3
+    },
+    {
+      "month": "2026-01",
+      "count": 2
+    },
+    {
+      "month": "2026-03",
+      "count": 1
+    },
+    {
+      "month": "2026-04",
+      "count": 18
+    },
+    {
+      "month": "2026-05",
+      "count": 5
+    }
+  ],
+  "by_party": [
+    {
+      "party": "R",
+      "count": 19
+    },
+    {
+      "party": "D",
+      "count": 14
+    },
+    {
+      "party": "I",
+      "count": 1
+    }
+  ],
+  "by_chamber": [
+    {
+      "chamber": "House",
+      "count": 24
+    },
+    {
+      "chamber": "Senate",
+      "count": 10
+    }
+  ],
+  "by_state": [
+    {
+      "state": "CA",
+      "count": 4
+    },
+    {
+      "state": "FL",
+      "count": 3
+    },
+    {
+      "state": "NY",
+      "count": 3
+    },
+    {
+      "state": "MA",
+      "count": 3
+    },
+    {
+      "state": "IA",
+      "count": 2
+    },
+    {
+      "state": "MO",
+      "count": 2
+    },
+    {
+      "state": "IN",
+      "count": 2
+    },
+    {
+      "state": "ID",
+      "count": 1
+    },
+    {
+      "state": "CO",
+      "count": 1
+    },
+    {
+      "state": "HI",
+      "count": 1
+    },
+    {
+      "state": "MD",
+      "count": 1
+    },
+    {
+      "state": "MS",
+      "count": 1
+    },
+    {
+      "state": "MT",
+      "count": 1
+    },
+    {
+      "state": "KS",
+      "count": 1
+    },
+    {
+      "state": "NC",
+      "count": 1
+    },
+    {
+      "state": "NJ",
+      "count": 1
+    },
+    {
+      "state": "OK",
+      "count": 1
+    },
+    {
+      "state": "UT",
+      "count": 1
+    },
+    {
+      "state": "VA",
+      "count": 1
+    },
+    {
+      "state": "VT",
+      "count": 1
+    }
+  ]
+}

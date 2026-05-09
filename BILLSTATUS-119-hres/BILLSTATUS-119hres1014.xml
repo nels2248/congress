@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<billStatus>
+  <version>3.0.0</version>
+  <bill>
+    <number>1014</number>
+    <updateDate>2026-03-17T15:59:22Z</updateDate>
+    <updateDateIncludingText>2026-03-17T15:59:22Z</updateDateIncludingText>
+    <originChamber>House</originChamber>
+    <originChamberCode>H</originChamberCode>
+    <type>HRES</type>
+    <introducedDate>2026-01-22</introducedDate>
+    <congress>119</congress>
+    <legislationUrl>https://www.congress.gov/bill/119th-congress/house-resolution/1014</legislationUrl>
+    <cdata/>
+    <committees>
+      <item>
+        <systemCode>hsru00</systemCode>
+        <name>Rules Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Reported Original Measure</name>
+            <date>2026-01-22T14:03:24Z</date>
+          </item>
+        </activities>
+      </item>
+    </committees>
+    <committeeReports>
+      <committeeReport>
+        <citation>H. Rept. 119-462</citation>
+      </committeeReport>
+    </committeeReports>
+    <relatedBills>
+      <item>
+        <title>Consolidated Appropriations Act, 2026</title>
+        <congress>119</congress>
+        <number>7148</number>
+        <type>HR</type>
+        <latestAction>
+          <actionDate>2026-02-03</actionDate>
+          <text>Became Public Law No: 119-75.</text>
+        </latestAction>
+        <relationshipDetails>
+          <item>
+            <type>Related bill</type>
+            <identifiedBy>House</identifiedBy>
+          </item>
+          <item>
+            <type>Procedurally related</type>
+            <identifiedBy>House</identifiedBy>
+          </item>
+        </relationshipDetails>
+      </item>
+      <item>
+        <title>Making further consolidated appropriations for the fiscal year ending September 30, 2026, and for other purposes.</title>
+        <congress>119</congress>
+        <number>7147</number>
+        <type>HR</type>
+        <latestAction>
+          <actionDate>2026-03-12</actionDate>
+          <text>Motion by Senator Thune to reconsider the vote by which the third cloture on the motion to proceed to the measure was not invoked (Record Vote No. 54) entered in Senate.</text>
+        </latestAction>
+        <relationshipDetails>
+          <item>
+            <type>Procedurally related</type>
+            <identifiedBy>House</identifiedBy>
+          </item>
+        </relationshipDetails>
+      </item>
+      <item>
+        <title>Expressing support for the designation of May 2025 as "Renewable Fuels Month" to recognize the important role that renewable fuels play in reducing carbon impacts, lowering fuel prices for consumers, supporting rural communities, and lessening reliance on foreign adversaries.</title>
+        <congress>119</congress>
+        <number>375</number>
+        <type>HRES</type>
+        <latestAction>
+          <actionDate>2026-01-22</actionDate>
+          <text>Pursuant to the provisions of H. Res. 1014, H. Res. 375 is considered passed House as amended.</text>
+          <actionTime>11:53:10</actionTime>
+        </latestAction>
+        <relationshipDetails>
+          <item>
+            <type>Procedurally related</type>
+            <identifiedBy>House</identifiedBy>
+          </item>
+        </relationshipDetails>
+      </item>
+    </relatedBills>
+    <actions>
+      <item>
+        <actionDate>2026-01-22</actionDate>
+        <actionTime>11:52:34</actionTime>
+        <text>Motion to reconsider laid on the table Agreed to without objection.</text>
+        <type>Floor</type>
+        <actionCode>H38310</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2026-01-22</actionDate>
+        <actionTime>11:52:32</actionTime>
+        <text>On agreeing to the resolution, as amended Agreed to by recorded vote: 214 - 213 (Roll no. 41).</text>
+        <type>Floor</type>
+        <actionCode>H37100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <recordedVotes>
+          <recordedVote>
+            <rollNumber>41</rollNumber>
+            <url>https://clerk.house.gov/evs/2026/roll041.xml</url>
+            <chamber>House</chamber>
+            <congress>119</congress>
+            <date>2026-01-22T16:52:32Z</date>
+            <sessionNumber>2</sessionNumber>
+          </recordedVote>
+        </recordedVotes>
+      </item>
+      <item>
+        <actionDate>2026-01-22</actionDate>
+        <actionTime>11:52:32</actionTime>
+        <text>Passed/agreed to in House: On agreeing to the resolution, as amended Agreed to by recorded vote: 214 - 213 (Roll no. 41).</text>
+        <type>Floor</type>
+        <actionCode>8000</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+        <recordedVotes>
+          <recordedVote>
+            <rollNumber>41</rollNumber>
+            <url>https://clerk.house.gov/evs/2026/roll041.xml</url>
+            <chamber>House</chamber>
+            <congress>119</congress>
+            <date>2026-01-22T16:52:32Z</date>
+            <sessionNumber>2</sessionNumber>
+          </recordedVote>
+        </recordedVotes>
+      </item>
+      <item>
+        <actionDate>2026-01-22</actionDate>
+        <actionTime>11:06:45</actionTime>
+        <text>On ordering the previous question on the amendment and the resolution Agreed to by the Yeas and Nays: 215-213 (Roll no. 39).</text>
+        <type>Floor</type>
+        <actionCode>H35000</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <recordedVotes>
+          <recordedVote>
+            <rollNumber>39</rollNumber>
+            <url>https://clerk.house.gov/evs/2026/roll039.xml</url>
+            <chamber>House</chamber>
+            <congress>119</congress>
+            <date>2026-01-22T16:06:45Z</date>
+            <sessionNumber>2</sessionNumber>
+          </recordedVote>
+        </recordedVotes>
+      </item>
+      <item>
+        <actionDate>2026-01-22</actionDate>
+        <actionTime>10:31:11</actionTime>
+        <text>Considered as unfinished business. (consideration: CR H1183-1185)</text>
+        <type>Floor</type>
+        <actionCode>H30000</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2026-01-22</actionDate>
+        <actionTime>10:16:10</actionTime>
+        <text>POSTPONED PROCEEDINGS - At the conclusion of debate on H. Res. 1014, the Chair put the question on ordering the previous question on the amendment and the resolution and by voice vote, announced the ayes had prevailed. Mr. McGovern demanded the yeas and nays and the Chair postponed further proceedings until a time to be announced.</text>
+        <type>Floor</type>
+        <actionCode>H8D000</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2026-01-22</actionDate>
+        <actionTime>09:22:02</actionTime>
+        <text>DEBATE - The House proceeded with one hour of debate on H. Res. 1014.</text>
+        <type>Floor</type>
+        <actionCode>H8D000</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2026-01-22</actionDate>
+        <actionTime>09:17:21</actionTime>
+        <text>Considered as privileged matter. (consideration: CR H1177-1183; text: CR H1177)</text>
+        <type>Floor</type>
+        <actionCode>H30000</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2026-01-22</actionDate>
+        <text>Placed on the House Calendar, Calendar No. 56.</text>
+        <type>Calendars</type>
+        <actionCode>H12420</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <calendarNumber>
+          <calendar>H00056</calendar>
+        </calendarNumber>
+      </item>
+      <item>
+        <actionDate>2026-01-22</actionDate>
+        <actionTime>09:03:25</actionTime>
+        <text>The resolution provides for consideration of H.R. 7148 under a structured rule and H.R. 7147 under a closed rule. The rule provides for one hour of debate and a motion to recommit on each bill.</text>
+        <type>Floor</type>
+        <actionCode>H12700</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2026-01-22</actionDate>
+        <text>The House Committee on Rules reported an original measure, H. Rept. 119-462, by Ms. Foxx.</text>
+        <type>Committee</type>
+        <actionCode>H12100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsru00</systemCode>
+            <name>Rules Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2026-01-22</actionDate>
+        <text>The House Committee on Rules reported an original measure, H. Rept. 119-462, by Ms. Foxx.</text>
+        <type>Committee</type>
+        <actionCode>1010</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsru00</systemCode>
+            <name>Rules Committee</name>
+          </item>
+        </committees>
+      </item>
+    </actions>
+    <sponsors>
+      <item>
+        <bioguideId>F000450</bioguideId>
+        <fullName>Rep. Foxx, Virginia [R-NC-5]</fullName>
+        <firstName>Virginia</firstName>
+        <lastName>Foxx</lastName>
+        <party>R</party>
+        <state>NC</state>
+        <district>5</district>
+        <isByRequest>N</isByRequest>
+      </item>
+    </sponsors>
+    <policyArea>
+      <name>Congress</name>
+    </policyArea>
+    <subjects>
+      <legislativeSubjects>
+        <item>
+          <name>House of Representatives</name>
+          <updateDate>2026-03-17T14:09:23Z</updateDate>
+        </item>
+        <item>
+          <name>Legislative rules and procedure</name>
+          <updateDate>2026-03-17T14:09:29Z</updateDate>
+        </item>
+      </legislativeSubjects>
+      <policyArea>
+        <name>Congress</name>
+        <updateDate>2026-03-17T13:22:10Z</updateDate>
+      </policyArea>
+    </subjects>
+    <summaries>
+      <summary>
+        <versionCode>07</versionCode>
+        <actionDate>2026-01-22</actionDate>
+        <actionDesc>Reported to House</actionDesc>
+        <updateDate>2026-03-13T12:10:55Z</updateDate>
+        <text><![CDATA[This resolution provides for the consideration of the bill (H.R. 7148) making further consolidated appropriations for the fiscal year ending September 30, 2026, and for other purposes; providing for consideration of the bill (H.R. 7147) making further consolidated appropriations for the fiscal year ending September 30, 2026, and for other purposes; and for other purposes.]]></text>
+      </summary>
+    </summaries>
+    <title>Providing for consideration of the bill (H.R. 7148) making further consolidated appropriations for the fiscal year ending September 30, 2026, and for other purposes; providing for consideration of the bill (H.R. 7147) making further consolidated appropriations for the fiscal year ending September 30, 2026, and for other purposes; and for other purposes.</title>
+    <titles>
+      <item>
+        <titleType>Official Titles from EH (Engrossed in House) bill text</titleType>
+        <titleTypeCode>259</titleTypeCode>
+        <title>Providing for consideration of the bill (H.R. 7148) making further consolidated appropriations for the fiscal year ending September 30, 2026, and for other purposes; providing for consideration of the bill (H.R. 7147) making further consolidated appropriations for the fiscal year ending September 30, 2026, and for other purposes; and for other purposes.</title>
+        <updateDate>2026-01-23T09:23:17Z</updateDate>
+        <chamberCode>H</chamberCode>
+        <chamberName>House</chamberName>
+        <billTextVersionName>Engrossed in House</billTextVersionName>
+        <billTextVersionCode>EH</billTextVersionCode>
+      </item>
+      <item>
+        <titleType>Display Title</titleType>
+        <titleTypeCode>45</titleTypeCode>
+        <title>Providing for consideration of the bill (H.R. 7148) making further consolidated appropriations for the fiscal year ending September 30, 2026, and for other purposes; providing for consideration of the bill (H.R. 7147) making further consolidated appropriations for the fiscal year ending September 30, 2026, and for other purposes; and for other purposes.</title>
+        <updateDate>2026-01-23T09:06:38Z</updateDate>
+      </item>
+      <item>
+        <titleType>Official Title as Introduced</titleType>
+        <titleTypeCode>6</titleTypeCode>
+        <title>Providing for consideration of the bill (H.R. 7148) making further consolidated appropriations for the fiscal year ending September 30, 2026, and for other purposes; providing for consideration of the bill (H.R. 7147) making further consolidated appropriations for the fiscal year ending September 30, 2026, and for other purposes; and for other purposes.</title>
+        <updateDate>2026-01-23T09:06:38Z</updateDate>
+      </item>
+    </titles>
+    <amendments>
+      <amendment>
+        <number>154</number>
+        <congress>119</congress>
+        <type>HAMDT</type>
+        <description>An amendment to repeal section 213 of title II of Division C of the Continuing Appropriations, Agriculture, Legislative Branch, Military Construction and Veterans Affairs, and Extensions Act, 2026, and the amendments made by such section.</description>
+        <purpose>Amendment repeals section 213 of title II of Division C of the Continuing Appropriations, Agriculture, Legislative Branch, Military Construction and Veterans Affairs, and Extensions Act, 2026, and the amendments made by such section.</purpose>
+        <updateDate>2026-01-28T09:09:13Z</updateDate>
+        <latestAction>
+          <actionDate>2026-01-22</actionDate>
+          <text>On agreeing to the Foxx amendment (A001) Agreed to by the Yeas and Nays: 427 - 0 (Roll no. 40).</text>
+          <actionTime>11:15:06</actionTime>
+          <links>
+            <link>
+              <name>Roll no. 40</name>
+              <url>https://www.congress.gov/votes/house/119-2/40</url>
+            </link>
+          </links>
+        </latestAction>
+        <sponsors>
+          <item>
+            <bioguideId>F000450</bioguideId>
+            <fullName>Rep. Foxx, Virginia [R-NC-5]</fullName>
+            <firstName>Virginia</firstName>
+            <lastName>Foxx</lastName>
+            <party>R</party>
+            <state>NC</state>
+            <district>5</district>
+          </item>
+        </sponsors>
+        <submittedDate>2026-01-22T05:00:00Z</submittedDate>
+        <chamber>House of Representatives</chamber>
+        <amendedBill>
+          <congress>119</congress>
+          <type>HRES</type>
+          <originChamber>House</originChamber>
+          <originChamberCode>H</originChamberCode>
+          <number>1014</number>
+          <title>Providing for consideration of the bill (H.R. 7148) making further consolidated appropriations for the fiscal year ending September 30, 2026, and for other purposes; providing for consideration of the bill (H.R. 7147) making further consolidated appropriations for the fiscal year ending September 30, 2026, and for other purposes; and for other purposes.</title>
+          <updateDateIncludingText>2026-03-17</updateDateIncludingText>
+        </amendedBill>
+        <actions>
+          <count>6</count>
+          <actions>
+            <item>
+              <actionDate>2026-01-22</actionDate>
+              <actionTime>11:15:06</actionTime>
+              <text>On agreeing to the Foxx amendment (A001) Agreed to by the Yeas and Nays: 427 - 0 (Roll no. 40).</text>
+              <type>Floor</type>
+              <actionCode>72000</actionCode>
+              <sourceSystem>
+                <code>9</code>
+                <name>Library of Congress</name>
+              </sourceSystem>
+              <recordedVotes>
+                <recordedVote>
+                  <rollNumber>40</rollNumber>
+                  <chamber>House</chamber>
+                  <congress>119</congress>
+                  <date>2026-01-22T16:15:06Z</date>
+                  <sessionNumber>2</sessionNumber>
+                  <url>https://clerk.house.gov/evs/2026/roll040.xml</url>
+                </recordedVote>
+              </recordedVotes>
+            </item>
+            <item>
+              <actionDate>2026-01-22</actionDate>
+              <actionTime>11:15:06</actionTime>
+              <type>Floor</type>
+              <actionCode>75000</actionCode>
+              <sourceSystem>
+                <code>9</code>
+                <name>Library of Congress</name>
+              </sourceSystem>
+              <recordedVotes>
+                <recordedVote>
+                  <rollNumber>40</rollNumber>
+                  <chamber>House</chamber>
+                  <congress>119</congress>
+                  <date>2026-01-22T16:15:06Z</date>
+                  <sessionNumber>2</sessionNumber>
+                  <url>https://clerk.house.gov/evs/2026/roll040.xml</url>
+                </recordedVote>
+              </recordedVotes>
+            </item>
+            <item>
+              <actionDate>2026-01-22</actionDate>
+              <actionTime>10:13:53</actionTime>
+              <text>Amendment (A001) offered by Ms. Foxx. (consideration: CR H1183-1185; text: CR H1183)</text>
+              <type>Floor</type>
+              <actionCode>71000</actionCode>
+              <sourceSystem>
+                <code>9</code>
+                <name>Library of Congress</name>
+              </sourceSystem>
+            </item>
+            <item>
+              <actionDate>2026-01-22</actionDate>
+              <actionTime>11:15:06</actionTime>
+              <text>House amendment agreed to: On agreeing to the Foxx amendment (A001) Agreed to by the Yeas and Nays: 427 - 0 (Roll no. 40).</text>
+              <type>Floor</type>
+              <actionCode>72000</actionCode>
+              <sourceSystem>
+                <code>9</code>
+                <name>Library of Congress</name>
+              </sourceSystem>
+              <recordedVotes>
+                <recordedVote>
+                  <rollNumber>40</rollNumber>
+                  <chamber>House</chamber>
+                  <congress>119</congress>
+                  <date>2026-01-22T16:15:06Z</date>
+                  <sessionNumber>2</sessionNumber>
+                  <url>https://clerk.house.gov/evs/2026/roll040.xml</url>
+                </recordedVote>
+              </recordedVotes>
+            </item>
+            <item>
+              <actionDate>2026-01-22</actionDate>
+              <actionTime>11:15:06</actionTime>
+              <text>Roll call votes on amendments in House</text>
+              <type>Floor</type>
+              <actionCode>75000</actionCode>
+              <sourceSystem>
+                <code>9</code>
+                <name>Library of Congress</name>
+              </sourceSystem>
+              <recordedVotes>
+                <recordedVote>
+                  <rollNumber>40</rollNumber>
+                  <chamber>House</chamber>
+                  <congress>119</congress>
+                  <date>2026-01-22T16:15:06Z</date>
+                  <sessionNumber>2</sessionNumber>
+                  <url>https://clerk.house.gov/evs/2026/roll040.xml</url>
+                </recordedVote>
+              </recordedVotes>
+            </item>
+            <item>
+              <actionDate>2026-01-22</actionDate>
+              <actionTime>10:13:53</actionTime>
+              <text>House Amendment Offered</text>
+              <type>Floor</type>
+              <actionCode>71000</actionCode>
+              <sourceSystem>
+                <code>9</code>
+                <name>Library of Congress</name>
+              </sourceSystem>
+            </item>
+          </actions>
+        </actions>
+      </amendment>
+    </amendments>
+    <textVersions>
+      <item>
+        <type>Engrossed in House</type>
+        <date>2026-01-22T05:00:00Z</date>
+        <formats>
+          <item>
+            <url>https://www.govinfo.gov/content/pkg/BILLS-119hres1014eh/xml/BILLS-119hres1014eh.xml</url>
+          </item>
+        </formats>
+      </item>
+      <item>
+        <type>Reported in House</type>
+        <date>2026-01-22T05:00:00Z</date>
+        <formats>
+          <item>
+            <url>https://www.govinfo.gov/content/pkg/BILLS-119hres1014rh/xml/BILLS-119hres1014rh.xml</url>
+          </item>
+        </formats>
+      </item>
+    </textVersions>
+    <latestAction>
+      <actionDate>2026-01-22</actionDate>
+      <text>Motion to reconsider laid on the table Agreed to without objection.</text>
+      <actionTime>11:52:34</actionTime>
+    </latestAction>
+  </bill>
+  <dublinCore xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:format>text/xml</dc:format>
+    <dc:language>EN</dc:language>
+    <dc:rights>Pursuant to Title 17 Section 105 of the United States Code, this file is not subject to copyright protection and is in the public domain.</dc:rights>
+    <dc:contributor>Congressional Research Service, Library of Congress</dc:contributor>
+    <dc:description>This file contains bill summaries and statuses for federal legislation. A bill summary describes the most significant provisions of a piece of legislation and details the effects the legislative text may have on current law and federal programs. Bill summaries are authored by the Congressional Research Service (CRS) of the Library of Congress. As stated in Public Law 91-510 (2 USC 166 (d)(6)), one of the duties of CRS is "to prepare summaries and digests of bills and resolutions of a public general nature introduced in the Senate or House of Representatives". For more information, refer to the User Guide that accompanies this file.</dc:description>
+  </dublinCore>
+</billStatus>

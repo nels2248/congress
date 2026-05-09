@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<billStatus>
+  <version>3.0.0</version>
+  <bill>
+    <number>1175</number>
+    <updateDate>2026-04-23T19:29:22Z</updateDate>
+    <updateDateIncludingText>2026-04-23T19:29:19Z</updateDateIncludingText>
+    <originChamber>House</originChamber>
+    <originChamberCode>H</originChamberCode>
+    <type>HRES</type>
+    <introducedDate>2026-04-15</introducedDate>
+    <congress>119</congress>
+    <legislationUrl>https://www.congress.gov/bill/119th-congress/house-resolution/1175</legislationUrl>
+    <cdata/>
+    <committees>
+      <item>
+        <systemCode>hsru00</systemCode>
+        <name>Rules Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Reported Original Measure</name>
+            <date>2026-04-15T13:14:39Z</date>
+          </item>
+        </activities>
+      </item>
+    </committees>
+    <committeeReports>
+      <committeeReport>
+        <citation>H. Rept. 119-610</citation>
+      </committeeReport>
+    </committeeReports>
+    <relatedBills>
+      <item>
+        <title>To amend the FISA Amendments Act of 2008 to extend the authorities of title VII of the Foreign Intelligence Surveillance Act of 1978 through October 20, 2027, and for other purposes.</title>
+        <congress>119</congress>
+        <number>8035</number>
+        <type>HR</type>
+        <latestAction>
+          <actionDate>2026-04-17</actionDate>
+          <text>Rule H. Res. 1175 failed passage of House.</text>
+          <actionTime>02:08:36</actionTime>
+        </latestAction>
+        <relationshipDetails>
+          <item>
+            <type>Related bill</type>
+            <identifiedBy>House</identifiedBy>
+          </item>
+          <item>
+            <type>Procedurally related</type>
+            <identifiedBy>House</identifiedBy>
+          </item>
+        </relationshipDetails>
+      </item>
+    </relatedBills>
+    <actions>
+      <item>
+        <actionDate>2026-04-17</actionDate>
+        <actionTime>02:08:38</actionTime>
+        <text>Motion to reconsider laid on the table Agreed to without objection.</text>
+        <type>Floor</type>
+        <actionCode>H38310</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2026-04-17</actionDate>
+        <actionTime>02:08:35</actionTime>
+        <text>On agreeing to the resolution Failed by recorded vote: 197 - 228 (Roll no. 124).</text>
+        <type>Floor</type>
+        <actionCode>H37100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <recordedVotes>
+          <recordedVote>
+            <rollNumber>124</rollNumber>
+            <url>https://clerk.house.gov/evs/2026/roll124.xml</url>
+            <chamber>House</chamber>
+            <congress>119</congress>
+            <date>2026-04-17T06:08:35Z</date>
+            <sessionNumber>2</sessionNumber>
+          </recordedVote>
+        </recordedVotes>
+      </item>
+      <item>
+        <actionDate>2026-04-17</actionDate>
+        <actionTime>02:08:35</actionTime>
+        <text>Failed of passage/not agreed to in House On agreeing to the resolution Failed by recorded vote: 197 - 228 (Roll no. 124).</text>
+        <type>Floor</type>
+        <actionCode>9000</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+        <recordedVotes>
+          <recordedVote>
+            <rollNumber>124</rollNumber>
+            <url>https://clerk.house.gov/evs/2026/roll124.xml</url>
+            <chamber>House</chamber>
+            <congress>119</congress>
+            <date>2026-04-17T06:08:35Z</date>
+            <sessionNumber>2</sessionNumber>
+          </recordedVote>
+        </recordedVotes>
+      </item>
+      <item>
+        <actionDate>2026-04-16</actionDate>
+        <actionTime>23:23:34</actionTime>
+        <text>DEBATE - The House proceeded with one hour of debate on H. Res. 1175.</text>
+        <type>Floor</type>
+        <actionCode>H8D000</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2026-04-16</actionDate>
+        <actionTime>23:22:31</actionTime>
+        <text>Considered as privileged matter. (consideration: CR H2948-2955; text: CR H2948)</text>
+        <type>Floor</type>
+        <actionCode>H30000</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2026-04-15</actionDate>
+        <text>Placed on the House Calendar, Calendar No. 71.</text>
+        <type>Calendars</type>
+        <actionCode>H12420</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <calendarNumber>
+          <calendar>H00071</calendar>
+        </calendarNumber>
+      </item>
+      <item>
+        <actionDate>2026-04-15</actionDate>
+        <actionTime>09:14:40</actionTime>
+        <text>Rule provides for consideration of H.R. 8035 with 1 hour of general debate. Motion to recommit allowed. Bill is closed to amendments.</text>
+        <type>Floor</type>
+        <actionCode>H12700</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2026-04-15</actionDate>
+        <text>The House Committee on Rules reported an original measure, H. Rept. 119-610, by Mr. Scott, Austin.</text>
+        <type>Committee</type>
+        <actionCode>H12100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsru00</systemCode>
+            <name>Rules Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2026-04-15</actionDate>
+        <text>The House Committee on Rules reported an original measure, H. Rept. 119-610, by Mr. Scott, Austin.</text>
+        <type>Committee</type>
+        <actionCode>1010</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsru00</systemCode>
+            <name>Rules Committee</name>
+          </item>
+        </committees>
+      </item>
+    </actions>
+    <sponsors>
+      <item>
+        <bioguideId>S001189</bioguideId>
+        <fullName>Rep. Scott, Austin [R-GA-8]</fullName>
+        <firstName>Austin</firstName>
+        <lastName>Scott</lastName>
+        <party>R</party>
+        <state>GA</state>
+        <district>8</district>
+        <isByRequest>N</isByRequest>
+      </item>
+    </sponsors>
+    <policyArea>
+      <name>Congress</name>
+    </policyArea>
+    <subjects>
+      <legislativeSubjects>
+        <item>
+          <name>House of Representatives</name>
+          <updateDate>2026-04-20T18:48:51Z</updateDate>
+        </item>
+        <item>
+          <name>Legislative rules and procedure</name>
+          <updateDate>2026-04-20T18:48:58Z</updateDate>
+        </item>
+      </legislativeSubjects>
+      <policyArea>
+        <name>Congress</name>
+        <updateDate>2026-04-17T18:27:35Z</updateDate>
+      </policyArea>
+    </subjects>
+    <summaries>
+      <summary>
+        <versionCode>07</versionCode>
+        <actionDate>2026-04-15</actionDate>
+        <actionDesc>Reported to House</actionDesc>
+        <updateDate>2026-04-16T08:19:50Z</updateDate>
+        <text><![CDATA[This resolution provides for the consideration of the bill (H.R. 8035) to amend the FISA Amendments Act of 2008 to extend the authorities of title VII of the Foreign Intelligence Surveillance Act of 1978 through October 20, 2027, and for other purposes.]]></text>
+      </summary>
+    </summaries>
+    <title>Providing for consideration of the bill (H.R. 8035) to amend the FISA Amendments Act of 2008 to extend the authorities of title VII of the Foreign Intelligence Surveillance Act of 1978 through October 20, 2027, and for other purposes.</title>
+    <titles>
+      <item>
+        <titleType>Display Title</titleType>
+        <titleTypeCode>45</titleTypeCode>
+        <title>Providing for consideration of the bill (H.R. 8035) to amend the FISA Amendments Act of 2008 to extend the authorities of title VII of the Foreign Intelligence Surveillance Act of 1978 through October 20, 2027, and for other purposes.</title>
+        <updateDate>2026-04-16T08:07:02Z</updateDate>
+      </item>
+      <item>
+        <titleType>Official Title as Introduced</titleType>
+        <titleTypeCode>6</titleTypeCode>
+        <title>Providing for consideration of the bill (H.R. 8035) to amend the FISA Amendments Act of 2008 to extend the authorities of title VII of the Foreign Intelligence Surveillance Act of 1978 through October 20, 2027, and for other purposes.</title>
+        <updateDate>2026-04-16T08:07:02Z</updateDate>
+      </item>
+    </titles>
+    <amendments>
+      <amendment>
+        <number>175</number>
+        <congress>119</congress>
+        <type>HAMDT</type>
+        <description>An amendment to strike the first section after the resolving clause and insert a new paragraph providing for the consideration of H.R. 8035.</description>
+        <purpose>Amendment sought to strike the first section after the resolving clause and insert a new paragraph providing for the consideration of H.R. 8035.</purpose>
+        <updateDate>2026-04-23T19:29:22Z</updateDate>
+        <latestAction>
+          <actionDate>2026-04-17</actionDate>
+          <text>On agreeing to the Scott, Austin amendment (A001) Failed by the Yeas and Nays: 200 - 220 (Roll no. 123).</text>
+          <actionTime>01:23:24</actionTime>
+          <links>
+            <link>
+              <name>Roll no. 123</name>
+              <url>https://www.congress.gov/votes/house/119-2/123</url>
+            </link>
+          </links>
+        </latestAction>
+        <sponsors>
+          <item>
+            <bioguideId>S001189</bioguideId>
+            <fullName>Rep. Scott, Austin [R-GA-8]</fullName>
+            <firstName>Austin</firstName>
+            <lastName>Scott</lastName>
+            <party>R</party>
+            <state>GA</state>
+            <district>8</district>
+          </item>
+        </sponsors>
+        <submittedDate>2026-04-17T04:00:00Z</submittedDate>
+        <chamber>House of Representatives</chamber>
+        <amendedBill>
+          <congress>119</congress>
+          <type>HRES</type>
+          <originChamber>House</originChamber>
+          <originChamberCode>H</originChamberCode>
+          <number>1175</number>
+          <title>Providing for consideration of the bill (H.R. 8035) to amend the FISA Amendments Act of 2008 to extend the authorities of title VII of the Foreign Intelligence Surveillance Act of 1978 through October 20, 2027, and for other purposes.</title>
+          <updateDateIncludingText>2026-04-23</updateDateIncludingText>
+        </amendedBill>
+        <links>
+          <link>
+            <name>H.R. 8035</name>
+            <url>https://www.congress.gov/bill/119th-congress/house-bill/8035</url>
+          </link>
+        </links>
+        <actions>
+          <count>9</count>
+          <actions>
+            <item>
+              <actionDate>2026-04-17</actionDate>
+              <actionTime>01:23:24</actionTime>
+              <text>On agreeing to the Scott, Austin amendment (A001) Failed by the Yeas and Nays: 200 - 220 (Roll no. 123).</text>
+              <type>Floor</type>
+              <actionCode>73000</actionCode>
+              <sourceSystem>
+                <code>9</code>
+                <name>Library of Congress</name>
+              </sourceSystem>
+              <recordedVotes>
+                <recordedVote>
+                  <rollNumber>123</rollNumber>
+                  <chamber>House</chamber>
+                  <congress>119</congress>
+                  <date>2026-04-17T05:23:24Z</date>
+                  <sessionNumber>2</sessionNumber>
+                  <url>https://clerk.house.gov/evs/2026/roll123.xml</url>
+                </recordedVote>
+              </recordedVotes>
+            </item>
+            <item>
+              <actionDate>2026-04-17</actionDate>
+              <actionTime>01:23:24</actionTime>
+              <type>Floor</type>
+              <actionCode>75000</actionCode>
+              <sourceSystem>
+                <code>9</code>
+                <name>Library of Congress</name>
+              </sourceSystem>
+              <recordedVotes>
+                <recordedVote>
+                  <rollNumber>123</rollNumber>
+                  <chamber>House</chamber>
+                  <congress>119</congress>
+                  <date>2026-04-17T05:23:24Z</date>
+                  <sessionNumber>2</sessionNumber>
+                  <url>https://clerk.house.gov/evs/2026/roll123.xml</url>
+                </recordedVote>
+              </recordedVotes>
+            </item>
+            <item>
+              <actionDate>2026-04-17</actionDate>
+              <actionTime>01:14:13</actionTime>
+              <text>On ordering the previous question on the amendment and the resolution Agreed to by the Yeas and Nays: 211 - 210 (Roll no. 122).</text>
+              <type>Floor</type>
+              <actionCode>74000</actionCode>
+              <sourceSystem>
+                <code>9</code>
+                <name>Library of Congress</name>
+              </sourceSystem>
+              <recordedVotes>
+                <recordedVote>
+                  <rollNumber>122</rollNumber>
+                  <chamber>House</chamber>
+                  <congress>119</congress>
+                  <date>2026-04-17T05:14:13Z</date>
+                  <sessionNumber>2</sessionNumber>
+                  <url>https://clerk.house.gov/evs/2026/roll122.xml</url>
+                </recordedVote>
+              </recordedVotes>
+            </item>
+            <item>
+              <actionDate>2026-04-17</actionDate>
+              <actionTime>01:14:13</actionTime>
+              <text>On ordering the previous question on the amendment and the Agreed to by the Yeas and Nays: 211 - 210 (Roll no. 122).</text>
+              <type>Floor</type>
+              <actionCode>75000</actionCode>
+              <sourceSystem>
+                <code>9</code>
+                <name>Library of Congress</name>
+              </sourceSystem>
+              <recordedVotes>
+                <recordedVote>
+                  <rollNumber>122</rollNumber>
+                  <chamber>House</chamber>
+                  <congress>119</congress>
+                  <date>2026-04-17T05:14:13Z</date>
+                  <sessionNumber>2</sessionNumber>
+                  <url>https://clerk.house.gov/evs/2026/roll122.xml</url>
+                </recordedVote>
+              </recordedVotes>
+            </item>
+            <item>
+              <actionDate>2026-04-17</actionDate>
+              <actionTime>00:05:03</actionTime>
+              <text>Amendment (A001) offered by Mr. Scott, Austin. (consideration: CR H2953; text: CR H2953)</text>
+              <type>Floor</type>
+              <actionCode>71000</actionCode>
+              <sourceSystem>
+                <code>9</code>
+                <name>Library of Congress</name>
+              </sourceSystem>
+            </item>
+            <item>
+              <actionDate>2026-04-17</actionDate>
+              <actionTime>01:14:13</actionTime>
+              <text>Roll call votes on amendments in House</text>
+              <type>Floor</type>
+              <actionCode>75000</actionCode>
+              <sourceSystem>
+                <code>9</code>
+                <name>Library of Congress</name>
+              </sourceSystem>
+              <recordedVotes>
+                <recordedVote>
+                  <rollNumber>122</rollNumber>
+                  <chamber>House</chamber>
+                  <congress>119</congress>
+                  <date>2026-04-17T05:14:13Z</date>
+                  <sessionNumber>2</sessionNumber>
+                  <url>https://clerk.house.gov/evs/2026/roll122.xml</url>
+                </recordedVote>
+              </recordedVotes>
+            </item>
+            <item>
+              <actionDate>2026-04-17</actionDate>
+              <actionTime>01:23:24</actionTime>
+              <text>House amendment not agreed to: On agreeing to the Scott, Austin amendment (A001) Failed by the Yeas and Nays: 200 - 220 (Roll no. 123).</text>
+              <type>Floor</type>
+              <actionCode>73000</actionCode>
+              <sourceSystem>
+                <code>9</code>
+                <name>Library of Congress</name>
+              </sourceSystem>
+              <recordedVotes>
+                <recordedVote>
+                  <rollNumber>123</rollNumber>
+                  <chamber>House</chamber>
+                  <congress>119</congress>
+                  <date>2026-04-17T05:23:24Z</date>
+                  <sessionNumber>2</sessionNumber>
+                  <url>https://clerk.house.gov/evs/2026/roll123.xml</url>
+                </recordedVote>
+              </recordedVotes>
+            </item>
+            <item>
+              <actionDate>2026-04-17</actionDate>
+              <actionTime>01:23:24</actionTime>
+              <text>Roll call votes on amendments in House</text>
+              <type>Floor</type>
+              <actionCode>75000</actionCode>
+              <sourceSystem>
+                <code>9</code>
+                <name>Library of Congress</name>
+              </sourceSystem>
+              <recordedVotes>
+                <recordedVote>
+                  <rollNumber>123</rollNumber>
+                  <chamber>House</chamber>
+                  <congress>119</congress>
+                  <date>2026-04-17T05:23:24Z</date>
+                  <sessionNumber>2</sessionNumber>
+                  <url>https://clerk.house.gov/evs/2026/roll123.xml</url>
+                </recordedVote>
+              </recordedVotes>
+            </item>
+            <item>
+              <actionDate>2026-04-17</actionDate>
+              <actionTime>00:05:03</actionTime>
+              <text>House Amendment Offered</text>
+              <type>Floor</type>
+              <actionCode>71000</actionCode>
+              <sourceSystem>
+                <code>9</code>
+                <name>Library of Congress</name>
+              </sourceSystem>
+            </item>
+          </actions>
+        </actions>
+      </amendment>
+    </amendments>
+    <textVersions>
+      <item>
+        <type>Reported in House</type>
+        <date>2026-04-15T04:00:00Z</date>
+        <formats>
+          <item>
+            <url>https://www.govinfo.gov/content/pkg/BILLS-119hres1175rh/xml/BILLS-119hres1175rh.xml</url>
+          </item>
+        </formats>
+      </item>
+    </textVersions>
+    <latestAction>
+      <actionDate>2026-04-17</actionDate>
+      <text>Motion to reconsider laid on the table Agreed to without objection.</text>
+      <actionTime>02:08:38</actionTime>
+    </latestAction>
+  </bill>
+  <dublinCore xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:format>text/xml</dc:format>
+    <dc:language>EN</dc:language>
+    <dc:rights>Pursuant to Title 17 Section 105 of the United States Code, this file is not subject to copyright protection and is in the public domain.</dc:rights>
+    <dc:contributor>Congressional Research Service, Library of Congress</dc:contributor>
+    <dc:description>This file contains bill summaries and statuses for federal legislation. A bill summary describes the most significant provisions of a piece of legislation and details the effects the legislative text may have on current law and federal programs. Bill summaries are authored by the Congressional Research Service (CRS) of the Library of Congress. As stated in Public Law 91-510 (2 USC 166 (d)(6)), one of the duties of CRS is "to prepare summaries and digests of bills and resolutions of a public general nature introduced in the Senate or House of Representatives". For more information, refer to the User Guide that accompanies this file.</dc:description>
+  </dublinCore>
+</billStatus>

@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<billStatus>
+  <version>3.0.0</version>
+  <bill>
+    <number>432</number>
+    <updateDate>2026-01-07T16:16:55Z</updateDate>
+    <updateDateIncludingText>2026-01-07T16:16:55Z</updateDateIncludingText>
+    <originChamber>House</originChamber>
+    <originChamberCode>H</originChamberCode>
+    <type>HRES</type>
+    <introducedDate>2025-05-20</introducedDate>
+    <congress>119</congress>
+    <legislationUrl>https://www.congress.gov/bill/119th-congress/house-resolution/432</legislationUrl>
+    <cdata/>
+    <committees>
+      <item>
+        <systemCode>hsru00</systemCode>
+        <name>Rules Committee</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Unknown</name>
+            <date>2025-11-17T20:48:39Z</date>
+          </item>
+          <item>
+            <name>Referred To</name>
+            <date>2025-05-20T14:00:20Z</date>
+          </item>
+        </activities>
+      </item>
+    </committees>
+    <relatedBills>
+      <item>
+        <title>Protect America's Workforce Act</title>
+        <congress>119</congress>
+        <number>2550</number>
+        <type>HR</type>
+        <latestAction>
+          <actionDate>2025-12-15</actionDate>
+          <text>Received in the Senate.</text>
+        </latestAction>
+        <relationshipDetails>
+          <item>
+            <type>Related bill</type>
+            <identifiedBy>House</identifiedBy>
+          </item>
+        </relationshipDetails>
+      </item>
+    </relatedBills>
+    <actions>
+      <item>
+        <actionDate>2025-12-11</actionDate>
+        <actionTime>15:03:36</actionTime>
+        <text>Motion to reconsider laid on the table Agreed to without objection.</text>
+        <type>Floor</type>
+        <actionCode>H38310</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-12-11</actionDate>
+        <actionTime>15:03:34</actionTime>
+        <text>On agreeing to the resolution Agreed to by the Yeas and Nays: 232 - 194 (Roll no. 331).</text>
+        <type>Floor</type>
+        <actionCode>H37100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <recordedVotes>
+          <recordedVote>
+            <rollNumber>331</rollNumber>
+            <url>https://clerk.house.gov/evs/2025/roll331.xml</url>
+            <chamber>House</chamber>
+            <congress>119</congress>
+            <date>2025-12-11T20:03:34Z</date>
+            <sessionNumber>1</sessionNumber>
+          </recordedVote>
+        </recordedVotes>
+      </item>
+      <item>
+        <actionDate>2025-12-11</actionDate>
+        <actionTime>15:03:34</actionTime>
+        <text>Passed/agreed to in House: On agreeing to the resolution Agreed to by the Yeas and Nays: 232 - 194 (Roll no. 331).</text>
+        <type>Floor</type>
+        <actionCode>8000</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+        <recordedVotes>
+          <recordedVote>
+            <rollNumber>331</rollNumber>
+            <url>https://clerk.house.gov/evs/2025/roll331.xml</url>
+            <chamber>House</chamber>
+            <congress>119</congress>
+            <date>2025-12-11T20:03:34Z</date>
+            <sessionNumber>1</sessionNumber>
+          </recordedVote>
+        </recordedVotes>
+      </item>
+      <item>
+        <actionDate>2025-12-11</actionDate>
+        <actionTime>14:55:45</actionTime>
+        <text>Considered as unfinished business. (consideration: CR H5794-5795)</text>
+        <type>Floor</type>
+        <actionCode>H30000</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-12-10</actionDate>
+        <actionTime>17:54:28</actionTime>
+        <text>POSTPONED PROCEEDINGS - At the conclusion of debate on H. Res. 432, the Chair put the question on agreeing to the resolution and by voice vote announced the ayes had prevailed. Mr. Guthrie demanded the yeas and nays and the Chair postponed further proceedings until a time to be announced.</text>
+        <type>Floor</type>
+        <actionCode>H8D000</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-12-10</actionDate>
+        <actionTime>17:54:21</actionTime>
+        <text>The previous question was ordered without objection.</text>
+        <type>Floor</type>
+        <actionCode>H35000</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-12-10</actionDate>
+        <actionTime>17:44:16</actionTime>
+        <text>DEBATE - The House proceeded with one hour of debate on H. Res. 432.</text>
+        <type>Floor</type>
+        <actionCode>H8D000</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-12-10</actionDate>
+        <actionTime>17:43:11</actionTime>
+        <text>Considered from the Discharge Calendar. (consideration: CR H5520-5522; text: CR H5521)</text>
+        <type>Floor</type>
+        <actionCode>H30000</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-12-10</actionDate>
+        <actionTime>17:43:09</actionTime>
+        <text>Consideration initiated from the Discharge Calendar.</text>
+        <type>Floor</type>
+        <actionCode>H30800</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-12-10</actionDate>
+        <text>On motion to discharge Agreed to by the Yeas and Nays: 222 - 200 (Roll no. 321).</text>
+        <type>President</type>
+        <actionCode>H30841</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <recordedVotes>
+          <recordedVote>
+            <rollNumber>321</rollNumber>
+            <url>https://clerk.house.gov/evs/2025/roll321.xml</url>
+            <chamber>House</chamber>
+            <congress>119</congress>
+            <date>2025-12-10T22:43:03Z</date>
+            <sessionNumber>1</sessionNumber>
+          </recordedVote>
+        </recordedVotes>
+      </item>
+      <item>
+        <actionDate>2025-12-10</actionDate>
+        <text>Mr. Golden (ME) moved to discharge.</text>
+        <type>Discharge</type>
+        <actionCode>H30840</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-12-10</actionDate>
+        <actionTime>17:33:57</actionTime>
+        <text>DEBATE - Pursuant to the rule, the House proceeded with 20 minutes of debate on the Golden (ME) motion to discharge.</text>
+        <type>Floor</type>
+        <actionCode>H8D000</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-12-10</actionDate>
+        <actionTime>17:33:38</actionTime>
+        <text>MOTION TO DISCHARGE COMMITTEE - Pursuant to clause 2 of Rule XV, Mr. Golden (ME) called up motion No. 3, to discharge the Committee on Rules from further consideration of H. Res. 432.</text>
+        <type>Floor</type>
+        <actionCode>H8D000</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-12-09</actionDate>
+        <actionTime>19:12:41</actionTime>
+        <text>NOTIFICATION OF INTENT TO OFFER MOTION TO DISCHARGE - Mr. Golden (ME) notified the House of his intent to offer a motion to discharge the Committee on Rules from further consideration of H.Res. 432 pursuant to clause 2(c) of rule XV. The Chair announced that the House will entertain the gentleman's motion within two legislative days.</text>
+        <type>Floor</type>
+        <actionCode>H8D000</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-11-17</actionDate>
+        <text>Motion to discharge the Committee on Rules filed by Mr. Golden (ME). Assigned to the Discharge Calendar, Calendar No. 3. (consideration: CR H4702)</text>
+        <type>Discharge</type>
+        <actionCode>H12450</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsru00</systemCode>
+            <name>Rules Committee</name>
+          </item>
+        </committees>
+        <calendarNumber>
+          <calendar>D00003</calendar>
+        </calendarNumber>
+      </item>
+      <item>
+        <actionDate>2025-06-04</actionDate>
+        <text>Motion to Discharge Committee filed by Mr. Golden (ME). Petition No: 119-6. (&lt;a href="https://clerk.house.gov/DischargePetition/2025060406"&gt;Discharge petition&lt;/a&gt; text with signatures.)</text>
+        <type>Discharge</type>
+        <actionCode>H17000</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-05-20</actionDate>
+        <text>Referred to the House Committee on Rules.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsru00</systemCode>
+            <name>Rules Committee</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-05-20</actionDate>
+        <text>Submitted in House</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-05-20</actionDate>
+        <text>Submitted in House</text>
+        <type>IntroReferral</type>
+        <actionCode>1025</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+    </actions>
+    <sponsors>
+      <item>
+        <bioguideId>G000592</bioguideId>
+        <fullName>Rep. Golden, Jared F. [D-ME-2]</fullName>
+        <firstName>Jared</firstName>
+        <lastName>Golden</lastName>
+        <party>D</party>
+        <state>ME</state>
+        <middleName>F.</middleName>
+        <district>2</district>
+        <isByRequest>N</isByRequest>
+      </item>
+    </sponsors>
+    <policyArea>
+      <name>Congress</name>
+    </policyArea>
+    <subjects>
+      <legislativeSubjects>
+        <item>
+          <name>House of Representatives</name>
+          <updateDate>2025-12-17T15:01:00Z</updateDate>
+        </item>
+        <item>
+          <name>Legislative rules and procedure</name>
+          <updateDate>2025-12-17T15:00:53Z</updateDate>
+        </item>
+      </legislativeSubjects>
+      <policyArea>
+        <name>Congress</name>
+        <updateDate>2025-09-09T21:10:44Z</updateDate>
+      </policyArea>
+    </subjects>
+    <summaries>
+      <summary>
+        <versionCode>00</versionCode>
+        <actionDate>2025-05-20</actionDate>
+        <actionDesc>Introduced in House</actionDesc>
+        <updateDate>2025-11-21T21:40:57Z</updateDate>
+        <cdata>
+          <text>&lt;p&gt;This resolution provides for immediate consideration by the House of Representatives of H.R. 2550, the &lt;em&gt;Protect America's Workforce Act&lt;/em&gt;, a bill nullifying &lt;a href="https://www.federalregister.gov/d/2025-05836"&gt;Executive Order 14251&lt;/a&gt;, entitled &lt;em&gt;Exclusions from Federal Labor-Management Relations Programs&lt;/em&gt; (issued on March 27, 2025).&lt;/p&gt;&lt;p&gt;The Executive Order excludes specified federal agencies from substantive and procedural requirements that generally apply to federal employees' labor organizing and collective bargaining, as well as respective management obligations.&lt;/p&gt;</text>
+        </cdata>
+      </summary>
+    </summaries>
+    <title>Providing for consideration of the bill (H.R. 2550) to nullify the Executive order relating to Exclusions from Federal Labor-Management Relations Programs, and for other purposes.</title>
+    <titles>
+      <item>
+        <titleType>Display Title</titleType>
+        <titleTypeCode>45</titleTypeCode>
+        <title>Providing for consideration of the bill (H.R. 2550) to nullify the Executive order relating to Exclusions from Federal Labor-Management Relations Programs, and for other purposes.</title>
+        <updateDate>2025-12-16T09:05:35Z</updateDate>
+      </item>
+      <item>
+        <titleType>Official Title as Introduced</titleType>
+        <titleTypeCode>6</titleTypeCode>
+        <title>Providing for consideration of the bill (H.R. 2550) to nullify the Executive order relating to Exclusions from Federal Labor-Management Relations Programs, and for other purposes.</title>
+        <updateDate>2025-12-16T09:05:35Z</updateDate>
+        <billTextVersionName>Introduced in House</billTextVersionName>
+        <billTextVersionCode>IH</billTextVersionCode>
+      </item>
+      <item>
+        <titleType>Official Titles from EH (Engrossed in House) bill text</titleType>
+        <titleTypeCode>259</titleTypeCode>
+        <title>Providing for consideration of the bill (H.R. 2550) to nullify the Executive order relating to Exclusions from Federal Labor-Management Relations Programs, and for other purposes.</title>
+        <updateDate>2025-12-13T03:08:17Z</updateDate>
+        <chamberCode>H</chamberCode>
+        <chamberName>House</chamberName>
+        <billTextVersionName>Engrossed in House</billTextVersionName>
+        <billTextVersionCode>EH</billTextVersionCode>
+      </item>
+    </titles>
+    <textVersions>
+      <item>
+        <type>Engrossed in House</type>
+        <date>2025-12-11T05:00:00Z</date>
+        <formats>
+          <item>
+            <url>https://www.govinfo.gov/content/pkg/BILLS-119hres432eh/xml/BILLS-119hres432eh.xml</url>
+          </item>
+        </formats>
+      </item>
+      <item>
+        <type>Introduced in House</type>
+        <date>2025-05-20T04:00:00Z</date>
+        <formats>
+          <item>
+            <url>https://www.govinfo.gov/content/pkg/BILLS-119hres432ih/xml/BILLS-119hres432ih.xml</url>
+          </item>
+        </formats>
+      </item>
+    </textVersions>
+    <latestAction>
+      <actionDate>2025-12-11</actionDate>
+      <text>Motion to reconsider laid on the table Agreed to without objection.</text>
+      <actionTime>15:03:36</actionTime>
+    </latestAction>
+  </bill>
+  <dublinCore xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:format>text/xml</dc:format>
+    <dc:language>EN</dc:language>
+    <dc:rights>Pursuant to Title 17 Section 105 of the United States Code, this file is not subject to copyright protection and is in the public domain.</dc:rights>
+    <dc:contributor>Congressional Research Service, Library of Congress</dc:contributor>
+    <dc:description>This file contains bill summaries and statuses for federal legislation. A bill summary describes the most significant provisions of a piece of legislation and details the effects the legislative text may have on current law and federal programs. Bill summaries are authored by the Congressional Research Service (CRS) of the Library of Congress. As stated in Public Law 91-510 (2 USC 166 (d)(6)), one of the duties of CRS is "to prepare summaries and digests of bills and resolutions of a public general nature introduced in the Senate or House of Representatives". For more information, refer to the User Guide that accompanies this file.</dc:description>
+  </dublinCore>
+</billStatus>

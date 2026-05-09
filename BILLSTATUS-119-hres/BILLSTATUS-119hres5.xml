@@ -1,0 +1,646 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<billStatus>
+  <version>3.0.0</version>
+  <bill>
+    <number>5</number>
+    <updateDate>2026-05-01T21:41:22Z</updateDate>
+    <updateDateIncludingText>2026-05-01T21:41:22Z</updateDateIncludingText>
+    <originChamber>House</originChamber>
+    <originChamberCode>H</originChamberCode>
+    <type>HRES</type>
+    <introducedDate>2025-01-03</introducedDate>
+    <congress>119</congress>
+    <legislationUrl>https://www.congress.gov/bill/119th-congress/house-resolution/5</legislationUrl>
+    <cdata/>
+    <relatedBills>
+      <item>
+        <title>Laken Riley Act</title>
+        <congress>119</congress>
+        <number>29</number>
+        <type>HR</type>
+        <latestAction>
+          <actionDate>2025-02-10</actionDate>
+          <text>Read the second time. Placed on Senate Legislative Calendar under General Orders. Calendar No. 10.</text>
+        </latestAction>
+        <relationshipDetails>
+          <item>
+            <type>Related bill</type>
+            <identifiedBy>House</identifiedBy>
+          </item>
+        </relationshipDetails>
+      </item>
+      <item>
+        <title>Illegitimate Court Counteraction Act</title>
+        <congress>119</congress>
+        <number>23</number>
+        <type>HR</type>
+        <latestAction>
+          <actionDate>2025-01-28</actionDate>
+          <text>Cloture on the motion to proceed to the measure not invoked in Senate by Yea-Nay Vote. 54 - 45. Record Vote Number: 22. (CR S410)</text>
+        </latestAction>
+        <relationshipDetails>
+          <item>
+            <type>Related bill</type>
+            <identifiedBy>House</identifiedBy>
+          </item>
+        </relationshipDetails>
+      </item>
+      <item>
+        <title>To amend the Internal Revenue Code of 1986 to provide special rules for the taxation of certain residents of Taiwan with income from sources within the United States.</title>
+        <congress>119</congress>
+        <number>33</number>
+        <type>HR</type>
+        <latestAction>
+          <actionDate>2025-01-16</actionDate>
+          <text>Received in the Senate and Read twice and referred to the Committee on Finance.</text>
+        </latestAction>
+        <relationshipDetails>
+          <item>
+            <type>Related bill</type>
+            <identifiedBy>House</identifiedBy>
+          </item>
+        </relationshipDetails>
+      </item>
+      <item>
+        <title>Preventing Violence Against Women by Illegal Aliens Act</title>
+        <congress>119</congress>
+        <number>30</number>
+        <type>HR</type>
+        <latestAction>
+          <actionDate>2025-01-17</actionDate>
+          <text>Received in the Senate and Read twice and referred to the Committee on the Judiciary.</text>
+        </latestAction>
+        <relationshipDetails>
+          <item>
+            <type>Related bill</type>
+            <identifiedBy>House</identifiedBy>
+          </item>
+        </relationshipDetails>
+      </item>
+      <item>
+        <title>Protection of Women and Girls in Sports Act of 2025</title>
+        <congress>119</congress>
+        <number>28</number>
+        <type>HR</type>
+        <latestAction>
+          <actionDate>2025-01-15</actionDate>
+          <text>Received in the Senate.</text>
+        </latestAction>
+        <relationshipDetails>
+          <item>
+            <type>Related bill</type>
+            <identifiedBy>House</identifiedBy>
+          </item>
+        </relationshipDetails>
+      </item>
+      <item>
+        <title>Born-Alive Abortion Survivors Protection Act</title>
+        <congress>119</congress>
+        <number>21</number>
+        <type>HR</type>
+        <latestAction>
+          <actionDate>2025-01-24</actionDate>
+          <text>Received in the Senate and Read twice and referred to the Committee on the Judiciary.</text>
+        </latestAction>
+        <relationshipDetails>
+          <item>
+            <type>Related bill</type>
+            <identifiedBy>House</identifiedBy>
+          </item>
+        </relationshipDetails>
+      </item>
+      <item>
+        <title>Protecting American Energy Production Act</title>
+        <congress>119</congress>
+        <number>26</number>
+        <type>HR</type>
+        <latestAction>
+          <actionDate>2025-02-10</actionDate>
+          <text>Received in the Senate and Read twice and referred to the Committee on Energy and Natural Resources.</text>
+        </latestAction>
+        <relationshipDetails>
+          <item>
+            <type>Related bill</type>
+            <identifiedBy>House</identifiedBy>
+          </item>
+        </relationshipDetails>
+      </item>
+      <item>
+        <title>Agent Raul Gonzalez Officer Safety Act</title>
+        <congress>119</congress>
+        <number>35</number>
+        <type>HR</type>
+        <latestAction>
+          <actionDate>2025-02-13</actionDate>
+          <text>Received in the Senate and Read twice and referred to the Committee on the Judiciary.</text>
+        </latestAction>
+        <relationshipDetails>
+          <item>
+            <type>Related bill</type>
+            <identifiedBy>House</identifiedBy>
+          </item>
+        </relationshipDetails>
+      </item>
+    </relatedBills>
+    <actions>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <actionTime>18:12:02</actionTime>
+        <text>Motion to reconsider laid on the table Agreed to without objection.</text>
+        <type>Floor</type>
+        <actionCode>H38310</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <actionTime>18:12:00</actionTime>
+        <text>On agreeing to the resolution Agreed to by the Yeas and Nays: 215 - 209 (Roll no. 5). (text: CR H8-14)</text>
+        <type>Floor</type>
+        <actionCode>H37100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <recordedVotes>
+          <recordedVote>
+            <rollNumber>5</rollNumber>
+            <url>https://clerk.house.gov/evs/2025/roll005.xml</url>
+            <chamber>House</chamber>
+            <congress>119</congress>
+            <date>2025-01-03T23:12:00Z</date>
+            <sessionNumber>1</sessionNumber>
+          </recordedVote>
+        </recordedVotes>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <actionTime>18:12:00</actionTime>
+        <text>Passed/agreed to in House: On agreeing to the resolution Agreed to by the Yeas and Nays: 215 - 209 (Roll no. 5). (text: CR H8-14)</text>
+        <type>Floor</type>
+        <actionCode>8000</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+        <recordedVotes>
+          <recordedVote>
+            <rollNumber>5</rollNumber>
+            <url>https://clerk.house.gov/evs/2025/roll005.xml</url>
+            <chamber>House</chamber>
+            <congress>119</congress>
+            <date>2025-01-03T23:12:00Z</date>
+            <sessionNumber>1</sessionNumber>
+          </recordedVote>
+        </recordedVotes>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <actionTime>18:06:14</actionTime>
+        <text>On motion to commit the resolution to a select committee with instructions Failed by the Yeas and Nays: 209 - 214 (Roll no. 4).</text>
+        <type>Floor</type>
+        <actionCode>H36610</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <recordedVotes>
+          <recordedVote>
+            <rollNumber>4</rollNumber>
+            <url>https://clerk.house.gov/evs/2025/roll004.xml</url>
+            <chamber>House</chamber>
+            <congress>119</congress>
+            <date>2025-01-03T23:06:14Z</date>
+            <sessionNumber>1</sessionNumber>
+          </recordedVote>
+        </recordedVotes>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <actionTime>18:02:11</actionTime>
+        <text>The previous question on the motion to commit was ordered without objection.</text>
+        <type>Floor</type>
+        <actionCode>H8D000</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <actionTime>18:02:10</actionTime>
+        <text>Ms. DeLauro moved to commit the resolution to a select committee composed of the Majority Leader and the Minority Leader with instructions to report the same back to the House forthwith with an amendment.</text>
+        <type>Floor</type>
+        <actionCode>H36600</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <actionTime>17:57:16</actionTime>
+        <text>On ordering the previous question Agreed to by the Yeas and Nays: 216 - 210 (Roll no. 3).</text>
+        <type>Floor</type>
+        <actionCode>H35000</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <recordedVotes>
+          <recordedVote>
+            <rollNumber>3</rollNumber>
+            <url>https://clerk.house.gov/evs/2025/roll003.xml</url>
+            <chamber>House</chamber>
+            <congress>119</congress>
+            <date>2025-01-03T22:57:16Z</date>
+            <sessionNumber>1</sessionNumber>
+          </recordedVote>
+        </recordedVotes>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <actionTime>17:23:52</actionTime>
+        <text>DEBATE - The House resumed debate on H. Res. 5.</text>
+        <type>Floor</type>
+        <actionCode>H8D000</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <actionTime>17:23:51</actionTime>
+        <text>ORDER OF PROCEDURE - Mr. Fishbach asked unanimous consent that the Chair may reduce to 5 minutes the minimum time for electronic voting on any question relating to H. Res. 5 that follows a 15 minute vote. Agreed to without objection.</text>
+        <type>Floor</type>
+        <actionCode>H8D000</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <actionTime>16:54:01</actionTime>
+        <text>DEBATE - The House resumed debate on H. Res. 5.</text>
+        <type>Floor</type>
+        <actionCode>H8D000</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <actionTime>16:39:13</actionTime>
+        <text>DEBATE - The House proceeded with one hour of debate on H. Res. 5.</text>
+        <type>Floor</type>
+        <actionCode>H8D000</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <actionTime>16:38:56</actionTime>
+        <text>Considered as privileged matter. (consideration: CR H8-23)</text>
+        <type>Floor</type>
+        <actionCode>H30000</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <text>Submitted in House</text>
+        <type>Committee</type>
+        <actionCode>H12100</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-01-03</actionDate>
+        <text>Submitted in House</text>
+        <type>IntroReferral</type>
+        <actionCode>1025</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+    </actions>
+    <sponsors>
+      <item>
+        <bioguideId>F000470</bioguideId>
+        <fullName>Rep. Fischbach, Michelle [R-MN-7]</fullName>
+        <firstName>Michelle</firstName>
+        <lastName>Fischbach</lastName>
+        <party>R</party>
+        <state>MN</state>
+        <district>7</district>
+        <isByRequest>N</isByRequest>
+      </item>
+    </sponsors>
+    <policyArea>
+      <name>Congress</name>
+    </policyArea>
+    <subjects>
+      <legislativeSubjects>
+        <item>
+          <name>Abortion</name>
+          <updateDate>2025-01-15T17:03:27Z</updateDate>
+        </item>
+        <item>
+          <name>Administrative law and regulatory procedures</name>
+          <updateDate>2025-01-15T17:03:24Z</updateDate>
+        </item>
+        <item>
+          <name>Advanced technology and technological innovations</name>
+          <updateDate>2025-01-15T17:03:26Z</updateDate>
+        </item>
+        <item>
+          <name>Appropriations</name>
+          <updateDate>2025-01-15T17:03:26Z</updateDate>
+        </item>
+        <item>
+          <name>Asia</name>
+          <updateDate>2025-01-15T17:03:24Z</updateDate>
+        </item>
+        <item>
+          <name>Assault and harassment offenses</name>
+          <updateDate>2025-01-15T17:03:24Z</updateDate>
+        </item>
+        <item>
+          <name>Border security and unlawful immigration</name>
+          <updateDate>2025-01-15T17:03:26Z</updateDate>
+        </item>
+        <item>
+          <name>Budget deficits and national debt</name>
+          <updateDate>2025-01-15T17:03:24Z</updateDate>
+        </item>
+        <item>
+          <name>Budget process</name>
+          <updateDate>2025-01-15T17:03:24Z</updateDate>
+        </item>
+        <item>
+          <name>China</name>
+          <updateDate>2025-01-15T17:03:24Z</updateDate>
+        </item>
+        <item>
+          <name>Computers and information technology</name>
+          <updateDate>2025-01-15T17:03:26Z</updateDate>
+        </item>
+        <item>
+          <name>Congressional Budget Office (CBO)</name>
+          <updateDate>2025-01-15T17:03:24Z</updateDate>
+        </item>
+        <item>
+          <name>Congressional committees</name>
+          <updateDate>2025-01-15T17:03:24Z</updateDate>
+        </item>
+        <item>
+          <name>Congressional leadership</name>
+          <updateDate>2025-01-15T17:03:24Z</updateDate>
+        </item>
+        <item>
+          <name>Congressional officers and employees</name>
+          <updateDate>2025-01-15T17:03:25Z</updateDate>
+        </item>
+        <item>
+          <name>Congressional operations and organization</name>
+          <updateDate>2025-01-15T17:03:25Z</updateDate>
+        </item>
+        <item>
+          <name>Congressional oversight</name>
+          <updateDate>2025-01-15T17:03:25Z</updateDate>
+        </item>
+        <item>
+          <name>Crimes against property</name>
+          <updateDate>2025-01-15T17:03:26Z</updateDate>
+        </item>
+        <item>
+          <name>Domestic violence and child abuse</name>
+          <updateDate>2025-01-15T17:03:27Z</updateDate>
+        </item>
+        <item>
+          <name>Drug trafficking and controlled substances</name>
+          <updateDate>2025-01-15T17:03:27Z</updateDate>
+        </item>
+        <item>
+          <name>Elections, voting, political campaign regulation</name>
+          <updateDate>2025-01-15T17:03:27Z</updateDate>
+        </item>
+        <item>
+          <name>Employment discrimination and employee rights</name>
+          <updateDate>2025-01-15T17:03:26Z</updateDate>
+        </item>
+        <item>
+          <name>Evidence and witnesses</name>
+          <updateDate>2025-01-15T17:03:25Z</updateDate>
+        </item>
+        <item>
+          <name>Executive agency funding and structure</name>
+          <updateDate>2025-01-15T17:03:25Z</updateDate>
+        </item>
+        <item>
+          <name>Family relationships</name>
+          <updateDate>2025-01-15T17:03:26Z</updateDate>
+        </item>
+        <item>
+          <name>Government buildings, facilities, and property</name>
+          <updateDate>2025-01-15T17:03:26Z</updateDate>
+        </item>
+        <item>
+          <name>Government employee pay, benefits, personnel management</name>
+          <updateDate>2025-01-15T17:03:25Z</updateDate>
+        </item>
+        <item>
+          <name>Government information and archives</name>
+          <updateDate>2025-01-15T17:03:25Z</updateDate>
+        </item>
+        <item>
+          <name>Government lending and loan guarantees</name>
+          <updateDate>2025-01-15T17:03:25Z</updateDate>
+        </item>
+        <item>
+          <name>Government trust funds</name>
+          <updateDate>2025-01-15T17:03:25Z</updateDate>
+        </item>
+        <item>
+          <name>Higher education</name>
+          <updateDate>2025-01-15T17:03:25Z</updateDate>
+        </item>
+        <item>
+          <name>House Committee on Agriculture</name>
+          <updateDate>2025-01-15T17:03:26Z</updateDate>
+        </item>
+        <item>
+          <name>House Committee on Appropriations</name>
+          <updateDate>2025-01-15T17:03:26Z</updateDate>
+        </item>
+        <item>
+          <name>House Committee on Education and Workforce</name>
+          <updateDate>2025-01-30T13:10:56Z</updateDate>
+        </item>
+        <item>
+          <name>House Committee on Ethics</name>
+          <updateDate>2025-01-15T17:03:26Z</updateDate>
+        </item>
+        <item>
+          <name>House Committee on House Administration</name>
+          <updateDate>2025-01-15T17:03:26Z</updateDate>
+        </item>
+        <item>
+          <name>House Committee on Oversight and Government Reform</name>
+          <updateDate>2025-01-15T17:03:26Z</updateDate>
+        </item>
+        <item>
+          <name>House Committee on Rules</name>
+          <updateDate>2025-01-15T17:03:26Z</updateDate>
+        </item>
+        <item>
+          <name>House Committee on the Budget</name>
+          <updateDate>2025-01-15T17:03:26Z</updateDate>
+        </item>
+        <item>
+          <name>House Committee on the Judiciary</name>
+          <updateDate>2025-01-15T17:03:26Z</updateDate>
+        </item>
+        <item>
+          <name>House of Representatives</name>
+          <updateDate>2025-01-15T17:03:26Z</updateDate>
+        </item>
+        <item>
+          <name>Income tax rates</name>
+          <updateDate>2025-01-15T17:03:26Z</updateDate>
+        </item>
+        <item>
+          <name>Inflation and prices</name>
+          <updateDate>2025-01-15T17:03:26Z</updateDate>
+        </item>
+        <item>
+          <name>Intergovernmental relations</name>
+          <updateDate>2025-01-15T17:03:27Z</updateDate>
+        </item>
+        <item>
+          <name>Internal Revenue Service (IRS)</name>
+          <updateDate>2025-01-15T17:03:26Z</updateDate>
+        </item>
+        <item>
+          <name>International law and treaties</name>
+          <updateDate>2025-01-15T17:03:27Z</updateDate>
+        </item>
+        <item>
+          <name>Internet, web applications, social media</name>
+          <updateDate>2025-01-15T17:03:26Z</updateDate>
+        </item>
+        <item>
+          <name>Land transfers</name>
+          <updateDate>2025-01-15T17:03:26Z</updateDate>
+        </item>
+        <item>
+          <name>Law enforcement officers</name>
+          <updateDate>2025-01-15T17:03:27Z</updateDate>
+        </item>
+        <item>
+          <name>Legislative rules and procedure</name>
+          <updateDate>2025-01-15T17:03:26Z</updateDate>
+        </item>
+        <item>
+          <name>Members of Congress</name>
+          <updateDate>2025-01-15T17:03:26Z</updateDate>
+        </item>
+        <item>
+          <name>Oil and gas</name>
+          <updateDate>2025-01-15T17:03:26Z</updateDate>
+        </item>
+        <item>
+          <name>Sanctions</name>
+          <updateDate>2025-01-15T17:03:27Z</updateDate>
+        </item>
+        <item>
+          <name>Sex offenses</name>
+          <updateDate>2025-01-15T17:03:26Z</updateDate>
+        </item>
+        <item>
+          <name>Sex, gender, sexual orientation discrimination</name>
+          <updateDate>2025-01-15T17:03:26Z</updateDate>
+        </item>
+        <item>
+          <name>State and local government operations</name>
+          <updateDate>2025-01-15T17:03:27Z</updateDate>
+        </item>
+        <item>
+          <name>Student aid and college costs</name>
+          <updateDate>2025-01-15T17:03:26Z</updateDate>
+        </item>
+        <item>
+          <name>Taiwan</name>
+          <updateDate>2025-01-15T17:03:27Z</updateDate>
+        </item>
+        <item>
+          <name>War and emergency powers</name>
+          <updateDate>2025-01-15T17:03:24Z</updateDate>
+        </item>
+      </legislativeSubjects>
+      <policyArea>
+        <name>Congress</name>
+        <updateDate>2025-01-08T18:44:57Z</updateDate>
+      </policyArea>
+    </subjects>
+    <summaries>
+      <summary>
+        <versionCode>00</versionCode>
+        <actionDate>2025-01-03</actionDate>
+        <actionDesc>Introduced in House</actionDesc>
+        <updateDate>2025-01-15T02:28:40Z</updateDate>
+        <text><![CDATA[<p>This resolution establishes rules for the House of Representatives for the 119th Congress.</p><p>The resolution adopts the rules from the 118th Congress with specified changes, including</p><ul><li>providing that a resolution vacating the Office of Speaker is only privileged (takes precedence over all matters other than motions to adjourn) if it is offered by a sponsor of the majority party joined by eight cosponsors from the majority party;&nbsp;</li><li>providing that the Speaker may only entertain a motion to suspend the rules on Mondays, Tuesdays, and Wednesdays; </li><li>prohibiting&nbsp;waiver (by rule or by order) of the germaneness rule (which requires amendments to be of the same subject matter as the measure under consideration); and </li><li>prohibiting consideration of measures that exceed a specified long-term budget impact according to the Congressional Budget Office.</li></ul><p>Additional changes include</p><ul><li>authorizing the use of electronic voting within a committee;</li><li>authorizing remote appearances by&nbsp;non-executive branch witnesses and their counsel in committee proceedings;&nbsp;</li><li>eliminating the House Office of Diversity and Inclusion;&nbsp;</li><li>eliminating&nbsp;certain collective bargaining rights for employees of the House of Representatives; </li><li>reauthorizing the House Select Committee on the Strategic Competition Between the United States and the Chinese Communist Party;&nbsp;</li><li>reauthorizing the Tom Lantos Human Rights Commission; and&nbsp;</li><li>reauthorizing the House Democracy Assistance Commission&nbsp;(an entity that advises democratic parliaments in other countries)&nbsp;and renaming it the House Democracy Partnership. </li></ul><p>The resolution provides for the consideration of H.R. 21, H.R. 22, H.R. 23, H.R. 26, H.R. 27, H.R. 28, H.R. 29, H.R. 30, H.R. 31, H.R. 32, H.R. 33, and H.R. 35.</p>]]></text>
+      </summary>
+    </summaries>
+    <title>Adopting the Rules of the House of Representatives for the One Hundred Nineteenth Congress, and for other purposes.</title>
+    <titles>
+      <item>
+        <titleType>Display Title</titleType>
+        <titleTypeCode>45</titleTypeCode>
+        <title>Adopting the Rules of the House of Representatives for the One Hundred Nineteenth Congress, and for other purposes.</title>
+        <updateDate>2025-01-07T14:38:37Z</updateDate>
+      </item>
+      <item>
+        <titleType>Official Title as Introduced</titleType>
+        <titleTypeCode>6</titleTypeCode>
+        <title>Adopting the Rules of the House of Representatives for the One Hundred Nineteenth Congress, and for other purposes.</title>
+        <updateDate>2025-01-07T14:38:37Z</updateDate>
+      </item>
+    </titles>
+    <textVersions>
+      <item>
+        <type>Engrossed in House</type>
+        <date>2025-01-03T05:00:00Z</date>
+        <formats>
+          <item>
+            <url>https://www.govinfo.gov/content/pkg/BILLS-119hres5eh/xml/BILLS-119hres5eh.xml</url>
+          </item>
+        </formats>
+      </item>
+    </textVersions>
+    <latestAction>
+      <actionDate>2025-01-03</actionDate>
+      <text>Motion to reconsider laid on the table Agreed to without objection.</text>
+      <actionTime>18:12:02</actionTime>
+    </latestAction>
+  </bill>
+  <dublinCore xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:format>text/xml</dc:format>
+    <dc:language>EN</dc:language>
+    <dc:rights>Pursuant to Title 17 Section 105 of the United States Code, this file is not subject to copyright protection and is in the public domain.</dc:rights>
+    <dc:contributor>Congressional Research Service, Library of Congress</dc:contributor>
+    <dc:description>This file contains bill summaries and statuses for federal legislation. A bill summary describes the most significant provisions of a piece of legislation and details the effects the legislative text may have on current law and federal programs. Bill summaries are authored by the Congressional Research Service (CRS) of the Library of Congress. As stated in Public Law 91-510 (2 USC 166 (d)(6)), one of the duties of CRS is "to prepare summaries and digests of bills and resolutions of a public general nature introduced in the Senate or House of Representatives". For more information, refer to the User Guide that accompanies this file.</dc:description>
+  </dublinCore>
+</billStatus>

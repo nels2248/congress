@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<billStatus>
+  <version>3.0.0</version>
+  <bill>
+    <number>198</number>
+    <updateDate>2025-10-09T00:11:25Z</updateDate>
+    <updateDateIncludingText>2025-10-09T00:11:25Z</updateDateIncludingText>
+    <originChamber>House</originChamber>
+    <originChamberCode>H</originChamberCode>
+    <type>HRES</type>
+    <introducedDate>2025-03-06</introducedDate>
+    <congress>119</congress>
+    <legislationUrl>https://www.congress.gov/bill/119th-congress/house-resolution/198</legislationUrl>
+    <cdata/>
+    <committees>
+      <item>
+        <systemCode>hsha00</systemCode>
+        <name>Committee on House Administration</name>
+        <chamber>House</chamber>
+        <type>Standing</type>
+        <activities>
+          <item>
+            <name>Reported By</name>
+            <date>2025-03-18T16:16:40Z</date>
+          </item>
+          <item>
+            <name>Markup By</name>
+            <date>2025-03-11T19:39:00Z</date>
+          </item>
+          <item>
+            <name>Referred To</name>
+            <date>2025-03-06T14:08:05Z</date>
+          </item>
+        </activities>
+      </item>
+    </committees>
+    <committeeReports>
+      <committeeReport>
+        <citation>H. Rept. 119-17</citation>
+      </committeeReport>
+    </committeeReports>
+    <actions>
+      <item>
+        <actionDate>2025-03-24</actionDate>
+        <actionTime>19:13:47</actionTime>
+        <text>Motion to reconsider laid on the table Agreed to without objection.</text>
+        <type>Floor</type>
+        <actionCode>H38310</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-03-24</actionDate>
+        <actionTime>19:13:43</actionTime>
+        <text>On agreeing to the resolution, as amended Agreed to without objection. (text of amendment in the nature of a substitute: CR H1215-1216)</text>
+        <type>Floor</type>
+        <actionCode>H37100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-03-24</actionDate>
+        <actionTime>19:13:43</actionTime>
+        <text>Passed/agreed to in House: On agreeing to the resolution, as amended Agreed to without objection. (text of amendment in the nature of a substitute: CR H1215-1216)</text>
+        <type>Floor</type>
+        <actionCode>8000</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-03-24</actionDate>
+        <actionTime>19:13:11</actionTime>
+        <text>Considered by unanimous consent. (consideration: CR H1215-1216)</text>
+        <type>Floor</type>
+        <actionCode>H30000</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-03-24</actionDate>
+        <actionTime>19:12:36</actionTime>
+        <text>Mr. Steil asked unanimous consent to take from the Speaker's table and consider.</text>
+        <type>Floor</type>
+        <actionCode>H30200</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-03-18</actionDate>
+        <text>Placed on the House Calendar, Calendar No. 9.</text>
+        <type>Calendars</type>
+        <actionCode>H12420</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-03-18</actionDate>
+        <text>Reported (Amended) by the Committee on House Administration. H. Rept. 119-17.</text>
+        <type>Committee</type>
+        <actionCode>H12200</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsha00</systemCode>
+            <name>Committee on House Administration</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-03-18</actionDate>
+        <text>Reported (Amended) by the Committee on House Administration. H. Rept. 119-17.</text>
+        <type>Committee</type>
+        <actionCode>5000</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsha00</systemCode>
+            <name>Committee on House Administration</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-03-11</actionDate>
+        <committees>
+          <item>
+            <systemCode>hsha00</systemCode>
+            <name>Committee on House Administration</name>
+          </item>
+        </committees>
+        <sourceSystem>
+          <code>1</code>
+          <name>House committee actions</name>
+        </sourceSystem>
+        <text>Ordered to be Reported (Amended) by Voice Vote.</text>
+        <type>Committee</type>
+      </item>
+      <item>
+        <actionDate>2025-03-11</actionDate>
+        <committees>
+          <item>
+            <systemCode>hsha00</systemCode>
+            <name>Committee on House Administration</name>
+          </item>
+        </committees>
+        <sourceSystem>
+          <code>1</code>
+          <name>House committee actions</name>
+        </sourceSystem>
+        <text>Committee Consideration and Mark-up Session Held</text>
+        <type>Committee</type>
+      </item>
+      <item>
+        <actionDate>2025-03-06</actionDate>
+        <text>Referred to the House Committee on House Administration.</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>2</code>
+          <name>House floor actions</name>
+        </sourceSystem>
+        <committees>
+          <item>
+            <systemCode>hsha00</systemCode>
+            <name>Committee on House Administration</name>
+          </item>
+        </committees>
+      </item>
+      <item>
+        <actionDate>2025-03-06</actionDate>
+        <text>Submitted in House</text>
+        <type>IntroReferral</type>
+        <actionCode>H11100</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-03-06</actionDate>
+        <text>Submitted in House</text>
+        <type>IntroReferral</type>
+        <actionCode>1025</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+      <item>
+        <actionDate>2025-03-06</actionDate>
+        <text>Submitted in House</text>
+        <type>IntroReferral</type>
+        <actionCode>1025</actionCode>
+        <sourceSystem>
+          <code>9</code>
+          <name>Library of Congress</name>
+        </sourceSystem>
+      </item>
+    </actions>
+    <sponsors>
+      <item>
+        <bioguideId>S001213</bioguideId>
+        <fullName>Rep. Steil, Bryan [R-WI-1]</fullName>
+        <firstName>Bryan</firstName>
+        <lastName>Steil</lastName>
+        <party>R</party>
+        <state>WI</state>
+        <district>1</district>
+        <isByRequest>N</isByRequest>
+      </item>
+    </sponsors>
+    <cosponsors>
+      <item>
+        <bioguideId>M001206</bioguideId>
+        <fullName>Rep. Morelle, Joseph D. [D-NY-25]</fullName>
+        <firstName>Joseph</firstName>
+        <lastName>Morelle</lastName>
+        <party>D</party>
+        <state>NY</state>
+        <middleName>D.</middleName>
+        <district>25</district>
+        <sponsorshipDate>2025-03-06</sponsorshipDate>
+        <isOriginalCosponsor>True</isOriginalCosponsor>
+      </item>
+    </cosponsors>
+    <policyArea>
+      <name>Congress</name>
+    </policyArea>
+    <subjects>
+      <legislativeSubjects>
+        <item>
+          <name>Congressional committees</name>
+          <updateDate>2025-05-07T13:10:10Z</updateDate>
+        </item>
+        <item>
+          <name>House Committee on Agriculture</name>
+          <updateDate>2025-05-07T13:13:41Z</updateDate>
+        </item>
+        <item>
+          <name>House Committee on Armed Services</name>
+          <updateDate>2025-05-07T13:13:41Z</updateDate>
+        </item>
+        <item>
+          <name>House Committee on Education and the Workforce</name>
+          <updateDate>2025-05-07T13:13:41Z</updateDate>
+        </item>
+        <item>
+          <name>House Committee on Energy and Commerce</name>
+          <updateDate>2025-05-07T13:13:41Z</updateDate>
+        </item>
+        <item>
+          <name>House Committee on Ethics</name>
+          <updateDate>2025-05-07T13:13:41Z</updateDate>
+        </item>
+        <item>
+          <name>House Committee on Financial Services</name>
+          <updateDate>2025-05-07T13:13:41Z</updateDate>
+        </item>
+        <item>
+          <name>House Committee on Foreign Affairs</name>
+          <updateDate>2025-05-07T13:13:41Z</updateDate>
+        </item>
+        <item>
+          <name>House Committee on Homeland Security</name>
+          <updateDate>2025-05-07T13:13:41Z</updateDate>
+        </item>
+        <item>
+          <name>House Committee on House Administration</name>
+          <updateDate>2025-05-07T13:13:41Z</updateDate>
+        </item>
+        <item>
+          <name>House Committee on Natural Resources</name>
+          <updateDate>2025-05-07T13:13:41Z</updateDate>
+        </item>
+        <item>
+          <name>House Committee on Oversight and Accountability</name>
+          <updateDate>2025-05-07T13:13:41Z</updateDate>
+        </item>
+        <item>
+          <name>House Committee on Rules</name>
+          <updateDate>2025-05-07T13:13:41Z</updateDate>
+        </item>
+        <item>
+          <name>House Committee on Science, Space, and Technology</name>
+          <updateDate>2025-05-07T13:13:41Z</updateDate>
+        </item>
+        <item>
+          <name>House Committee on Small Business</name>
+          <updateDate>2025-05-07T13:13:41Z</updateDate>
+        </item>
+        <item>
+          <name>House Committee on Transportation and Infrastructure</name>
+          <updateDate>2025-05-07T13:13:41Z</updateDate>
+        </item>
+        <item>
+          <name>House Committee on Veterans' Affairs</name>
+          <updateDate>2025-05-07T13:13:41Z</updateDate>
+        </item>
+        <item>
+          <name>House Committee on Ways and Means</name>
+          <updateDate>2025-05-07T13:13:41Z</updateDate>
+        </item>
+        <item>
+          <name>House Committee on the Budget</name>
+          <updateDate>2025-05-07T13:13:41Z</updateDate>
+        </item>
+        <item>
+          <name>House Committee on the Judiciary</name>
+          <updateDate>2025-05-07T13:13:41Z</updateDate>
+        </item>
+        <item>
+          <name>House Permanent Select Committee on Intelligence</name>
+          <updateDate>2025-05-07T13:13:41Z</updateDate>
+        </item>
+        <item>
+          <name>House of Representatives</name>
+          <updateDate>2025-05-07T13:10:18Z</updateDate>
+        </item>
+      </legislativeSubjects>
+      <policyArea>
+        <name>Congress</name>
+        <updateDate>2025-05-05T19:44:33Z</updateDate>
+      </policyArea>
+    </subjects>
+    <title>Providing for the expenses of certain committees of the House of Representatives in the One Hundred Nineteenth Congress.</title>
+    <titles>
+      <item>
+        <titleType>Official Title as Introduced</titleType>
+        <titleTypeCode>6</titleTypeCode>
+        <title>Providing for the expenses of certain committees of the House of Representatives in the One Hundred Nineteenth Congress.</title>
+        <updateDate>2025-03-07T09:18:34Z</updateDate>
+        <billTextVersionName>Introduced in House</billTextVersionName>
+        <billTextVersionCode>IH</billTextVersionCode>
+      </item>
+      <item>
+        <titleType>Display Title</titleType>
+        <titleTypeCode>45</titleTypeCode>
+        <title>Providing for the expenses of certain committees of the House of Representatives in the One Hundred Nineteenth Congress.</title>
+        <updateDate>2025-03-07T09:06:46Z</updateDate>
+      </item>
+    </titles>
+    <amendments>
+      <amendment>
+        <number>9</number>
+        <congress>119</congress>
+        <type>HAMDT</type>
+        <description>Amendment is the reported version of the resolution, House Report 119-17 as reported by the Committee on House Administration.</description>
+        <updateDate>2025-03-25T13:55:07Z</updateDate>
+        <latestAction>
+          <actionDate>2025-03-24</actionDate>
+          <text>On agreeing to the Steil amendment (A001) Agreed to without objection.</text>
+          <actionTime>19:13:32</actionTime>
+        </latestAction>
+        <sponsors>
+          <item>
+            <bioguideId>S001213</bioguideId>
+            <fullName>Rep. Steil, Bryan [R-WI-1]</fullName>
+            <firstName>Bryan</firstName>
+            <lastName>Steil</lastName>
+            <party>R</party>
+            <state>WI</state>
+            <district>1</district>
+          </item>
+        </sponsors>
+        <submittedDate>2025-03-24T04:00:00Z</submittedDate>
+        <chamber>House of Representatives</chamber>
+        <amendedBill>
+          <congress>119</congress>
+          <type>HRES</type>
+          <originChamber>House</originChamber>
+          <originChamberCode>H</originChamberCode>
+          <number>198</number>
+          <title>Providing for the expenses of certain committees of the House of Representatives in the One Hundred Nineteenth Congress.</title>
+          <updateDateIncludingText>2025-10-09</updateDateIncludingText>
+        </amendedBill>
+        <actions>
+          <count>4</count>
+          <actions>
+            <item>
+              <actionDate>2025-03-24</actionDate>
+              <actionTime>19:13:32</actionTime>
+              <text>On agreeing to the Steil amendment (A001) Agreed to without objection.</text>
+              <type>Floor</type>
+              <actionCode>72000</actionCode>
+              <sourceSystem>
+                <code>9</code>
+                <name>Library of Congress</name>
+              </sourceSystem>
+            </item>
+            <item>
+              <actionDate>2025-03-24</actionDate>
+              <actionTime>19:13:21</actionTime>
+              <text>Amendment (A001) in the nature of a substitute offered by Mr. Steil. (consideration: CR H1215-1216; text: CR H1215-1216)</text>
+              <type>Floor</type>
+              <actionCode>71000</actionCode>
+              <sourceSystem>
+                <code>9</code>
+                <name>Library of Congress</name>
+              </sourceSystem>
+            </item>
+            <item>
+              <actionDate>2025-03-24</actionDate>
+              <actionTime>19:13:21</actionTime>
+              <text>House Amendment Offered</text>
+              <type>Floor</type>
+              <actionCode>71000</actionCode>
+              <sourceSystem>
+                <code>9</code>
+                <name>Library of Congress</name>
+              </sourceSystem>
+            </item>
+            <item>
+              <actionDate>2025-03-24</actionDate>
+              <actionTime>19:13:32</actionTime>
+              <text>House amendment agreed to: On agreeing to the Steil amendment (A001) Agreed to without objection.</text>
+              <type>Floor</type>
+              <actionCode>72000</actionCode>
+              <sourceSystem>
+                <code>9</code>
+                <name>Library of Congress</name>
+              </sourceSystem>
+            </item>
+          </actions>
+        </actions>
+      </amendment>
+    </amendments>
+    <textVersions>
+      <item>
+        <type>Engrossed in House</type>
+        <date>2025-03-24T04:00:00Z</date>
+        <formats>
+          <item>
+            <url>https://www.govinfo.gov/content/pkg/BILLS-119hres198eh/xml/BILLS-119hres198eh.xml</url>
+          </item>
+        </formats>
+      </item>
+      <item>
+        <type>Reported in House</type>
+        <date>2025-03-18T04:00:00Z</date>
+        <formats>
+          <item>
+            <url>https://www.govinfo.gov/content/pkg/BILLS-119hres198rh/xml/BILLS-119hres198rh.xml</url>
+          </item>
+        </formats>
+      </item>
+      <item>
+        <type>Introduced in House</type>
+        <date>2025-03-06T05:00:00Z</date>
+        <formats>
+          <item>
+            <url>https://www.govinfo.gov/content/pkg/BILLS-119hres198ih/xml/BILLS-119hres198ih.xml</url>
+          </item>
+        </formats>
+      </item>
+    </textVersions>
+    <latestAction>
+      <actionDate>2025-03-24</actionDate>
+      <text>Motion to reconsider laid on the table Agreed to without objection.</text>
+      <actionTime>19:13:47</actionTime>
+    </latestAction>
+  </bill>
+  <dublinCore xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:format>text/xml</dc:format>
+    <dc:language>EN</dc:language>
+    <dc:rights>Pursuant to Title 17 Section 105 of the United States Code, this file is not subject to copyright protection and is in the public domain.</dc:rights>
+    <dc:contributor>Congressional Research Service, Library of Congress</dc:contributor>
+    <dc:description>This file contains bill summaries and statuses for federal legislation. A bill summary describes the most significant provisions of a piece of legislation and details the effects the legislative text may have on current law and federal programs. Bill summaries are authored by the Congressional Research Service (CRS) of the Library of Congress. As stated in Public Law 91-510 (2 USC 166 (d)(6)), one of the duties of CRS is "to prepare summaries and digests of bills and resolutions of a public general nature introduced in the Senate or House of Representatives". For more information, refer to the User Guide that accompanies this file.</dc:description>
+  </dublinCore>
+</billStatus>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Congress Next-Step Predictor</title>
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+
+<style>
+body {
+    font-family: Arial;
+    margin: 0;
+    background: #f5f6fa;
+}
+
+.header {
+    background: #111827;
+    color: white;
+    padding: 10px;
+}
+
+.container {
+    display: flex;
+    height: calc(100vh - 40px);
+}
+
+/* TABLE */
+.table {
+    width: 65%;
+    background: white;
+    overflow: auto;
+}
+
+.details {
+    width: 35%;
+    padding: 12px;
+    border-left: 1px solid #ddd;
+    overflow: auto;
+}
+
+/* TABLE */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    font-size: 12px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+th {
+    background: #f3f4f6;
+    position: sticky;
+    top: 0;
+}
+
+/* COLORS */
+.high { color: #16a34a; }
+.med { color: #f59e0b; }
+.low { color: #ef4444; }
+.uncertain { color: #6b7280; }
+
+.item {
+    font-size: 12px;
+    padding: 3px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+/* pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    gap: 10px;
+}
+
+button {
+    padding: 5px 10px;
+    font-size: 12px;
+}
+</style>
+</head>
+
+<body>
+
+<div style="
+    background:#111827;
+    color:white;
+    padding:10px;
+    display:flex;
+    gap:15px;
+    align-items:center;
+    font-family:Arial;
+">
+    <div style="font-weight:bold;">Congress Dashboard</div>
+
+    <a href="index.html" style="color:white;text-decoration:none;">Details</a>
+    <a href="cluster_groups.html" style="color:white;text-decoration:none;">Clusters</a>
+    <a href="ml_dashboard.html" style="color:white;text-decoration:none;">ML Dashboard</a>
+</div>
+
+<div class="header">
+Congress Next-Step Predictor (Detailed View + Sorting)
+</div>
+
+<div class="container">
+
+<div class="table">
+<table>
+<thead>
+<tr>
+<th onclick="sortBy('bill_number')">Bill ID</th>
+<th onclick="sortBy('early_action_count')">Actions</th>
+<th onclick="sortBy('velocity')">Velocity</th>
+<th onclick="sortBy('confidence')">Score</th>
+</tr>
+</thead>
+<tbody id="rows"></tbody>
+</table>
+
+<div class="pagination">
+    <button onclick="prev()">Prev</button>
+    <span id="page"></span>
+    <button onclick="next()">Next</button>
+</div>
+
+</div>
+
+<div class="details" id="details">
+Click a bill to see full analysis
+</div>
+
+</div>
+
+<script>
+
+let data = [];
+let page = 1;
+let size = 15;
+
+let sortKey = "confidence";
+let sortDir = "desc";
+
+// =========================
+// LOAD
+// =========================
+d3.json("ml_results.json").then(d => {
+    data = d.bills;
+    render();
+});
+
+// =========================
+// SORT CONTROL (RESET PAGE)
+// =========================
+function sortBy(key) {
+
+    if (sortKey === key) {
+        sortDir = sortDir === "asc" ? "desc" : "asc";
+    } else {
+        sortKey = key;
+        sortDir = "desc";
+    }
+
+    page = 1; // IMPORTANT UX FIX
+    render();
+}
+
+// =========================
+// SAFE SORT (NUMERIC FIX)
+// =========================
+function sortFn(a, b) {
+
+    let va = a[sortKey];
+    let vb = b[sortKey];
+
+    if (sortKey === "bill_number") {
+        va = parseInt(va.replace(/\D/g, ""));
+        vb = parseInt(vb.replace(/\D/g, ""));
+    }
+
+    return sortDir === "asc"
+        ? (va > vb ? 1 : -1)
+        : (va < vb ? 1 : -1);
+}
+
+// =========================
+// RENDER TABLE
+// =========================
+function render() {
+
+    let sorted = [...data].sort(sortFn);
+
+    let start = (page - 1) * size;
+    let pageData = sorted.slice(start, start + size);
+
+    let rows = d3.select("#rows")
+        .selectAll("tr")
+        .data(pageData, d => d.bill_number);
+
+    rows.exit().remove();
+
+    let enter = rows.enter()
+        .append("tr")
+        .on("click", (e, d) => show(d));
+
+    rows = enter.merge(rows);
+    rows.html("");
+
+    rows.append("td").text(d => d.bill_number);
+    rows.append("td").text(d => d.early_action_count);
+    rows.append("td").text(d => d.velocity.toFixed(2));
+
+    rows.append("td")
+        .html(d => {
+            if (d.early_action_count <= 1) {
+                return `<span class="uncertain">UNCERTAIN</span>`;
+            }
+
+            let pct = (d.confidence * 100).toFixed(1);
+            let cls = pct > 75 ? "high" : pct > 50 ? "med" : "low";
+            return `<span class="${cls}">${pct}%</span>`;
+        });
+
+    document.getElementById("page").innerText =
+        `Page ${page}`;
+}
+
+// =========================
+// PAGINATION
+// =========================
+function next() {
+    page++;
+    render();
+}
+
+function prev() {
+    page = Math.max(1, page - 1);
+    render();
+}
+
+// =========================
+// DETAIL VIEW (EXPANDED)
+// =========================
+function show(d) {
+
+    let exp = "";
+
+    if (d.explanation?.breakdown) {
+        exp += `<h4>Feature Breakdown</h4>`;
+        Object.keys(d.explanation.breakdown).forEach(k => {
+            let f = d.explanation.breakdown[k];
+            exp += `
+                <div class="item">
+                    <b>${k}</b><br/>
+                    value: ${f.value}<br/>
+                    weight: ${f.weight.toFixed(3)}<br/>
+                    impact: ${f.impact.toFixed(3)}
+                </div>
+            `;
+        });
+    }
+
+    let timeline = "<h4>Timeline</h4>";
+
+    (d.timeline || []).forEach(t => {
+        timeline += `
+            <div class="item">
+                <b>Step ${t.step}</b>: ${t.text}<br/>
+                <small>${t.action_date || ""}</small>
+            </div>
+        `;
+    });
+
+    let status =
+        d.early_action_count <= 1
+            ? "UNCERTAIN (not enough signal yet)"
+            : "Model Prediction";
+
+    document.getElementById("details").innerHTML = `
+        <h3>Bill ${d.bill_number}</h3>
+
+        <b>Status:</b> ${status}<br/>
+        <b>Confidence:</b> ${(d.confidence * 100).toFixed(1)}%
+
+        <h4>Core Features</h4>
+        <div class="item">Early Actions: ${d.early_action_count}</div>
+        <div class="item">Velocity: ${d.velocity.toFixed(3)}</div>
+        <div class="item">Span Days: ${d.span_days}</div>
+        <div class="item">Text Variety: ${d.text_variety}</div>
+
+        ${exp}
+
+        ${timeline}
+    `;
+}
+
+</script>
+
+</body>
+</html>
